@@ -1,0 +1,1581 @@
+Microchip MPLAB XC8 Compiler V2.05 ()
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
+  -cs -h+dist/default/production\LunOS_v1.X.production.sym \
+  --cmf=dist/default/production\LunOS_v1.X.production.cmf -z -Q18F4520 \
+  -oC:\Users\Eriel\AppData\Local\Temp\sagk.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/LunOS_v1.X.production.map -E1 -ver=XC8 \
+  --acfsm=1493 -ASTACK=080h-01DFh -pstack=STACK -ACODE=00h-07FFFh \
+  -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
+  -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-07Fh -AABS1=00h-05FFh \
+  -ABIGRAM=01h-05FFh -ARAM=080h-0FFh,0100h-01FFhx5 -ABANK0=080h-0FFh \
+  -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
+  -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh -ASFR=0F80h-0FFFh \
+  -preset_vec=00h,intcode=08h,intcodelo,powerup,init -pramtop=0600h \
+  -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
+  -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
+  -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F000FFh \
+  -peeprom_data=EEDATA \
+  -prdata=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM \
+  -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
+  -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
+  -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
+  C:\Users\Eriel\AppData\Local\Temp\sagk.o \
+  dist/default/production\LunOS_v1.X.production.o 
+
+Object code version is 3.11
+
+Machine type is 18F4520
+
+Call graph: (short form)
+
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\Eriel\AppData\Local\Temp\sagk.o
+                stack                                80       80      160       80       2
+                init                                  C        C        8        4       0
+                reset_vec                             0        0        4        0       0
+                idloc                            200000   200000        8   200000       0
+                config                           300000   300000        E   300000       0
+dist/default/production\LunOS_v1.X.production.o
+                intcode                               8        8        4        4       0
+                temp                                 4B       4B       20        1       1
+                text28                             15AE     15AE       96        4       0
+                text27                              C60      C60      110        4       0
+                intcode_body                         14       14      4B8        4       0
+                text25                             1434     1434       BE        4       0
+                text24                             16D4     16D4       7E        4       0
+                text23                             19C0     19C0       2A        4       0
+                text22                              F88      F88      108        4       0
+                text21                             18C4     18C4       4C        4       0
+                text20                             1872     1872       52        4       0
+                text19                             1188     1188       F6        4       0
+                text18                             127E     127E       E8        4       0
+                text17                              E7E      E7E      10A        4       0
+                text16                             1910     1910       40        4       0
+                text15                             1A12     1A12        4        4       0
+                text14                             19FC     19FC       10        4       0
+                text13                             19EA     19EA       12        4       0
+                text12                             14F2     14F2       BC        4       0
+                text11                             1644     1644       90        4       0
+                text10                             1A0C     1A0C        6        4       0
+                text9                               4CC      4CC      4A4        4       0
+                text8                              1366     1366       CE        4       0
+                text7                              1090     1090       F8        4       0
+                text6                              198E     198E       32        4       0
+                text5                               B0E      B0E      152        4       0
+                text4                               970      970      19E        4       0
+                text3                              1752     1752       70        4       0
+                text2                               D70      D70      10E        4       0
+                text1                              17C2     17C2       5A        4       0
+                text0                              181C     181C       56        4       0
+                cstackCOMRAM                         6B       6B       10        1       1
+                bssBIGRAM                           1E0      1E0      420      1E0       1
+                dataCOMRAM                           7B       7B        2        1       1
+                bssCOMRAM                             1        1       4A        1       1
+                cinit                              1950     1950       3E        4       0
+                idataCOMRAM                        1A16     1A16        2        4       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+                stack                                80       80      160         2
+
+        CLASS   CODE           
+                intcode                               8        8        4         0
+                init                                  C        C        8         0
+                reset_vec                             0        0        4         0
+                text28                             15AE     15AE       96         0
+                text27                              C60      C60      110         0
+                intcode_body                         14       14      4B8         0
+                text25                             1434     1434       BE         0
+                text24                             16D4     16D4       7E         0
+                text23                             19C0     19C0       2A         0
+                text22                              F88      F88      108         0
+                text21                             18C4     18C4       4C         0
+                text20                             1872     1872       52         0
+                text19                             1188     1188       F6         0
+                text18                             127E     127E       E8         0
+                text17                              E7E      E7E      10A         0
+                text16                             1910     1910       40         0
+                text15                             1A12     1A12        4         0
+                text14                             19FC     19FC       10         0
+                text13                             19EA     19EA       12         0
+                text12                             14F2     14F2       BC         0
+                text11                             1644     1644       90         0
+                text10                             1A0C     1A0C        6         0
+                text9                               4CC      4CC      4A4         0
+                text8                              1366     1366       CE         0
+                text7                              1090     1090       F8         0
+                text6                              198E     198E       32         0
+                text5                               B0E      B0E      152         0
+                text4                               970      970      19E         0
+                text3                              1752     1752       70         0
+                text2                               D70      D70      10E         0
+                text1                              17C2     17C2       5A         0
+                text0                              181C     181C       56         0
+                cinit                              1950     1950       3E         0
+                idataCOMRAM                        1A16     1A16        2         0
+
+        CLASS   CONST          
+
+        CLASS   SMALLCONST     
+
+        CLASS   MEDIUMCONST    
+
+        CLASS   COMRAM         
+                temp                                 4B       4B       20         1
+                cstackCOMRAM                         6B       6B       10         1
+                dataCOMRAM                           7B       7B        2         1
+                bssCOMRAM                             1        1       4A         1
+
+        CLASS   ABS1           
+
+        CLASS   BIGRAM         
+                bssBIGRAM                           1E0      1E0      420         1
+
+        CLASS   RAM            
+
+        CLASS   BANK0          
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   BANK4          
+
+        CLASS   BANK5          
+
+        CLASS   SFR            
+
+        CLASS   FARRAM         
+
+        CLASS   CONFIG         
+                config                           300000   300000        E         0
+
+        CLASS   IDLOC          
+                idloc                            200000   200000        8         0
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
+
+                reset_vec                      000000  000004  000004         0       0  CODE    
+                bssCOMRAM                      000001  00007C  00007D         1       1  COMRAM  
+                intcode                        000008  001A10  001A18         4       0  CODE    
+                stack                          000080  000160  0001E0        80       2  STACK   
+                bssBIGRAM                      0001E0  000420  000600       1E0       1  BIGRAM  
+                idloc                          200000  000008  200008    200000       0  IDLOC   
+                config                         300000  00000E  30000E    300000       0  CONFIG  
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            000080-0000FF               80
+        BANK1            000100-0001DF               E0
+        BIGRAM           00007D-0001DF              163
+        CODE             000004-000007                4
+                         001A18-007FFF             65E8
+        COMRAM           00007D-00007F                3
+        CONST            000004-000007                4
+                         001A18-007FFF             65E8
+        EEDATA           F00000-F000FF              100
+        MEDIUMCONST      001A18-007FFF             65E8
+        RAM              000080-0001DF               80
+        SFR              000F80-000FFF               80
+        SMALLCONST       001A18-007FFF              100
+
+                                  Symbol Table
+
+_BSR                       (abs)        000FE0
+_INTCON2bits               (abs)        000FF1
+_INTCONbits                (abs)        000FF2
+_ISR_timer0                intcode      000008
+_PORTBbits                 (abs)        000F81
+_PORTDbits                 (abs)        000F83
+_SRAMInitHeap              text8        001366
+_SRAMalloc                 text4        000970
+_STATUS                    (abs)        000FD8
+_STKPTR                    (abs)        000FFC
+_T0CONbits                 (abs)        000FD5
+_TMR0L                     (abs)        000FD6
+_TOS                       (abs)        000FFD
+_TOSH                      (abs)        000FFE
+_TOSL                      (abs)        000FFD
+_TOSU                      (abs)        000FFF
+_TRISB                     (abs)        000F93
+_TRISDbits                 (abs)        000F95
+_WREG                      (abs)        000FE8
+__CFG_PBADEN$OFF           (abs)        000000
+__CFG_WDT$OFF              (abs)        000000
+__HRAM                     (abs)        000000
+__Habs1                    abs1         000000
+__Hbank0                   bank0        000000
+__Hbank1                   bank1        000000
+__Hbank2                   bank2        000000
+__Hbank3                   bank3        000000
+__Hbank4                   bank4        000000
+__Hbank5                   bank5        000000
+__Hbigbss                  bigbss       000000
+__Hbigdata                 bigdata      000000
+__Hbigram                  bigram       000000
+__Hbss                     bss          000000
+__HbssBIGRAM               bssBIGRAM    000000
+__HbssCOMRAM               bssCOMRAM    000000
+__Hcinit                   cinit        000000
+__Hclrtext                 clrtext      000000
+__Hcomram                  comram       000000
+__Hconfig                  config       30000E
+__Hconst                   const        000000
+__HcstackCOMRAM            cstackCOMRAM 000000
+__Hdata                    data         000000
+__HdataCOMRAM              dataCOMRAM   000000
+__Heeprom_data             eeprom_data  000000
+__Hfarbss                  farbss       000000
+__Hfardata                 fardata      000000
+__Hibigdata                ibigdata     000000
+__Hidata                   idata        000000
+__HidataCOMRAM             idataCOMRAM  000000
+__Hidloc                   idloc        200008
+__Hifardata                ifardata     000000
+__Hinit                    init         000014
+__Hintcode                 intcode      00000C
+__Hintcode_body            intcode_body 000000
+__Hintcodelo               intcodelo    00000C
+__Hintentry                intentry     000000
+__Hintret                  intret       000000
+__Hintsave_regs            intsave_regs 000000
+__Hirdata                  irdata       000000
+__Hmediumconst             mediumconst  000000
+__HnvFARRAM                nvFARRAM     000000
+__Hnvbit                   nvbit        000000
+__Hnvrram                  nvrram       000000
+__Hparam                   rparam       000000
+__Hpowerup                 powerup      00000C
+__Hram                     ram          000000
+__Hramtop                  ramtop       000600
+__Hrbit                    rbit         000000
+__Hrbss                    rbss         000000
+__Hrdata                   rdata        000000
+__Hreset_vec               reset_vec    000004
+__Hrparam                  rparam       000000
+__Hsfr                     sfr          000000
+__Hsmallconst              smallconst   000000
+__Hspace_0                 (abs)        30000E
+__Hspace_1                 (abs)        000600
+__Hspace_2                 (abs)        0001E0
+__Hstack                   stack        0001E0
+__Hstruct                  struct       000000
+__Htemp                    temp         00006B
+__Htext                    text         000000
+__Htext0                   text0        000000
+__Htext1                   text1        000000
+__Htext10                  text10       000000
+__Htext11                  text11       000000
+__Htext12                  text12       000000
+__Htext13                  text13       000000
+__Htext14                  text14       000000
+__Htext15                  text15       000000
+__Htext16                  text16       000000
+__Htext17                  text17       000000
+__Htext18                  text18       000000
+__Htext19                  text19       000000
+__Htext2                   text2        000000
+__Htext20                  text20       000000
+__Htext21                  text21       000000
+__Htext22                  text22       000000
+__Htext23                  text23       000000
+__Htext24                  text24       000000
+__Htext25                  text25       000000
+__Htext27                  text27       000000
+__Htext28                  text28       000000
+__Htext29                  text29       000000
+__Htext3                   text3        000000
+__Htext4                   text4        000000
+__Htext5                   text5        000000
+__Htext6                   text6        000000
+__Htext7                   text7        000000
+__Htext8                   text8        000000
+__Htext9                   text9        000000
+__LRAM                     (abs)        000001
+__Labs1                    abs1         000000
+__Lbank0                   bank0        000000
+__Lbank1                   bank1        000000
+__Lbank2                   bank2        000000
+__Lbank3                   bank3        000000
+__Lbank4                   bank4        000000
+__Lbank5                   bank5        000000
+__Lbigbss                  bigbss       000000
+__Lbigdata                 bigdata      000000
+__Lbigram                  bigram       000000
+__Lbss                     bss          000000
+__LbssBIGRAM               bssBIGRAM    000000
+__LbssCOMRAM               bssCOMRAM    000000
+__Lcinit                   cinit        000000
+__Lclrtext                 clrtext      000000
+__Lcomram                  comram       000000
+__Lconfig                  config       300000
+__Lconst                   const        000000
+__LcstackCOMRAM            cstackCOMRAM 000000
+__Ldata                    data         000000
+__LdataCOMRAM              dataCOMRAM   000000
+__Leeprom_data             eeprom_data  000000
+__Lfarbss                  farbss       000000
+__Lfardata                 fardata      000000
+__Libigdata                ibigdata     000000
+__Lidata                   idata        000000
+__LidataCOMRAM             idataCOMRAM  000000
+__Lidloc                   idloc        200000
+__Lifardata                ifardata     000000
+__Linit                    init         00000C
+__Lintcode                 intcode      000008
+__Lintcode_body            intcode_body 000000
+__Lintcodelo               intcodelo    00000C
+__Lintentry                intentry     000000
+__Lintret                  intret       000000
+__Lintsave_regs            intsave_regs 000000
+__Lirdata                  irdata       000000
+__Lmediumconst             mediumconst  000000
+__LnvFARRAM                nvFARRAM     000000
+__Lnvbit                   nvbit        000000
+__Lnvrram                  nvrram       000000
+__Lparam                   rparam       000000
+__Lpowerup                 powerup      00000C
+__Lram                     ram          000000
+__Lramtop                  ramtop       000600
+__Lrbit                    rbit         000000
+__Lrbss                    rbss         000000
+__Lrdata                   rdata        000000
+__Lreset_vec               reset_vec    000000
+__Lrparam                  rparam       000000
+__Lsfr                     sfr          000000
+__Lsmallconst              smallconst   000000
+__Lspace_0                 (abs)        000000
+__Lspace_1                 (abs)        000000
+__Lspace_2                 (abs)        000000
+__Lstack                   stack        000080
+__Lstruct                  struct       000000
+__Ltemp                    temp         00004B
+__Ltext                    text         000000
+__Ltext0                   text0        000000
+__Ltext1                   text1        000000
+__Ltext10                  text10       000000
+__Ltext11                  text11       000000
+__Ltext12                  text12       000000
+__Ltext13                  text13       000000
+__Ltext14                  text14       000000
+__Ltext15                  text15       000000
+__Ltext16                  text16       000000
+__Ltext17                  text17       000000
+__Ltext18                  text18       000000
+__Ltext19                  text19       000000
+__Ltext2                   text2        000000
+__Ltext20                  text20       000000
+__Ltext21                  text21       000000
+__Ltext22                  text22       000000
+__Ltext23                  text23       000000
+__Ltext24                  text24       000000
+__Ltext25                  text25       000000
+__Ltext27                  text27       000000
+__Ltext28                  text28       000000
+__Ltext29                  text29       000000
+__Ltext3                   text3        000000
+__Ltext4                   text4        000000
+__Ltext5                   text5        000000
+__Ltext6                   text6        000000
+__Ltext7                   text7        000000
+__Ltext8                   text8        000000
+__Ltext9                   text9        000000
+__S0                       (abs)        30000E
+__S1                       (abs)        000600
+__S2                       (abs)        0001E0
+__SRAMmerge                text5        000B0E
+___inthi_sp                stack        0000F6
+___intlo_sp                stack        00016B
+___lwmod                   text12       0014F2
+___param_bank              (abs)        000000
+___rparam_used             (abs)        000001
+___sp                      stack        000080
+___wmul                    text28       0015AE
+__accesstop                (abs)        000080
+__activetblptr             (abs)        000000
+__end_of_ISR_timer0        intcode_body 0004CC
+__end_of_SRAMInitHeap      text8        001434
+__end_of_SRAMalloc         text4        000B0E
+__end_of__SRAMmerge        text5        000C60
+__end_of___lwmod           text12       0015AE
+__end_of___wmul            text28       001644
+__end_of__initialization   cinit        001988
+__end_of_config_INT0       text14       001A0C
+__end_of_config_timer0     text13       0019FC
+__end_of_delay_decrement   text27       000D70
+__end_of_dispatcher        text9        000970
+__end_of_lunos_createTask  text7        001188
+__end_of_lunos_delayTask   text20       0018C4
+__end_of_lunos_init        text6        0019C0
+__end_of_main              text0        001872
+__end_of_pipe_create       text2        000E7E
+__end_of_pipe_read         text22       001090
+__end_of_pipe_write        text17       000F88
+__end_of_round_robin       text11       0016D4
+__end_of_scheduler         text10       001A12
+__end_of_sem_init          text3        0017C2
+__end_of_sem_post          text19       00127E
+__end_of_sem_wait          text18       001366
+__end_of_task_0            text16       001950
+__end_of_task_1            text21       001910
+__end_of_task_2            text23       0019EA
+__end_of_task_bozo         text24       001752
+__end_of_task_idle         text15       001A16
+__end_of_task_xuxa         text25       0014F2
+__end_of_user_conf         text1        00181C
+__initialization           cinit        001950
+__mediumconst              mediumconst  000000
+__pbssBIGRAM               bssBIGRAM    0001E0
+__pbssCOMRAM               bssCOMRAM    000001
+__pcinit                   cinit        001950
+__pcstackCOMRAM            cstackCOMRAM 00006B
+__pdataCOMRAM              dataCOMRAM   00007B
+__pidataCOMRAM             idataCOMRAM  001A16
+__pintcode                 intcode      000008
+__pintcode_body            intcode_body 000014
+__ptext0                   text0        00181C
+__ptext1                   text1        0017C2
+__ptext10                  text10       001A0C
+__ptext11                  text11       001644
+__ptext12                  text12       0014F2
+__ptext13                  text13       0019EA
+__ptext14                  text14       0019FC
+__ptext15                  text15       001A12
+__ptext16                  text16       001910
+__ptext17                  text17       000E7E
+__ptext18                  text18       00127E
+__ptext19                  text19       001188
+__ptext2                   text2        000D70
+__ptext20                  text20       001872
+__ptext21                  text21       0018C4
+__ptext22                  text22       000F88
+__ptext23                  text23       0019C0
+__ptext24                  text24       0016D4
+__ptext25                  text25       001434
+__ptext27                  text27       000C60
+__ptext28                  text28       0015AE
+__ptext29                  text29       000000
+__ptext3                   text3        001752
+__ptext4                   text4        000970
+__ptext5                   text5        000B0E
+__ptext6                   text6        00198E
+__ptext7                   text7        001090
+__ptext8                   text8        001366
+__ptext9                   text9        0004CC
+__ramtop                   ramtop       000600
+__size_of_ISR_timer0       (abs)        000000
+__size_of_SRAMInitHeap     (abs)        000000
+__size_of_SRAMalloc        (abs)        000000
+__size_of__SRAMmerge       (abs)        000000
+__size_of___lwmod          (abs)        000000
+__size_of___wmul           (abs)        000000
+__size_of_config_INT0      (abs)        000000
+__size_of_config_timer0    (abs)        000000
+__size_of_delay_decrement  (abs)        000000
+__size_of_dispatcher       (abs)        000000
+__size_of_lunos_createTask (abs)        000000
+__size_of_lunos_delayTask  (abs)        000000
+__size_of_lunos_init       (abs)        000000
+__size_of_main             (abs)        000000
+__size_of_pipe_create      (abs)        000000
+__size_of_pipe_read        (abs)        000000
+__size_of_pipe_write       (abs)        000000
+__size_of_round_robin      (abs)        000000
+__size_of_scheduler        (abs)        000000
+__size_of_sem_init         (abs)        000000
+__size_of_sem_post         (abs)        000000
+__size_of_sem_wait         (abs)        000000
+__size_of_task_0           (abs)        000000
+__size_of_task_1           (abs)        000000
+__size_of_task_2           (abs)        000000
+__size_of_task_bozo        (abs)        000000
+__size_of_task_idle        (abs)        000000
+__size_of_task_xuxa        (abs)        000000
+__size_of_user_conf        (abs)        000000
+__smallconst               smallconst   000000
+__uDynamicHeap             bssBIGRAM    000400
+_config_INT0               text14       0019FC
+_config_timer0             text13       0019EA
+_delay_decrement           text27       000C60
+_dispatcher                text9        0004CC
+_lunos_createTask          text7        001090
+_lunos_delayTask           text20       001872
+_lunos_init                text6        00198E
+_main                      text0        00181C
+_mem                       bssCOMRAM    000001
+_p                         bssCOMRAM    00003F
+_pipe_create               text2        000D70
+_pipe_read                 text22       000F88
+_pipe_write                text17       000E7E
+_quantum                   dataCOMRAM   00007B
+_r_pipe                    bssCOMRAM    000007
+_ready_queue               bssBIGRAM    0001E0
+_round_robin               text11       001644
+_scheduler                 text10       001A0C
+_sem_init                  text3        001752
+_sem_post                  text19       001188
+_sem_wait                  text18       00127E
+_size                      bssCOMRAM    000003
+_task_0                    text16       001910
+_task_1                    text21       0018C4
+_task_2                    text23       0019C0
+_task_bozo                 text24       0016D4
+_task_idle                 text15       001A12
+_task_xuxa                 text25       001434
+_teste_1                   bssCOMRAM    000031
+_teste_2                   bssCOMRAM    000023
+_user_conf                 text1        0017C2
+_w_pipe                    bssCOMRAM    000015
+_who                       bssCOMRAM    000005
+btemp                      temp         00004B
+end_of_initialization      cinit        001988
+int_func                   intcode_body 000014
+intlevel0                  text         000000
+intlevel1                  text         000000
+intlevel2                  text         000000
+intlevel3                  text         000000
+lltemp0                    temp         00004B
+lltemp1                    temp         000053
+lltemp2                    temp         00005B
+lltemp3                    temp         000063
+ltemp0                     temp         00004B
+ltemp1                     temp         00004F
+ltemp2                     temp         000053
+stackhi                    (abs)        0001DF
+stacklo                    (abs)        000080
+start                      init         00000C
+start_initialization       cinit        001950
+ttemp0                     temp         00004B
+ttemp1                     temp         00004E
+ttemp2                     temp         000051
+ttemp3                     temp         000054
+ttemp5                     temp         00004C
+ttemp6                     temp         00004F
+ttemp7                     temp         000053
+wtemp0                     temp         00004B
+wtemp1                     temp         00004D
+wtemp2                     temp         00004F
+wtemp3                     temp         000051
+wtemp4                     temp         000053
+wtemp5                     temp         000055
+wtemp8                     temp         00004C
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 16 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels required when called:   14
+ This function calls:
+		_config_INT0
+		_config_timer0
+		_dispatcher
+		_lunos_createTask
+		_lunos_init
+		_user_conf
+ This function is called by:
+		Startup code after reset
+ This function uses a reentrant model
+
+
+ *************** function _user_conf *****************
+ Defined at:
+		line 18 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   12
+ This function calls:
+		_SRAMalloc
+		_pipe_create
+		_sem_init
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _pipe_create *****************
+ Defined at:
+		line 9 in file "pipe.c"
+ Parameters:    Size  Location     Type
+  p               2  [STACK] PTR struct pipe
+		 -> p(12), 
+  w               2  [STACK] PTR struct semaphore
+		 -> w_pipe(14), 
+  r               2  [STACK] PTR struct semaphore
+		 -> r_pipe(14), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp+10, btemp+11
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   11
+ This function calls:
+		_sem_init
+ This function is called by:
+		_user_conf
+ This function uses a reentrant model
+
+
+ *************** function _sem_init *****************
+ Defined at:
+		line 10 in file "semaphore.c"
+ Parameters:    Size  Location     Type
+  s               2  [STACK] PTR struct semaphore
+		 -> r_pipe(14), w_pipe(14), teste_2(14), teste_1(14), 
+  valor           2  [STACK] int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp+10, btemp+11
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_pipe_create
+		_user_conf
+ This function uses a reentrant model
+
+
+ *************** function _SRAMalloc *****************
+ Defined at:
+		line 191 in file "sralloc.c"
+ Parameters:    Size  Location     Type
+  nBytes          1  [STACK] unsigned char 
+ Auto vars:     Size  Location     Type
+  pHeap           2  [STACK] PTR struct _SALLOC
+		 -> _uDynamicHeap(512), 
+  temp            2  [STACK] PTR struct _SALLOC
+		 -> _uDynamicHeap(512), 
+  segHeader       1  [STACK] struct _SALLOC
+  segLen          1  [STACK] unsigned char 
+ Return value:  Size  Location     Type
+                  2  [STACK] PTR unsigned char 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   11
+ This function calls:
+		__SRAMmerge
+ This function is called by:
+		_user_conf
+ This function uses a reentrant model
+
+
+ *************** function __SRAMmerge *****************
+ Defined at:
+		line 359 in file "sralloc.c"
+ Parameters:    Size  Location     Type
+  pSegA           2  [STACK] PTR struct _SALLOC
+		 -> _uDynamicHeap(512), 
+ Auto vars:     Size  Location     Type
+  pSegB           2  [STACK] PTR struct _SALLOC
+		 -> _uDynamicHeap(512), 
+  uSegB           1  [STACK] struct _SALLOC
+  uSegA           1  [STACK] struct _SALLOC
+  uSum            1  [STACK] struct _SALLOC
+ Return value:  Size  Location     Type
+                  1  [STACK] unsigned char 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_SRAMalloc
+ This function uses a reentrant model
+
+
+ *************** function _lunos_init *****************
+ Defined at:
+		line 49 in file "kernel.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   11
+ This function calls:
+		_SRAMInitHeap
+		_lunos_createTask
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _lunos_createTask *****************
+ Defined at:
+		line 14 in file "kernel.c"
+ Parameters:    Size  Location     Type
+  prior           2  [STACK] unsigned int 
+  f               2  [STACK] PTR FTN()void 
+		 -> task_2(1), task_1(1), task_0(1), task_idle(1), 
+ Auto vars:     Size  Location     Type
+  new_task      108  [STACK] struct pcb
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_lunos_init
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _SRAMInitHeap *****************
+ Defined at:
+		line 313 in file "sralloc.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  count           2  [STACK] unsigned int 
+  pHeap           2  [STACK] PTR unsigned char 
+		 -> _uDynamicHeap(512), 
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+8, btemp+9, btemp+10, btemp+11
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_lunos_init
+ This function uses a reentrant model
+
+
+ *************** function _dispatcher *****************
+ Defined at:
+		line 64 in file "kernel.c"
+ Parameters:    Size  Location     Type
+  state           1  [STACK] enum E4
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   13
+ This function calls:
+		_scheduler
+ This function is called by:
+		_lunos_delayTask
+		_main
+		_sem_wait
+ This function uses a reentrant model
+
+
+ *************** function _scheduler *****************
+ Defined at:
+		line 56 in file "kernel.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  2  [STACK] unsigned int 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   12
+ This function calls:
+		_round_robin
+ This function is called by:
+		_dispatcher
+ This function uses a reentrant model
+
+
+ *************** function _round_robin *****************
+ Defined at:
+		line 76 in file "kernel.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  next_task_to    2  [STACK] int 
+ Return value:  Size  Location     Type
+                  2  [STACK] unsigned int 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   11
+ This function calls:
+		___lwmod
+ This function is called by:
+		_ISR_timer0
+		_scheduler
+ This function uses a reentrant model
+
+
+ *************** function ___lwmod *****************
+ Defined at:
+		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c"
+ Parameters:    Size  Location     Type
+  dividend        2  [STACK] unsigned int 
+  divisor         2  [STACK] unsigned int 
+ Auto vars:     Size  Location     Type
+  counter         1  [STACK] unsigned char 
+ Return value:  Size  Location     Type
+                  2  [STACK] unsigned int 
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0, btemp, btemp+1, btemp+8, btemp+9, btemp+10, btemp+11, prodl
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_round_robin
+ This function uses a reentrant model
+
+
+ *************** function _config_timer0 *****************
+ Defined at:
+		line 23 in file "int0_test.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _config_INT0 *****************
+ Defined at:
+		line 13 in file "int0_test.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _task_idle *****************
+ Defined at:
+		line 116 in file "kernel.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_lunos_init
+ This function uses a reentrant model
+
+
+ *************** function _task_0 *****************
+ Defined at:
+		line 26 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclath, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, btemp+12, btemp+13, btemp+14, btemp+15, btemp+16, btemp+17, btemp+18, btemp+19, btemp+20, btemp+21, btemp+22, btemp+23, btemp+24, btemp+25, btemp+26, btemp+27, btemp+28, btemp+29, btemp+30, btemp+31, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    9
+ This function calls:
+		_lunos_delayTask
+		_pipe_write
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _pipe_write *****************
+ Defined at:
+		line 18 in file "pipe.c"
+ Parameters:    Size  Location     Type
+  p               2  [STACK] PTR struct pipe
+		 -> p(12), 
+  data            2  [STACK] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclath, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, btemp+12, btemp+13, btemp+14, btemp+15, btemp+16, btemp+17, btemp+18, btemp+19, btemp+20, btemp+21, btemp+22, btemp+23, btemp+24, btemp+25, btemp+26, btemp+27, btemp+28, btemp+29, btemp+30, btemp+31, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_sem_post
+		_sem_wait
+ This function is called by:
+		_task_0
+ This function uses a reentrant model
+
+
+ *************** function _sem_wait *****************
+ Defined at:
+		line 20 in file "semaphore.c"
+ Parameters:    Size  Location     Type
+  s               2  [STACK] PTR struct semaphore
+		 -> r_pipe(14), w_pipe(14), teste_2(14), teste_1(14), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_dispatcher
+ This function is called by:
+		_pipe_write
+		_pipe_read
+		_task_bozo
+		_task_xuxa
+ This function uses a reentrant model
+
+
+ *************** function _sem_post *****************
+ Defined at:
+		line 32 in file "semaphore.c"
+ Parameters:    Size  Location     Type
+  s               2  [STACK] PTR struct semaphore
+		 -> r_pipe(14), w_pipe(14), teste_2(14), teste_1(14), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_pipe_write
+		_pipe_read
+		_task_bozo
+		_task_xuxa
+ This function uses a reentrant model
+
+
+ *************** function _lunos_delayTask *****************
+ Defined at:
+		line 29 in file "kernel.c"
+ Parameters:    Size  Location     Type
+  time            2  [STACK] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_dispatcher
+ This function is called by:
+		_task_0
+		_task_1
+		_task_2
+		_task_xuxa
+ This function uses a reentrant model
+
+
+ *************** function _task_1 *****************
+ Defined at:
+		line 35 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  dado            2  [STACK] unsigned int 
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    9
+ This function calls:
+		_lunos_delayTask
+		_pipe_read
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _pipe_read *****************
+ Defined at:
+		line 27 in file "pipe.c"
+ Parameters:    Size  Location     Type
+  p               2  [STACK] PTR struct pipe
+		 -> p(12), 
+  data            2  [STACK] PTR unsigned int 
+		 -> dado(2), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_sem_post
+		_sem_wait
+ This function is called by:
+		_task_1
+ This function uses a reentrant model
+
+
+ *************** function _task_2 *****************
+ Defined at:
+		line 44 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_lunos_delayTask
+ This function is called by:
+		_main
+ This function uses a reentrant model
+
+
+ *************** function _task_bozo *****************
+ Defined at:
+		line 52 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               2  [STACK] int 
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_sem_post
+		_sem_wait
+ This function is called by:
+		Interrupt level 1
+ This function uses a reentrant model
+
+
+ *************** function _task_xuxa *****************
+ Defined at:
+		line 63 in file "tasks.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               2  [STACK] int 
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_lunos_delayTask
+		_sem_post
+		_sem_wait
+ This function is called by:
+		Interrupt level 1
+ This function uses a reentrant model
+
+
+ *************** function _ISR_timer0 *****************
+ Defined at:
+		line 56 in file "int0_test.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:         16       0       0       0       0       0       0
+      Totals:        16       0       0       0       0       0       0
+Total ram usage:       16 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		___wmul
+		_delay_decrement
+		_round_robin
+ This function is called by:
+		Interrupt level 2
+ This function uses a non-reentrant model
+
+
+ *************** function _delay_decrement *****************
+ Defined at:
+		line 99 in file "kernel.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               2  [STACK] int 
+ Return value:  Size  Location     Type
+                  1  [STACK] void 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+8, btemp+9, btemp+10, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_ISR_timer0
+ This function uses a reentrant model
+
+
+ *************** function ___wmul *****************
+ Defined at:
+		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c"
+ Parameters:    Size  Location     Type
+  multiplier      2  [STACK] unsigned int 
+  multiplicand    2  [STACK] unsigned int 
+ Auto vars:     Size  Location     Type
+  product         2  [STACK] unsigned int 
+ Return value:  Size  Location     Type
+                  2  [STACK] unsigned int 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, btemp, btemp+1, btemp+11, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_ISR_timer0
+ This function uses a reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+semaphore.c
+		_sem_wait      		CODE           	127E	0000	233
+		_sem_init      		CODE           	1752	0000	113
+		_sem_post      		CODE           	1188	0000	247
+
+semaphore.c estimated size: 593
+
+C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
+		___lwmod       		CODE           	14F2	0000	189
+
+C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c estimated size: 189
+
+sralloc.c
+		__SRAMmerge    		CODE           	0B0E	0000	339
+		_SRAMalloc     		CODE           	0970	0000	415
+		_SRAMInitHeap  		CODE           	1366	0000	207
+
+sralloc.c estimated size: 961
+
+int0_test.c
+		_ISR_timer0    		CODE           	0008	0000	1213
+		_config_INT0   		CODE           	19FC	0000	17
+		_config_timer0 		CODE           	19EA	0000	19
+
+int0_test.c estimated size: 1249
+
+tasks.c
+		_task_2        		CODE           	19C0	0000	43
+		_task_0        		CODE           	1910	0000	65
+		_task_xuxa     		CODE           	1434	0000	191
+		_user_conf     		CODE           	17C2	0000	91
+		_task_1        		CODE           	18C4	0000	77
+		_task_bozo     		CODE           	16D4	0000	127
+
+tasks.c estimated size: 594
+
+kernel.c
+		_delay_decrement		CODE           	0C60	0000	273
+		_scheduler     		CODE           	1A0C	0000	7
+		_round_robin   		CODE           	1644	0000	145
+		_dispatcher    		CODE           	04CC	0000	1189
+		_lunos_createTask		CODE           	1090	0000	249
+		_lunos_init    		CODE           	198E	0000	51
+		_task_idle     		CODE           	1A12	0000	5
+		_lunos_delayTask		CODE           	1872	0000	83
+
+kernel.c estimated size: 2002
+
+shared
+		__initialization		CODE           	1950	0000	57
+
+shared estimated size: 57
+
+C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+		___wmul        		CODE           	15AE	0000	151
+
+C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c estimated size: 151
+
+pipe.c
+		_pipe_read     		CODE           	0F88	0000	265
+		_pipe_write    		CODE           	0E7E	0000	267
+		_pipe_create   		CODE           	0D70	0000	271
+
+pipe.c estimated size: 803
+
+main.c
+		_main          		CODE           	181C	0000	87
+
+main.c estimated size: 87
+
