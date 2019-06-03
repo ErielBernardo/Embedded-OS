@@ -1,21 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "12 ./semaphore.h
 [; ;./semaphore.h: 12: typedef struct semaphore {
-[s S9 `i 1 `ui -> 4 `i `ui 1 `ui 1 ]
-[n S9 semaphore contador bloqued_Queue bloqued_size task_to_ready ]
+[s S7 `i 1 `ui -> 4 `i `ui 1 `ui 1 ]
+[n S7 semaphore contador bloqued_Queue bloqued_size task_to_ready ]
 "12 ./pipe.h
 [; ;./pipe.h: 12: typedef struct pipe {
-[s S10 `ui -> 2 `i `ui 1 `ui 1 `*S9 1 `*S9 1 ]
-[n S10 pipe pipe_data index_write index_read w r ]
+[s S8 `ui -> 2 `i `ui 1 `ui 1 `*S7 1 `*S7 1 ]
+[n S8 pipe pipe_data index_write index_read w r ]
 "19 ./semaphore.h
 [; ;./semaphore.h: 19: void sem_init(sem_t *s, int valor);
-[v _sem_init `(v ~T0 @X0 0 ef2`*S9`i ]
+[v _sem_init `(v ~T0 @X0 0 ef2`*S7`i ]
 "20
 [; ;./semaphore.h: 20: void sem_wait(sem_t *s);
-[v _sem_wait `(v ~T0 @X0 0 ef1`*S9 ]
+[v _sem_wait `(v ~T0 @X0 0 ef1`*S7 ]
 "21
 [; ;./semaphore.h: 21: void sem_post(sem_t *s);
-[v _sem_post `(v ~T0 @X0 0 ef1`*S9 ]
+[v _sem_post `(v ~T0 @X0 0 ef1`*S7 ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -444,12 +444,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "9 pipe.c
 [; ;pipe.c: 9: void pipe_create(pipe_t *p, sem_t * w, sem_t * r) {
-[v _pipe_create `(v ~T0 @X0 1 ef3`*S10`*S9`*S9 ]
+[v _pipe_create `(v ~T0 @X0 1 ef3`*S8`*S7`*S7 ]
 {
 [e :U _pipe_create ]
-[v _p `*S10 ~T0 @X0 1 r1 ]
-[v _w `*S9 ~T0 @X0 1 r2 ]
-[v _r `*S9 ~T0 @X0 1 r3 ]
+[v _p `*S8 ~T0 @X0 1 r1 ]
+[v _w `*S7 ~T0 @X0 1 r2 ]
+[v _r `*S7 ~T0 @X0 1 r3 ]
 [f ]
 "10
 [; ;pipe.c: 10:   p->index_write = 0;
@@ -471,14 +471,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sem_init (2 , . *U _p 4 -> 0 `i ]
 "16
 [; ;pipe.c: 16: }
-[e :UE 291 ]
+[e :UE 289 ]
 }
 "18
 [; ;pipe.c: 18: void pipe_write(pipe_t *p, unsigned int data) {
-[v _pipe_write `(v ~T0 @X0 1 ef2`*S10`ui ]
+[v _pipe_write `(v ~T0 @X0 1 ef2`*S8`ui ]
 {
 [e :U _pipe_write ]
-[v _p `*S10 ~T0 @X0 1 r1 ]
+[v _p `*S8 ~T0 @X0 1 r1 ]
 [v _data `ui ~T0 @X0 1 r2 ]
 [f ]
 "20
@@ -495,14 +495,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sem_post (1 . *U _p 4 ]
 "25
 [; ;pipe.c: 25: }
-[e :UE 292 ]
+[e :UE 290 ]
 }
 "27
 [; ;pipe.c: 27: void pipe_read(pipe_t *p, unsigned int *data) {
-[v _pipe_read `(v ~T0 @X0 1 ef2`*S10`*ui ]
+[v _pipe_read `(v ~T0 @X0 1 ef2`*S8`*ui ]
 {
 [e :U _pipe_read ]
-[v _p `*S10 ~T0 @X0 1 r1 ]
+[v _p `*S8 ~T0 @X0 1 r1 ]
 [v _data `*ui ~T0 @X0 1 r2 ]
 [f ]
 "29
@@ -519,5 +519,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sem_post (1 . *U _p 3 ]
 "34
 [; ;pipe.c: 34: }
-[e :UE 293 ]
+[e :UE 291 ]
 }

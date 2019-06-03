@@ -4364,6 +4364,67 @@ extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
 
 
 
+# 1 "./types.h" 1
+
+
+
+
+
+
+
+# 1 "./config.h" 1
+# 9 "./types.h" 2
+
+
+
+
+typedef unsigned int tid;
+typedef unsigned char byte;
+typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
+typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
+typedef enum {FREE_ = 0, BUSY_} buffer_state;
+
+typedef struct data_stack {
+  byte TOSU_reg;
+  byte TOSL_reg;
+  byte TOSH_reg;
+} t_data_stack;
+
+typedef struct stack {
+
+  t_data_stack h_stack[31];
+  int stack_level;
+} t_stack;
+
+typedef struct pcb {
+  tid task_id;
+  unsigned int task_prior;
+  byte PC_reg;
+  byte W_reg;
+  byte STATUS_reg;
+  byte BSR_reg;
+  t_state task_state;
+  t_stack task_stack;
+  void(*task_f)();
+  unsigned int task_delay_time;
+} t_pcb;
+
+typedef struct r_queue {
+  t_pcb tasks[4 +1];
+  unsigned int tasks_installed;
+  int task_running;
+} t_r_queue;
+
+typedef struct {
+    bottle_state bottle_state;
+} t_bottle;
+
+typedef struct {
+    int count;
+    t_bottle bottles[3];
+    buffer_state p_state;
+} t_buffer;
+# 5 "./tasks.h" 2
 
 
 
@@ -4374,6 +4435,12 @@ void task_1();
 void task_2();
 void task_bozo();
 void task_xuxa();
+void count_bottles();
+void fill_bottle();
+
+void check_level();
+void cover_bottle();
+void count_out();
 # 7 "tasks.c" 2
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 1 3
 # 18 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 3
@@ -4537,75 +4604,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 2 3
 # 8 "tasks.c" 2
 # 1 "./semaphore.h" 1
-
-
-
-
-
-
-
-# 1 "./config.h" 1
-# 9 "./semaphore.h" 2
-# 1 "./types.h" 1
-# 13 "./types.h"
-typedef unsigned int tid;
-typedef unsigned char byte;
-typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
-typedef enum {EMPTY = 0, FULL, WAITING_PACKING, PACKED} bottle_state;
-typedef enum {FREE_ = 0, BUSY_} tap_state;
-typedef enum {EMPTY_ = 0, COMPLETED} pack_state;
-
-typedef struct data_stack {
-  byte TOSU_reg;
-  byte TOSL_reg;
-  byte TOSH_reg;
-} t_data_stack;
-
-typedef struct stack {
-
-  t_data_stack h_stack[31];
-  int stack_level;
-} t_stack;
-
-typedef struct pcb {
-  tid task_id;
-  unsigned int task_prior;
-  byte PC_reg;
-  byte W_reg;
-  byte STATUS_reg;
-  byte BSR_reg;
-  t_state task_state;
-  t_stack task_stack;
-  void(*task_f)();
-  unsigned int task_delay_time;
-} t_pcb;
-
-typedef struct r_queue {
-  t_pcb tasks[4 +1];
-  unsigned int tasks_installed;
-  int task_running;
-} t_r_queue;
-
-typedef struct {
-    bottle_state bottle_state;
-} t_bottle;
-
-typedef struct {
-    t_bottle pack[6];
-    pack_state p_state;
-} bottle_pack;
-
-typedef struct {
-    t_bottle bottle;
-    tap_state filler_state;
-} filler;
-
-typedef struct {
-    t_bottle bottle;
-} put_cover_machine;
-# 10 "./semaphore.h" 2
-
-
+# 12 "./semaphore.h"
 typedef struct semaphore {
   int contador;
   unsigned int bloqued_Queue[4];
@@ -4658,22 +4657,98 @@ void SRAMfree(unsigned char * pSRAM);
 void SRAMInitHeap(void);
 # 12 "tasks.c" 2
 
+
 unsigned char* mem;
 
 sem_t teste_1, teste_2, w_pipe, r_pipe;
 pipe_t p;
+t_buffer global_buffer;
 
 void user_conf() {
   TRISB = 0b00000001;
+  TRISC = 0b01111111;
+  TRISD = 0b11111110;
+  PORTCbits.RC7 = 1;
+
   sem_init(&teste_1, 1);
   sem_init(&teste_2, 0);
   pipe_create(&p, &w_pipe, &r_pipe);
   mem = SRAMalloc(5);
+
+  global_buffer.count = 0;
+  global_buffer.p_state = FREE_;
+}
+
+
+void count_bottles(){
+    while(global_buffer.count < 3){
+        if(!PORTBbits.RB6){
+            lunos_delayTask(500);
+            t_bottle bottle;
+            global_buffer.bottles[global_buffer.count] = bottle;
+            global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
+            global_buffer.count += 1;
+            }
+        }
+    global_buffer.p_state = BUSY_;
+}
+
+void fill_bottle(){
+    while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
+        lunos_delayTask(100);
+    }
+}
+
+void check_level(){
+    if (!PORTDbits.RD1)
+        global_buffer.bottles[0].bottle_state = EMPTY;
+    else if (PORTDbits.RD1)
+        global_buffer.bottles[0].bottle_state = FULL;
+    else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+
+    if (!PORTDbits.RD2)
+        global_buffer.bottles[1].bottle_state = EMPTY;
+    else if (PORTDbits.RD2)
+        global_buffer.bottles[1].bottle_state = FULL;
+    else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+
+    if (!PORTDbits.RD3)
+        global_buffer.bottles[2].bottle_state = EMPTY;
+    else if (PORTDbits.RD3)
+        global_buffer.bottles[2].bottle_state = FULL;
+    else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+}
+
+void cover_bottle(){
+    if (PORTCbits.RC3){
+        if(global_buffer.bottles[0].bottle_state == FULL)
+            global_buffer.bottles[0].bottle_state = CLOSED;
+        else if (PORTCbits.RC3)
+            global_buffer.bottles[0].bottle_state = FAIL;
+        else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+    }
+    if (PORTCbits.RC4){
+        if(global_buffer.bottles[1].bottle_state == FULL)
+            global_buffer.bottles[1].bottle_state = CLOSED;
+        else if (PORTCbits.RC4)
+            global_buffer.bottles[1].bottle_state = FAIL;
+        else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+    }
+    if (PORTCbits.RC5){
+        if(global_buffer.bottles[2].bottle_state == FULL)
+            global_buffer.bottles[2].bottle_state = CLOSED;
+        else if (PORTCbits.RC5)
+            global_buffer.bottles[2].bottle_state = FAIL;
+        else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+    }
+}
+
+void count_out(){
+
 }
 
 void task_0() {
   while(1){
-
     pipe_write(&p, 1);
     PORTBbits.RB3 = ~PORTBbits.RB3;
     lunos_delayTask(1000);

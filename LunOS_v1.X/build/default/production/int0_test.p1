@@ -102,21 +102,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;int0_test.c: 68:       { who = ready_queue.task_running; ready_queue.tasks[who].task_state = READY; ready_queue.tasks[who].W_reg = WREG; ready_queue.tasks[who].STATUS_reg = STATUS; ready_queue.tasks[who].BSR_reg = BSR; size = 0; while (STKPTR) { ready_queue.tasks[who].task_stack.h_stack[size].TOSU_reg = TOSU; ready_queue.tasks[who].task_stack.h_stack[size].TOSH_reg = TOSH; ready_queue.tasks[who].task_stack.h_stack[size].TOSL_reg = TOSL; size++; __asm("POP"); } ready_queue.tasks[who].task_stack.stack_level = size - 1;};
 [c E2532 0 1 2 3 4 5 .. ]
 [n E2532 . READY RUNNING WAITING FINISHED WAITING_PIPE WAITING_SEM  ]
-"20 ./types.h
-[; ;./types.h: 20: typedef struct data_stack {
+"19 ./types.h
+[; ;./types.h: 19: typedef struct data_stack {
 [s S281 `uc 1 `uc 1 `uc 1 ]
 [n S281 data_stack TOSU_reg TOSL_reg TOSH_reg ]
-"26
-[; ;./types.h: 26: typedef struct stack {
+"25
+[; ;./types.h: 25: typedef struct stack {
 [s S282 `S281 -> 31 `i `i 1 ]
 [n S282 stack h_stack stack_level ]
-[v F2573 `(v ~T0 @X0 0 t? ]
-"32
-[; ;./types.h: 32: typedef struct pcb {
-[s S283 `ui 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `E2532 1 `S282 1 `*F2573 1 `ui 1 ]
+[v F2569 `(v ~T0 @X0 0 t? ]
+"31
+[; ;./types.h: 31: typedef struct pcb {
+[s S283 `ui 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `E2532 1 `S282 1 `*F2569 1 `ui 1 ]
 [n S283 pcb task_id task_prior PC_reg W_reg STATUS_reg BSR_reg task_state task_stack task_f task_delay_time ]
-"45
-[; ;./types.h: 45: typedef struct r_queue {
+"44
+[; ;./types.h: 44: typedef struct r_queue {
 [s S284 `S283 -> 5 `i `ui 1 `i 1 ]
 [n S284 r_queue tasks tasks_installed task_running ]
 "10 int0_test.c
@@ -610,7 +610,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
 "21
 [; ;int0_test.c: 21: }
-[e :UE 289 ]
+[e :UE 287 ]
 }
 "23
 [; ;int0_test.c: 23: void config_timer0() {
@@ -638,7 +638,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TMR0L -> -> 252 `i `uc ]
 "34
 [; ;int0_test.c: 34: }
-[e :UE 290 ]
+[e :UE 288 ]
 }
 [v $root$_ISR_timer0 `(v ~T0 @X0 0 e ]
 "56
@@ -652,7 +652,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
 "59
 [; ;int0_test.c: 59:   if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 292  ]
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 290  ]
 {
 "60
 [; ;int0_test.c: 60:     INTCONbits.TMR0IF = 0;
@@ -671,7 +671,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e -- _quantum -> 1 `i ]
 "66
 [; ;int0_test.c: 66:     if (quantum <= 0) {
-[e $ ! <= _quantum -> 0 `i 293  ]
+[e $ ! <= _quantum -> 0 `i 291  ]
 {
 "67
 [; ;int0_test.c: 67:       quantum = 10;
@@ -685,8 +685,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 4 _STATUS ]
 [e = . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 5 _BSR ]
 [e = _size -> 0 `i ]
-[e $U 294  ]
-[e :U 295 ]
+[e $U 292  ]
+[e :U 293 ]
 {
 [e = . *U + &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 * -> -> _size `ui `ux -> -> # *U &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 `ui `ux 0 _TOSU ]
 [e = . *U + &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 * -> -> _size `ui `ux -> -> # *U &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 `ui `ux 2 _TOSH ]
@@ -694,9 +694,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _size -> 1 `i ]
 [; <" POP ;# ">
 }
+[e :U 292 ]
+[e $ != -> _STKPTR `i -> 0 `i 293  ]
 [e :U 294 ]
-[e $ != -> _STKPTR `i -> 0 `i 295  ]
-[e :U 296 ]
 [e = . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 1 - _size -> 1 `i ]
 }
 "69
@@ -707,21 +707,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e = _who . _ready_queue 2 ]
 [e = _STKPTR -> -> 0 `i `uc ]
-[e $ ! == . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 1 -> 0 `i 297  ]
+[e $ ! == . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 1 -> 0 `i 295  ]
 {
 [; <" PUSH ;# ">
 [e = _TOS -> . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 8 `um ]
 }
-[e $U 298  ]
-[e :U 297 ]
+[e $U 296  ]
+[e :U 295 ]
 {
 [e = . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 6 . `E2532 1 ]
 [e = _WREG . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 3 ]
 [e = _STATUS . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 4 ]
 [e = _BSR . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 5 ]
 [e = _size . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 1 ]
-[e $U 299  ]
-[e :U 300 ]
+[e $U 297  ]
+[e :U 298 ]
 {
 [; <" PUSH ;# ">
 [e = _TOSL . *U + &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 * -> -> _size `ui `ux -> -> # *U &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 `ui `ux 1 ]
@@ -729,24 +729,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TOSU . *U + &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 * -> -> _size `ui `ux -> -> # *U &U . . *U + &U . _ready_queue 0 * -> -> _who `ui `ux -> -> # *U &U . _ready_queue 0 `ui `ux 7 0 `ui `ux 0 ]
 [e -- _size -> 1 `i ]
 }
+[e :U 297 ]
+[e $ != _size -> 0 `i 298  ]
 [e :U 299 ]
-[e $ != _size -> 0 `i 300  ]
-[e :U 301 ]
 }
-[e :U 298 ]
+[e :U 296 ]
 }
 "71
 [; ;int0_test.c: 71:     }
 }
-[e :U 293 ]
+[e :U 291 ]
 "73
 [; ;int0_test.c: 73:   }
 }
-[e :U 292 ]
+[e :U 290 ]
 "75
 [; ;int0_test.c: 75:   INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "76
 [; ;int0_test.c: 76: }
-[e :UE 291 ]
+[e :UE 289 ]
 }

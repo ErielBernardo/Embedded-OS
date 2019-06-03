@@ -4541,9 +4541,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 typedef unsigned int tid;
 typedef unsigned char byte;
 typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
-typedef enum {EMPTY = 0, FULL, WAITING_PACKING, PACKED} bottle_state;
-typedef enum {FREE_ = 0, BUSY_} tap_state;
-typedef enum {EMPTY_ = 0, COMPLETED} pack_state;
+typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
+typedef enum {FREE_ = 0, BUSY_} buffer_state;
 
 typedef struct data_stack {
   byte TOSU_reg;
@@ -4581,18 +4580,10 @@ typedef struct {
 } t_bottle;
 
 typedef struct {
-    t_bottle pack[6];
-    pack_state p_state;
-} bottle_pack;
-
-typedef struct {
-    t_bottle bottle;
-    tap_state filler_state;
-} filler;
-
-typedef struct {
-    t_bottle bottle;
-} put_cover_machine;
+    int count;
+    t_bottle bottles[3];
+    buffer_state p_state;
+} t_buffer;
 # 11 "./kernel.h" 2
 
 
@@ -4622,12 +4613,19 @@ void task_idle();
 
 
 
+
 void user_conf();
 void task_0();
 void task_1();
 void task_2();
 void task_bozo();
 void task_xuxa();
+void count_bottles();
+void fill_bottle();
+
+void check_level();
+void cover_bottle();
+void count_out();
 # 8 "main.c" 2
 # 1 "./int0_test.h" 1
 # 10 "./int0_test.h"
@@ -4658,7 +4656,7 @@ void SRAMInitHeap(void);
 #pragma config PBADEN = OFF
 #pragma config WDT = OFF
 
-__asm("GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa");
+__asm("GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle");
 
 void main(void) {
 
@@ -4671,7 +4669,7 @@ void main(void) {
 
   lunos_createTask(3, &task_0);
   lunos_createTask(4, &task_1);
-  lunos_createTask(5, &task_2);
+  lunos_createTask(5, &count_bottles);
 
 
 

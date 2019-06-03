@@ -8,14 +8,13 @@
 #include "config.h"
 
 #define STACK_SIZE 31
-#define PACK_SIZE 6
+#define MAX_BOTTLES 3
 
 typedef unsigned int tid;
 typedef unsigned char byte;
 typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
-typedef enum {EMPTY = 0, FULL, WAITING_PACKING, PACKED} bottle_state;
-typedef enum {FREE_ = 0, BUSY_} tap_state;
-typedef enum {EMPTY_ = 0, COMPLETED} pack_state;
+typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
+typedef enum {FREE_ = 0, BUSY_} buffer_state;
 
 typedef struct data_stack {
   byte TOSU_reg;
@@ -53,18 +52,10 @@ typedef struct {
 } t_bottle;
 
 typedef struct {
-    t_bottle pack[PACK_SIZE];
-    pack_state p_state;
-} bottle_pack;
-
-typedef struct {
-    t_bottle bottle;
-    tap_state filler_state;
-} filler;
-
-typedef struct {
-    t_bottle bottle;
-} put_cover_machine;
+    int count;
+    t_bottle bottles[MAX_BOTTLES];
+    buffer_state p_state;
+} t_buffer;
 
 #endif	/* TYPES_H */
 

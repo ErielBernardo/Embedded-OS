@@ -1,27 +1,73 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "12 ./semaphore.h
 [; ;./semaphore.h: 12: typedef struct semaphore {
-[s S289 `i 1 `ui -> 4 `i `ui 1 `ui 1 ]
-[n S289 semaphore contador bloqued_Queue bloqued_size task_to_ready ]
+[s S287 `i 1 `ui -> 4 `i `ui 1 `ui 1 ]
+[n S287 semaphore contador bloqued_Queue bloqued_size task_to_ready ]
 "12 ./pipe.h
 [; ;./pipe.h: 12: typedef struct pipe {
-[s S290 `ui -> 2 `i `ui 1 `ui 1 `*S289 1 `*S289 1 ]
-[n S290 pipe pipe_data index_write index_read w r ]
+[s S288 `ui -> 2 `i `ui 1 `ui 1 `*S287 1 `*S287 1 ]
+[n S288 pipe pipe_data index_write index_read w r ]
+"18 tasks.c
+[; ;tasks.c: 18: t_buffer global_buffer;
+[c E2364 0 1 2 3 .. ]
+[n E2364 . EMPTY FULL CLOSED FAIL  ]
+"50 ./types.h
+[; ;./types.h: 50: typedef struct {
+[s S280 `E2364 1 ]
+[n S280 . bottle_state ]
+"18 tasks.c
+[; ;tasks.c: 18: t_buffer global_buffer;
+[c E2370 0 1 .. ]
+[n E2370 . FREE_ BUSY_  ]
+"54 ./types.h
+[; ;./types.h: 54: typedef struct {
+[s S281 `i 1 `S280 -> 3 `i `E2370 1 ]
+[n S281 . count bottles p_state ]
 "1699 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 1699: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"1921
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 1921: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"2143
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 2143: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"456
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 456:     struct {
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"466
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 466:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
+"476
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 476:     struct {
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . T13CKI CCP2 . SCL SDA . CK DT ]
+"486
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 486:     struct {
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . T1CKI . P1A ]
+"491
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 491:     struct {
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . . PA2 PA1 ]
+"455
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 455: typedef union {
+[u S17 `S18 1 `S19 1 `S20 1 `S21 1 `S22 1 ]
+[n S17 . . . . . . ]
+"497
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 497: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
+[v _PORTCbits `VS17 ~T0 @X0 0 e@3970 ]
 "19 ./semaphore.h
 [; ;./semaphore.h: 19: void sem_init(sem_t *s, int valor);
-[v _sem_init `(v ~T0 @X0 0 ef2`*S289`i ]
+[v _sem_init `(v ~T0 @X0 0 ef2`*S287`i ]
 "20 ./pipe.h
 [; ;./pipe.h: 20: void pipe_create(pipe_t *p, sem_t *w, sem_t *r);
-[v _pipe_create `(v ~T0 @X0 0 ef3`*S290`*S289`*S289 ]
+[v _pipe_create `(v ~T0 @X0 0 ef3`*S288`*S287`*S287 ]
 "1 ./sralloc.h
 [; ;./sralloc.h: 1: unsigned char * SRAMalloc(unsigned char nBytes);
 [v _SRAMalloc `(*uc ~T0 @X0 0 ef1`uc ]
-"21 ./pipe.h
-[; ;./pipe.h: 21: void pipe_write(pipe_t *p, unsigned int data);
-[v _pipe_write `(v ~T0 @X0 0 ef2`*S290`ui ]
 "277 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 277:     struct {
 [s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -52,15 +98,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 "65 ./kernel.h
 [; ;./kernel.h: 65: void lunos_delayTask(unsigned int time);
 [v _lunos_delayTask `(v ~T0 @X0 0 ef1`ui ]
-"22 ./pipe.h
+"638 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 638:     struct {
+[s S24 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"648
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 648:     struct {
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S25 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
+"658
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 658:     struct {
+[s S26 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . . P1B P1C P1D ]
+"664
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 664:     struct {
+[s S27 :7 `uc 1 :1 `uc 1 ]
+[n S27 . . SS2 ]
+"637
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 637: typedef union {
+[u S23 `S24 1 `S25 1 `S26 1 `S27 1 ]
+[n S23 . . . . . ]
+"669
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 669: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
+[v _PORTDbits `VS23 ~T0 @X0 0 e@3971 ]
+"21 ./pipe.h
+[; ;./pipe.h: 21: void pipe_write(pipe_t *p, unsigned int data);
+[v _pipe_write `(v ~T0 @X0 0 ef2`*S288`ui ]
+"22
 [; ;./pipe.h: 22: void pipe_read(pipe_t *p, unsigned int *data);
-[v _pipe_read `(v ~T0 @X0 0 ef2`*S290`*ui ]
+[v _pipe_read `(v ~T0 @X0 0 ef2`*S288`*ui ]
 "20 ./semaphore.h
 [; ;./semaphore.h: 20: void sem_wait(sem_t *s);
-[v _sem_wait `(v ~T0 @X0 0 ef1`*S289 ]
+[v _sem_wait `(v ~T0 @X0 0 ef1`*S287 ]
 "21
 [; ;./semaphore.h: 21: void sem_post(sem_t *s);
-[v _sem_post `(v ~T0 @X0 0 ef1`*S289 ]
+[v _sem_post `(v ~T0 @X0 0 ef1`*S287 ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -487,235 +559,508 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _size
 -> 0 `i
 ]
-"13 tasks.c
-[; ;tasks.c: 13: unsigned char* mem;
+"14 tasks.c
+[; ;tasks.c: 14: unsigned char* mem;
 [v _mem `*uc ~T0 @X0 1 e ]
-"15
-[; ;tasks.c: 15: sem_t teste_1, teste_2, w_pipe, r_pipe;
-[v _teste_1 `S289 ~T0 @X0 1 e ]
-[v _teste_2 `S289 ~T0 @X0 1 e ]
-[v _w_pipe `S289 ~T0 @X0 1 e ]
-[v _r_pipe `S289 ~T0 @X0 1 e ]
 "16
-[; ;tasks.c: 16: pipe_t p;
-[v _p `S290 ~T0 @X0 1 e ]
+[; ;tasks.c: 16: sem_t teste_1, teste_2, w_pipe, r_pipe;
+[v _teste_1 `S287 ~T0 @X0 1 e ]
+[v _teste_2 `S287 ~T0 @X0 1 e ]
+[v _w_pipe `S287 ~T0 @X0 1 e ]
+[v _r_pipe `S287 ~T0 @X0 1 e ]
+"17
+[; ;tasks.c: 17: pipe_t p;
+[v _p `S288 ~T0 @X0 1 e ]
 "18
-[; ;tasks.c: 18: void user_conf() {
+[; ;tasks.c: 18: t_buffer global_buffer;
+[v _global_buffer `S281 ~T0 @X0 1 e ]
+"20
+[; ;tasks.c: 20: void user_conf() {
 [v _user_conf `(v ~T0 @X0 1 ef ]
 {
 [e :U _user_conf ]
 [f ]
-"19
-[; ;tasks.c: 19:   TRISB = 0b00000001;
-[e = _TRISB -> -> 1 `i `uc ]
-"20
-[; ;tasks.c: 20:   sem_init(&teste_1, 1);
-[e ( _sem_init (2 , &U _teste_1 -> 1 `i ]
 "21
-[; ;tasks.c: 21:   sem_init(&teste_2, 0);
-[e ( _sem_init (2 , &U _teste_2 -> 0 `i ]
+[; ;tasks.c: 21:   TRISB = 0b00000001;
+[e = _TRISB -> -> 1 `i `uc ]
 "22
-[; ;tasks.c: 22:   pipe_create(&p, &w_pipe, &r_pipe);
-[e ( _pipe_create (3 , , &U _p &U _w_pipe &U _r_pipe ]
+[; ;tasks.c: 22:   TRISC = 0b01111111;
+[e = _TRISC -> -> 127 `i `uc ]
 "23
-[; ;tasks.c: 23:   mem = SRAMalloc(5);
-[e = _mem ( _SRAMalloc (1 -> -> 5 `i `uc ]
+[; ;tasks.c: 23:   TRISD = 0b11111110;
+[e = _TRISD -> -> 254 `i `uc ]
 "24
-[; ;tasks.c: 24: }
-[e :UE 291 ]
-}
+[; ;tasks.c: 24:   PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
 "26
-[; ;tasks.c: 26: void task_0() {
+[; ;tasks.c: 26:   sem_init(&teste_1, 1);
+[e ( _sem_init (2 , &U _teste_1 -> 1 `i ]
+"27
+[; ;tasks.c: 27:   sem_init(&teste_2, 0);
+[e ( _sem_init (2 , &U _teste_2 -> 0 `i ]
+"28
+[; ;tasks.c: 28:   pipe_create(&p, &w_pipe, &r_pipe);
+[e ( _pipe_create (3 , , &U _p &U _w_pipe &U _r_pipe ]
+"29
+[; ;tasks.c: 29:   mem = SRAMalloc(5);
+[e = _mem ( _SRAMalloc (1 -> -> 5 `i `uc ]
+"31
+[; ;tasks.c: 31:   global_buffer.count = 0;
+[e = . _global_buffer 0 -> 0 `i ]
+"32
+[; ;tasks.c: 32:   global_buffer.p_state = FREE_;
+[e = . _global_buffer 2 . `E2370 0 ]
+"33
+[; ;tasks.c: 33: }
+[e :UE 289 ]
+}
+"36
+[; ;tasks.c: 36: void count_bottles(){
+[v _count_bottles `(v ~T0 @X0 1 ef ]
+{
+[e :U _count_bottles ]
+[f ]
+"37
+[; ;tasks.c: 37:     while(global_buffer.count < 3){
+[e $U 291  ]
+[e :U 292 ]
+{
+"38
+[; ;tasks.c: 38:         if(!PORTBbits.RB6){
+[e $ ! ! != -> . . _PORTBbits 0 6 `i -> 0 `i 294  ]
+{
+"39
+[; ;tasks.c: 39:             lunos_delayTask(500);
+[e ( _lunos_delayTask (1 -> -> 500 `i `ui ]
+"40
+[; ;tasks.c: 40:             t_bottle bottle;
+[v _bottle `S280 ~T0 @X0 1 a ]
+"41
+[; ;tasks.c: 41:             global_buffer.bottles[global_buffer.count] = bottle;
+[e = *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux _bottle ]
+"42
+[; ;tasks.c: 42:             global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
+[e = . *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 0 ]
+"43
+[; ;tasks.c: 43:             global_buffer.count += 1;
+[e =+ . _global_buffer 0 -> 1 `i ]
+"44
+[; ;tasks.c: 44:             }
+}
+[e :U 294 ]
+"45
+[; ;tasks.c: 45:         }
+}
+[e :U 291 ]
+"37
+[; ;tasks.c: 37:     while(global_buffer.count < 3){
+[e $ < . _global_buffer 0 -> 3 `i 292  ]
+[e :U 293 ]
+"46
+[; ;tasks.c: 46:     global_buffer.p_state = BUSY_;
+[e = . _global_buffer 2 . `E2370 1 ]
+"47
+[; ;tasks.c: 47: }
+[e :UE 290 ]
+}
+"49
+[; ;tasks.c: 49: void fill_bottle(){
+[v _fill_bottle `(v ~T0 @X0 1 ef ]
+{
+[e :U _fill_bottle ]
+[f ]
+"50
+[; ;tasks.c: 50:     while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
+[e $U 296  ]
+[e :U 297 ]
+{
+"51
+[; ;tasks.c: 51:         lunos_delayTask(100);
+[e ( _lunos_delayTask (1 -> -> 100 `i `ui ]
+"52
+[; ;tasks.c: 52:     }
+}
+[e :U 296 ]
+"50
+[; ;tasks.c: 50:     while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
+[e $ && && ! != -> . . _PORTCbits 0 0 `i -> 0 `i ! != -> . . _PORTCbits 0 1 `i -> 0 `i ! != -> . . _PORTCbits 0 2 `i -> 0 `i 297  ]
+[e :U 298 ]
+"53
+[; ;tasks.c: 53: }
+[e :UE 295 ]
+}
+"55
+[; ;tasks.c: 55: void check_level(){
+[v _check_level `(v ~T0 @X0 1 ef ]
+{
+[e :U _check_level ]
+[f ]
+"56
+[; ;tasks.c: 56:     if (!PORTDbits.RD1)
+[e $ ! ! != -> . . _PORTDbits 0 1 `i -> 0 `i 300  ]
+"57
+[; ;tasks.c: 57:         global_buffer.bottles[0].bottle_state = EMPTY;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 0 ]
+[e $U 301  ]
+"58
+[; ;tasks.c: 58:     else if (PORTDbits.RD1)
+[e :U 300 ]
+[e $ ! != -> . . _PORTDbits 0 1 `i -> 0 `i 302  ]
+"59
+[; ;tasks.c: 59:         global_buffer.bottles[0].bottle_state = FULL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 1 ]
+[e $U 303  ]
+"60
+[; ;tasks.c: 60:     else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+[e :U 302 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 303 ]
+[e :U 301 ]
+"62
+[; ;tasks.c: 62:     if (!PORTDbits.RD2)
+[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 304  ]
+"63
+[; ;tasks.c: 63:         global_buffer.bottles[1].bottle_state = EMPTY;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 0 ]
+[e $U 305  ]
+"64
+[; ;tasks.c: 64:     else if (PORTDbits.RD2)
+[e :U 304 ]
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 306  ]
+"65
+[; ;tasks.c: 65:         global_buffer.bottles[1].bottle_state = FULL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 1 ]
+[e $U 307  ]
+"66
+[; ;tasks.c: 66:     else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+[e :U 306 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 307 ]
+[e :U 305 ]
+"68
+[; ;tasks.c: 68:     if (!PORTDbits.RD3)
+[e $ ! ! != -> . . _PORTDbits 0 3 `i -> 0 `i 308  ]
+"69
+[; ;tasks.c: 69:         global_buffer.bottles[2].bottle_state = EMPTY;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 0 ]
+[e $U 309  ]
+"70
+[; ;tasks.c: 70:     else if (PORTDbits.RD3)
+[e :U 308 ]
+[e $ ! != -> . . _PORTDbits 0 3 `i -> 0 `i 310  ]
+"71
+[; ;tasks.c: 71:         global_buffer.bottles[2].bottle_state = FULL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 1 ]
+[e $U 311  ]
+"72
+[; ;tasks.c: 72:     else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+[e :U 310 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 311 ]
+[e :U 309 ]
+"73
+[; ;tasks.c: 73: }
+[e :UE 299 ]
+}
+"75
+[; ;tasks.c: 75: void cover_bottle(){
+[v _cover_bottle `(v ~T0 @X0 1 ef ]
+{
+[e :U _cover_bottle ]
+[f ]
+"76
+[; ;tasks.c: 76:     if (PORTCbits.RC3){
+[e $ ! != -> . . _PORTCbits 0 3 `i -> 0 `i 313  ]
+{
+"77
+[; ;tasks.c: 77:         if(global_buffer.bottles[0].bottle_state == FULL)
+[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2364 1 `ui 314  ]
+"78
+[; ;tasks.c: 78:             global_buffer.bottles[0].bottle_state = CLOSED;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 2 ]
+[e $U 315  ]
+"79
+[; ;tasks.c: 79:         else if (PORTCbits.RC3)
+[e :U 314 ]
+[e $ ! != -> . . _PORTCbits 0 3 `i -> 0 `i 316  ]
+"80
+[; ;tasks.c: 80:             global_buffer.bottles[0].bottle_state = FAIL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 3 ]
+[e $U 317  ]
+"81
+[; ;tasks.c: 81:         else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+[e :U 316 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 317 ]
+[e :U 315 ]
+"82
+[; ;tasks.c: 82:     }
+}
+[e :U 313 ]
+"83
+[; ;tasks.c: 83:     if (PORTCbits.RC4){
+[e $ ! != -> . . _PORTCbits 0 4 `i -> 0 `i 318  ]
+{
+"84
+[; ;tasks.c: 84:         if(global_buffer.bottles[1].bottle_state == FULL)
+[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2364 1 `ui 319  ]
+"85
+[; ;tasks.c: 85:             global_buffer.bottles[1].bottle_state = CLOSED;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 2 ]
+[e $U 320  ]
+"86
+[; ;tasks.c: 86:         else if (PORTCbits.RC4)
+[e :U 319 ]
+[e $ ! != -> . . _PORTCbits 0 4 `i -> 0 `i 321  ]
+"87
+[; ;tasks.c: 87:             global_buffer.bottles[1].bottle_state = FAIL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 3 ]
+[e $U 322  ]
+"88
+[; ;tasks.c: 88:         else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+[e :U 321 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 322 ]
+[e :U 320 ]
+"89
+[; ;tasks.c: 89:     }
+}
+[e :U 318 ]
+"90
+[; ;tasks.c: 90:     if (PORTCbits.RC5){
+[e $ ! != -> . . _PORTCbits 0 5 `i -> 0 `i 323  ]
+{
+"91
+[; ;tasks.c: 91:         if(global_buffer.bottles[2].bottle_state == FULL)
+[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2364 1 `ui 324  ]
+"92
+[; ;tasks.c: 92:             global_buffer.bottles[2].bottle_state = CLOSED;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 2 ]
+[e $U 325  ]
+"93
+[; ;tasks.c: 93:         else if (PORTCbits.RC5)
+[e :U 324 ]
+[e $ ! != -> . . _PORTCbits 0 5 `i -> 0 `i 326  ]
+"94
+[; ;tasks.c: 94:             global_buffer.bottles[2].bottle_state = FAIL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2364 3 ]
+[e $U 327  ]
+"95
+[; ;tasks.c: 95:         else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+[e :U 326 ]
+[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
+[e :U 327 ]
+[e :U 325 ]
+"96
+[; ;tasks.c: 96:     }
+}
+[e :U 323 ]
+"97
+[; ;tasks.c: 97: }
+[e :UE 312 ]
+}
+"99
+[; ;tasks.c: 99: void count_out(){
+[v _count_out `(v ~T0 @X0 1 ef ]
+{
+[e :U _count_out ]
+[f ]
+"101
+[; ;tasks.c: 101: }
+[e :UE 328 ]
+}
+"103
+[; ;tasks.c: 103: void task_0() {
 [v _task_0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_0 ]
 [f ]
-"27
-[; ;tasks.c: 27:   while(1){
-[e :U 294 ]
+"104
+[; ;tasks.c: 104:   while(1){
+[e :U 331 ]
 {
-"29
-[; ;tasks.c: 29:     pipe_write(&p, 1);
+"105
+[; ;tasks.c: 105:     pipe_write(&p, 1);
 [e ( _pipe_write (2 , &U _p -> -> 1 `i `ui ]
-"30
-[; ;tasks.c: 30:     PORTBbits.RB3 = ~PORTBbits.RB3;
+"106
+[; ;tasks.c: 106:     PORTBbits.RB3 = ~PORTBbits.RB3;
 [e = . . _PORTBbits 0 3 -> ~ -> . . _PORTBbits 0 3 `i `uc ]
-"31
-[; ;tasks.c: 31:     lunos_delayTask(1000);
+"107
+[; ;tasks.c: 107:     lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"32
-[; ;tasks.c: 32:   }
+"108
+[; ;tasks.c: 108:   }
 }
-[e :U 293 ]
-[e $U 294  ]
-[e :U 295 ]
-"34
-[; ;tasks.c: 34: }
-[e :UE 292 ]
+[e :U 330 ]
+[e $U 331  ]
+[e :U 332 ]
+"110
+[; ;tasks.c: 110: }
+[e :UE 329 ]
 }
-"36
-[; ;tasks.c: 36: void task_1() {
+"112
+[; ;tasks.c: 112: void task_1() {
 [v _task_1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_1 ]
 [f ]
-"37
-[; ;tasks.c: 37:   unsigned int dado;
+"113
+[; ;tasks.c: 113:   unsigned int dado;
 [v _dado `ui ~T0 @X0 1 a ]
-"38
-[; ;tasks.c: 38:   while(1){
-[e :U 298 ]
+"114
+[; ;tasks.c: 114:   while(1){
+[e :U 335 ]
 {
-"39
-[; ;tasks.c: 39:     pipe_read(&p, &dado);
+"115
+[; ;tasks.c: 115:     pipe_read(&p, &dado);
 [e ( _pipe_read (2 , &U _p &U _dado ]
-"40
-[; ;tasks.c: 40:     PORTBbits.RB4 = ~PORTBbits.RB4;
+"116
+[; ;tasks.c: 116:     PORTBbits.RB4 = ~PORTBbits.RB4;
 [e = . . _PORTBbits 0 4 -> ~ -> . . _PORTBbits 0 4 `i `uc ]
-"41
-[; ;tasks.c: 41:     lunos_delayTask(2000);
+"117
+[; ;tasks.c: 117:     lunos_delayTask(2000);
 [e ( _lunos_delayTask (1 -> -> 2000 `i `ui ]
-"42
-[; ;tasks.c: 42:   }
+"118
+[; ;tasks.c: 118:   }
 }
-[e :U 297 ]
-[e $U 298  ]
-[e :U 299 ]
-"43
-[; ;tasks.c: 43: }
-[e :UE 296 ]
+[e :U 334 ]
+[e $U 335  ]
+[e :U 336 ]
+"119
+[; ;tasks.c: 119: }
+[e :UE 333 ]
 }
-"45
-[; ;tasks.c: 45: void task_2() {
+"121
+[; ;tasks.c: 121: void task_2() {
 [v _task_2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_2 ]
 [f ]
-"46
-[; ;tasks.c: 46:   while(1){
-[e :U 302 ]
+"122
+[; ;tasks.c: 122:   while(1){
+[e :U 339 ]
 {
-"47
-[; ;tasks.c: 47:     PORTBbits.RB5 = ~PORTBbits.RB5;
+"123
+[; ;tasks.c: 123:     PORTBbits.RB5 = ~PORTBbits.RB5;
 [e = . . _PORTBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-"48
-[; ;tasks.c: 48:     lunos_delayTask(1000);
+"124
+[; ;tasks.c: 124:     lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"49
-[; ;tasks.c: 49:   }
+"125
+[; ;tasks.c: 125:   }
 }
-[e :U 301 ]
-[e $U 302  ]
-[e :U 303 ]
-"51
-[; ;tasks.c: 51: }
-[e :UE 300 ]
+[e :U 338 ]
+[e $U 339  ]
+[e :U 340 ]
+"127
+[; ;tasks.c: 127: }
+[e :UE 337 ]
 }
-"53
-[; ;tasks.c: 53: void task_bozo() {
+"129
+[; ;tasks.c: 129: void task_bozo() {
 [v _task_bozo `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_bozo ]
 [f ]
-"54
-[; ;tasks.c: 54:   while (1) {
-[e :U 306 ]
+"130
+[; ;tasks.c: 130:   while (1) {
+[e :U 343 ]
 {
-"55
-[; ;tasks.c: 55:     int i;
+"131
+[; ;tasks.c: 131:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"56
-[; ;tasks.c: 56:     sem_wait(&teste_1);
+"132
+[; ;tasks.c: 132:     sem_wait(&teste_1);
 [e ( _sem_wait (1 &U _teste_1 ]
-"57
-[; ;tasks.c: 57:     for (i = 0; i < 4; i++) {
+"133
+[; ;tasks.c: 133:     for (i = 0; i < 4; i++) {
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 308  ]
-[e $U 309  ]
-[e :U 308 ]
+[e $ < _i -> 4 `i 345  ]
+[e $U 346  ]
+[e :U 345 ]
 {
-"58
-[; ;tasks.c: 58:       mem[i] = i+1;
+"134
+[; ;tasks.c: 134:       mem[i] = i+1;
 [e = *U + _mem * -> _i `x -> -> # *U _mem `i `x -> + _i -> 1 `i `uc ]
-"59
-[; ;tasks.c: 59:     }
+"135
+[; ;tasks.c: 135:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 308  ]
-[e :U 309 ]
+[e $ < _i -> 4 `i 345  ]
+[e :U 346 ]
 }
-"60
-[; ;tasks.c: 60:     sem_post(&teste_2);
+"136
+[; ;tasks.c: 136:     sem_post(&teste_2);
 [e ( _sem_post (1 &U _teste_2 ]
-"61
-[; ;tasks.c: 61:   }
+"137
+[; ;tasks.c: 137:   }
 }
-[e :U 305 ]
-[e $U 306  ]
-[e :U 307 ]
-"62
-[; ;tasks.c: 62: }
-[e :UE 304 ]
+[e :U 342 ]
+[e $U 343  ]
+[e :U 344 ]
+"138
+[; ;tasks.c: 138: }
+[e :UE 341 ]
 }
-"64
-[; ;tasks.c: 64: void task_xuxa() {
+"140
+[; ;tasks.c: 140: void task_xuxa() {
 [v _task_xuxa `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_xuxa ]
 [f ]
-"65
-[; ;tasks.c: 65:   int i;
+"141
+[; ;tasks.c: 141:   int i;
 [v _i `i ~T0 @X0 1 a ]
-"66
-[; ;tasks.c: 66:   while (1) {
-[e :U 313 ]
+"142
+[; ;tasks.c: 142:   while (1) {
+[e :U 350 ]
 {
-"67
-[; ;tasks.c: 67:     sem_wait(&teste_2);
+"143
+[; ;tasks.c: 143:     sem_wait(&teste_2);
 [e ( _sem_wait (1 &U _teste_2 ]
-"68
-[; ;tasks.c: 68:     for (i = 0; i < 4; i++) {
+"144
+[; ;tasks.c: 144:     for (i = 0; i < 4; i++) {
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 315  ]
-[e $U 316  ]
-[e :U 315 ]
+[e $ < _i -> 4 `i 352  ]
+[e $U 353  ]
+[e :U 352 ]
 {
-"69
-[; ;tasks.c: 69:       if (mem[i] % 2 == 0)
-[e $ ! == % -> *U + _mem * -> _i `x -> -> # *U _mem `i `x `i -> 2 `i -> 0 `i 318  ]
-"70
-[; ;tasks.c: 70:         PORTBbits.RB3 = ~PORTBbits.RB3;
+"145
+[; ;tasks.c: 145:       if (mem[i] % 2 == 0)
+[e $ ! == % -> *U + _mem * -> _i `x -> -> # *U _mem `i `x `i -> 2 `i -> 0 `i 355  ]
+"146
+[; ;tasks.c: 146:         PORTBbits.RB3 = ~PORTBbits.RB3;
 [e = . . _PORTBbits 0 3 -> ~ -> . . _PORTBbits 0 3 `i `uc ]
-[e $U 319  ]
-"71
-[; ;tasks.c: 71:       else
-[e :U 318 ]
-"72
-[; ;tasks.c: 72:         PORTBbits.RB5 = ~PORTBbits.RB5;
+[e $U 356  ]
+"147
+[; ;tasks.c: 147:       else
+[e :U 355 ]
+"148
+[; ;tasks.c: 148:         PORTBbits.RB5 = ~PORTBbits.RB5;
 [e = . . _PORTBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-[e :U 319 ]
-"73
-[; ;tasks.c: 73:       lunos_delayTask(1000);
+[e :U 356 ]
+"149
+[; ;tasks.c: 149:       lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"74
-[; ;tasks.c: 74:     }
+"150
+[; ;tasks.c: 150:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 315  ]
-[e :U 316 ]
+[e $ < _i -> 4 `i 352  ]
+[e :U 353 ]
 }
-"75
-[; ;tasks.c: 75:     sem_post(&teste_1);
+"151
+[; ;tasks.c: 151:     sem_post(&teste_1);
 [e ( _sem_post (1 &U _teste_1 ]
-"76
-[; ;tasks.c: 76:   }
+"152
+[; ;tasks.c: 152:   }
 }
-[e :U 312 ]
-[e $U 313  ]
-[e :U 314 ]
-"77
-[; ;tasks.c: 77: }
-[e :UE 311 ]
+[e :U 349 ]
+[e $U 350  ]
+[e :U 351 ]
+"153
+[; ;tasks.c: 153: }
+[e :UE 348 ]
 }

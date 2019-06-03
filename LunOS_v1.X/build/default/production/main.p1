@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70 ./kernel.h
 [; ;./kernel.h: 70: void lunos_init();
 [v _lunos_init `(v ~T0 @X0 0 e? ]
-"8 ./tasks.h
-[; ;./tasks.h: 8: void user_conf();
+"9 ./tasks.h
+[; ;./tasks.h: 9: void user_conf();
 [v _user_conf `(v ~T0 @X0 0 e? ]
 "10 ./int0_test.h
 [; ;./int0_test.h: 10: void config_INT0();
@@ -12,19 +12,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;./int0_test.h: 11: void config_timer0();
 [v _config_timer0 `(v ~T0 @X0 0 e? ]
-[v F2595 `(v ~T0 @X0 0 t? ]
+[v F2585 `(v ~T0 @X0 0 t? ]
 "64 ./kernel.h
 [; ;./kernel.h: 64: void lunos_createTask(unsigned int prior, void(*f)());
-[v _lunos_createTask `(v ~T0 @X0 0 ef2`ui`*F2595 ]
-"9 ./tasks.h
-[; ;./tasks.h: 9: void task_0();
+[v _lunos_createTask `(v ~T0 @X0 0 ef2`ui`*F2585 ]
+"10 ./tasks.h
+[; ;./tasks.h: 10: void task_0();
 [v _task_0 `(v ~T0 @X0 0 e? ]
-"10
-[; ;./tasks.h: 10: void task_1();
-[v _task_1 `(v ~T0 @X0 0 e? ]
 "11
-[; ;./tasks.h: 11: void task_2();
-[v _task_2 `(v ~T0 @X0 0 e? ]
+[; ;./tasks.h: 11: void task_1();
+[v _task_1 `(v ~T0 @X0 0 e? ]
+"15
+[; ;./tasks.h: 15: void count_bottles();
+[v _count_bottles `(v ~T0 @X0 0 e? ]
 "32 main.c
 [c E2528 0 1 2 3 4 5 .. ]
 [n E2528 . READY RUNNING WAITING FINISHED WAITING_PIPE WAITING_SEM  ]
@@ -465,7 +465,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WDT    = OFF ]
 "14
 [; ;main.c: 14: 
-[; <" GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa ;# ">
+[; <" GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
 "16
 [; ;main.c: 16: 
@@ -490,16 +490,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26
 [e ( _lunos_createTask (2 , -> -> 4 `i `ui &U _task_1 ]
 "27
-[e ( _lunos_createTask (2 , -> -> 5 `i `ui &U _task_2 ]
+[e ( _lunos_createTask (2 , -> -> 5 `i `ui &U _count_bottles ]
 "32
 [e ( _dispatcher (1 . `E2528 0 ]
 "34
-[e :U 292 ]
+[e :U 290 ]
+[e :U 289 ]
+[e $U 290  ]
 [e :U 291 ]
-[e $U 292  ]
-[e :U 293 ]
 "36
-[e $UE 290  ]
+[e $UE 288  ]
 "37
-[e :UE 290 ]
+[e :UE 288 ]
 }

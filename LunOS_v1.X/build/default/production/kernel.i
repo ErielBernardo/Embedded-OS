@@ -28,9 +28,8 @@
 typedef unsigned int tid;
 typedef unsigned char byte;
 typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
-typedef enum {EMPTY = 0, FULL, WAITING_PACKING, PACKED} bottle_state;
-typedef enum {FREE_ = 0, BUSY_} tap_state;
-typedef enum {EMPTY_ = 0, COMPLETED} pack_state;
+typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
+typedef enum {FREE_ = 0, BUSY_} buffer_state;
 
 typedef struct data_stack {
   byte TOSU_reg;
@@ -68,18 +67,10 @@ typedef struct {
 } t_bottle;
 
 typedef struct {
-    t_bottle pack[6];
-    pack_state p_state;
-} bottle_pack;
-
-typedef struct {
-    t_bottle bottle;
-    tap_state filler_state;
-} filler;
-
-typedef struct {
-    t_bottle bottle;
-} put_cover_machine;
+    int count;
+    t_bottle bottles[3];
+    buffer_state p_state;
+} t_buffer;
 # 6 "kernel.c" 2
 # 1 "./kernel.h" 1
 
