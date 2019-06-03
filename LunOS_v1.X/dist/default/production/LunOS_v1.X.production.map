@@ -2,10 +2,10 @@ Microchip MPLAB XC8 Compiler V2.05 ()
 
 Linker command line:
 
--W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
-  -cs -h+dist/default/production\LunOS_v1.X.production.sym \
-  --cmf=dist/default/production\LunOS_v1.X.production.cmf -z -Q18F4520 \
-  -oC:\Users\Eriel\AppData\Local\Temp\sagk.2 --defsym=__MPLAB_BUILD=1 \
+-W-3 --edf=/Applications/microchip/xc8/v2.05/pic/dat/en_msgs.txt -cs \
+  -h+dist/default/production/LunOS_v1.X.production.sym \
+  --cmf=dist/default/production/LunOS_v1.X.production.cmf -z -Q18F4520 \
+  -o/tmp/xcRL9AAPT --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LunOS_v1.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=080h-01DFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -22,8 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Eriel\AppData\Local\Temp\sagk.o \
-  dist/default/production\LunOS_v1.X.production.o 
+  /tmp/xcY07d1Ir.o dist/default/production/LunOS_v1.X.production.o 
 
 Object code version is 3.11
 
@@ -35,13 +34,13 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Eriel\AppData\Local\Temp\sagk.o
+/tmp/xcY07d1Ir.o
                 stack                                80       80      160       80       2
                 init                                  C        C        8        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\LunOS_v1.X.production.o
+dist/default/production/LunOS_v1.X.production.o
                 intcode                               8        8        4        4       0
                 temp                                 4B       4B       20        1       1
                 text28                             15AE     15AE       96        4       0
@@ -169,9 +168,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  00007C  00007D         1       1  COMRAM  
-                intcode                        000008  001A10  001A18         4       0  CODE    
-                stack                          000080  000160  0001E0        80       2  STACK   
                 bssBIGRAM                      0001E0  000420  000600       1E0       1  BIGRAM  
+                stack                          000080  000160  0001E0        80       2  STACK   
+                intcode                        000008  001A10  001A18         4       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -972,7 +971,7 @@ Total ram usage:        0 bytes
 
  *************** function ___lwmod *****************
  Defined at:
-		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c"
+		line 7 in file "/Applications/microchip/xc8/v2.05/pic/sources/c99/common/lwmod.c"
  Parameters:    Size  Location     Type
   dividend        2  [STACK] unsigned int 
   divisor         2  [STACK] unsigned int 
@@ -1258,7 +1257,7 @@ Total ram usage:        0 bytes
 
  *************** function _task_1 *****************
  Defined at:
-		line 35 in file "tasks.c"
+		line 36 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1323,7 +1322,7 @@ Total ram usage:        0 bytes
 
  *************** function _task_2 *****************
  Defined at:
-		line 44 in file "tasks.c"
+		line 45 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1353,7 +1352,7 @@ Total ram usage:        0 bytes
 
  *************** function _task_bozo *****************
  Defined at:
-		line 52 in file "tasks.c"
+		line 53 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1384,7 +1383,7 @@ Total ram usage:        0 bytes
 
  *************** function _task_xuxa *****************
  Defined at:
-		line 63 in file "tasks.c"
+		line 64 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1477,7 +1476,7 @@ Total ram usage:        0 bytes
 
  *************** function ___wmul *****************
  Defined at:
-		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c"
+		line 15 in file "/Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c"
  Parameters:    Size  Location     Type
   multiplier      2  [STACK] unsigned int 
   multiplicand    2  [STACK] unsigned int 
@@ -1515,11 +1514,6 @@ semaphore.c
 		_sem_post      		CODE           	1188	0000	247
 
 semaphore.c estimated size: 593
-
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
-		___lwmod       		CODE           	14F2	0000	189
-
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c estimated size: 189
 
 sralloc.c
 		__SRAMmerge    		CODE           	0B0E	0000	339
@@ -1562,10 +1556,10 @@ shared
 
 shared estimated size: 57
 
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c
 		___wmul        		CODE           	15AE	0000	151
 
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c estimated size: 151
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c estimated size: 151
 
 pipe.c
 		_pipe_read     		CODE           	0F88	0000	265
@@ -1578,4 +1572,9 @@ main.c
 		_main          		CODE           	181C	0000	87
 
 main.c estimated size: 87
+
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/lwmod.c
+		___lwmod       		CODE           	14F2	0000	189
+
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/lwmod.c estimated size: 189
 

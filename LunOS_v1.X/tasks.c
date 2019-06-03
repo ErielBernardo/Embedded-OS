@@ -17,13 +17,23 @@ pipe_t p;
 
 void user_conf() {
   TRISB = 0b00000001;
+  TRISC = 0b10000000;
+  TRISD = 0b00000001;
+  PORTCbits.RC7 = 1;
   sem_init(&teste_1, 1);
   sem_init(&teste_2, 0);
   pipe_create(&p, &w_pipe, &r_pipe);
   mem = SRAMalloc(5);
 }
 
-void task_0() {
+void start_mat(){
+    PORTCbits.RC7 = ~PORTCbits.RC7;
+    lunos_delayTask(2000);
+    PORTCbits.RC7 = ~PORTCbits.RC7;
+}
+
+/*
+void () {
   while(1){
     pipe_write(&p, 1);
     PORTBbits.RB3 = ~PORTBbits.RB3;
@@ -74,3 +84,4 @@ void task_xuxa() {
     sem_post(&teste_1);
   }
 }
+*/

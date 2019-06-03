@@ -385,9 +385,9 @@ idloc 200000 200007 IDLOC 200000 0
 bssCOMRAM 1 7C COMRAM 1 1
 bssBIGRAM 1E0 5FF BIGRAM 1E0 1
 %locals
-dist/default/production\LunOS_v1.X.production.o
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h
-C:\Users\Eriel\AppData\Local\Temp\sagk.
+dist/default/production/LunOS_v1.X.production.o
+/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
+/tmp/xcwTftgvF
 1969 1950 0 CODE 0
 1971 1950 0 CODE 0
 1974 1950 0 CODE 0
@@ -540,7 +540,7 @@ kernel.c
 81 1692 0 CODE 0
 83 16C2 0 CODE 0
 84 16CE 0 CODE 0
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/lwmod.c
 7 14F2 0 CODE 0
 12 14F4 0 CODE 0
 13 1504 0 CODE 0
@@ -577,9 +577,9 @@ kernel.c
 118 1A12 0 CODE 0
 tasks.c
 26 1910 0 CODE 0
-28 1910 0 CODE 0
-29 1924 0 CODE 0
-30 1942 0 CODE 0
+29 1910 0 CODE 0
+30 1924 0 CODE 0
+31 1942 0 CODE 0
 pipe.c
 18 E7E 0 CODE 0
 20 E7E 0 CODE 0
@@ -615,11 +615,11 @@ kernel.c
 35 18BC 0 CODE 0
 36 18BE 0 CODE 0
 tasks.c
-35 18C4 0 CODE 0
-37 18C8 0 CODE 0
+36 18C4 0 CODE 0
 38 18C8 0 CODE 0
-39 18E8 0 CODE 0
-40 1902 0 CODE 0
+39 18C8 0 CODE 0
+40 18E8 0 CODE 0
+41 1902 0 CODE 0
 pipe.c
 27 F88 0 CODE 0
 29 F88 0 CODE 0
@@ -628,30 +628,30 @@ pipe.c
 32 105A 0 CODE 0
 34 1086 0 CODE 0
 tasks.c
-44 19C0 0 CODE 0
-46 19C0 0 CODE 0
-47 19DC 0 CODE 0
+45 19C0 0 CODE 0
+47 19C0 0 CODE 0
+48 19DC 0 CODE 0
 tasks.c
-52 16D4 0 CODE 0
-53 16D8 0 CODE 0
-55 16D8 0 CODE 0
-56 16E4 0 CODE 0
-57 16EC 0 CODE 0
-58 170C 0 CODE 0
-59 1744 0 CODE 0
+53 16D4 0 CODE 0
+54 16D8 0 CODE 0
+56 16D8 0 CODE 0
+57 16E4 0 CODE 0
+58 16EC 0 CODE 0
+59 170C 0 CODE 0
+60 1744 0 CODE 0
 tasks.c
-63 1434 0 CODE 0
-65 1438 0 CODE 0
+64 1434 0 CODE 0
 66 1438 0 CODE 0
-67 1444 0 CODE 0
-68 144C 0 CODE 0
-69 1468 0 CODE 0
-71 1484 0 CODE 0
-72 14A0 0 CODE 0
-73 14AC 0 CODE 0
-74 14E4 0 CODE 0
+67 1438 0 CODE 0
+68 1444 0 CODE 0
+69 144C 0 CODE 0
+70 1468 0 CODE 0
+72 1484 0 CODE 0
+73 14A0 0 CODE 0
+74 14AC 0 CODE 0
+75 14E4 0 CODE 0
 tasks.c
-76 8 0 CODE 0
+77 8 0 CODE 0
 int0_test.c
 56 8 0 CODE 0
 int0_test.c
@@ -679,7 +679,7 @@ kernel.c
 106 D02 0 CODE 0
 113 D30 0 CODE 0
 114 D6A 0 CODE 0
-C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+/Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c
 15 15AE 0 CODE 0
 37 15B2 0 CODE 0
 38 15CA 0 CODE 0
