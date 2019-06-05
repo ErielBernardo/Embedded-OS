@@ -130,17 +130,17 @@ BUSY_ 1
 [v _check_level check_level `R(v  1 e 1 0 ]
 "93
 [v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
-"121
+"126
 [v _count_out count_out `R(v  1 e 1 0 ]
-"139
+"135
 [v _task_0 task_0 `R(v  1 e 1 0 ]
-"148
+"144
 [v _task_1 task_1 `R(v  1 e 1 0 ]
-"157
+"153
 [v _task_2 task_2 `R(v  1 e 1 0 ]
-"165
+"161
 [v _task_bozo task_bozo `R(v  1 e 1 0 ]
-"176
+"172
 [v _task_xuxa task_xuxa `R(v  1 e 1 0 ]
 "14 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/kernel.h
 [v _who who `i  1 e 2 0 ]
@@ -344,8 +344,6 @@ BUSY_ 1
 [v _TOSH TOSH `VEuc  1 e 1 @4094 ]
 "6999
 [v _TOSU TOSU `VEuc  1 e 1 @4095 ]
-"7405
-[v _FREE FREE `VEb  1 e 0 @32052 ]
 "11 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/int0_test.c
 [v _quantum quantum `i  1 e 2 0 ]
 [s S250 data_stack 3 `uc 1 TOSU_reg 1 0 `uc 1 TOSL_reg 1 1 `uc 1 TOSH_reg 1 2 ]
@@ -408,16 +406,16 @@ BUSY_ 1
 "191 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/sralloc.c
 [v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
 {
-[s S1006 _BITS 1 `uc 1 count 1 0 :7:0 
+[s S1007 _BITS 1 `uc 1 count 1 0 :7:0 
 `uc 1 alloc 1 0 :1:7 
 ]
 "193
-[u S1009 _SALLOC 1 `uc 1 byte 1 0 `S1006 1 bits 1 0 ]
-[v _pHeap pHeap `*.39S1009  1 a 2 0 ]
+[u S1010 _SALLOC 1 `uc 1 byte 1 0 `S1007 1 bits 1 0 ]
+[v _pHeap pHeap `*.39S1010  1 a 2 0 ]
 "194
-[v _temp temp `*.39S1009  1 a 2 2 ]
+[v _temp temp `*.39S1010  1 a 2 2 ]
 "195
-[v _segHeader segHeader `S1009  1 a 1 4 ]
+[v _segHeader segHeader `S1010  1 a 1 4 ]
 "196
 [v _segLen segLen `uc  1 a 1 5 ]
 "191
@@ -427,18 +425,18 @@ BUSY_ 1
 "359
 [v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
 {
-[s S1006 _BITS 1 `uc 1 count 1 0 :7:0 
+[s S1007 _BITS 1 `uc 1 count 1 0 :7:0 
 `uc 1 alloc 1 0 :1:7 
 ]
 "361
-[u S1009 _SALLOC 1 `uc 1 byte 1 0 `S1006 1 bits 1 0 ]
-[v _pSegB pSegB `*.39S1009  1 a 2 0 ]
+[u S1010 _SALLOC 1 `uc 1 byte 1 0 `S1007 1 bits 1 0 ]
+[v _pSegB pSegB `*.39S1010  1 a 2 0 ]
 "362
-[v _uSegB uSegB `S1009  1 a 1 2 ]
-[v _uSegA uSegA `S1009  1 a 1 3 ]
-[v _uSum uSum `S1009  1 a 1 4 ]
+[v _uSegB uSegB `S1010  1 a 1 2 ]
+[v _uSegA uSegA `S1010  1 a 1 3 ]
+[v _uSum uSum `S1010  1 a 1 4 ]
 "359
-[v _pSegA pSegA `*.39S1009  1 p 2 -2 ]
+[v _pSegA pSegA `*.39S1010  1 p 2 -2 ]
 "403
 } 5
 "49 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/kernel.c
@@ -552,19 +550,7 @@ BUSY_ 1
 "93
 [v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
 {
-"119
-} 0
-"121
-[v _count_out count_out `R(v  1 e 1 0 ]
-{
 "124
-[v _out_bottles out_bottles `i  1 a 2 0 ]
-"137
-} 2
-"139
-[v _task_0 task_0 `R(v  1 e 1 0 ]
-{
-"146
 } 0
 "18 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
 [v _pipe_write pipe_write `R(v  1 e 1 0 ]
@@ -575,12 +561,12 @@ BUSY_ 1
 [v _data data `ui  1 p 2 -4 ]
 "25
 } 0
-"148 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
-[v _task_1 task_1 `R(v  1 e 1 0 ]
+"126 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
+[v _count_out count_out `R(v  1 e 1 0 ]
 {
-"149
-[v _dado dado `ui  1 a 2 0 ]
-"155
+"128
+[v _count count `ui  1 a 2 0 ]
+"133
 } 2
 "27 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
 [v _pipe_read pipe_read `R(v  1 e 1 0 ]
@@ -591,24 +577,36 @@ BUSY_ 1
 [v _data data `*.39ui  1 p 2 -4 ]
 "34
 } 0
-"157 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
+"135 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
+[v _task_0 task_0 `R(v  1 e 1 0 ]
+{
+"142
+} 0
+"144
+[v _task_1 task_1 `R(v  1 e 1 0 ]
+{
+"145
+[v _dado dado `ui  1 a 2 0 ]
+"151
+} 2
+"153
 [v _task_2 task_2 `R(v  1 e 1 0 ]
 {
-"163
+"159
 } 0
-"165
+"161
 [v _task_bozo task_bozo `R(v  1 e 1 0 ]
 {
-"167
+"163
 [v _i i `i  1 a 2 0 ]
-"174
+"170
 } 2
-"176
+"172
 [v _task_xuxa task_xuxa `R(v  1 e 1 0 ]
 {
-"177
+"173
 [v _i i `i  1 a 2 0 ]
-"189
+"185
 } 2
 "56 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/int0_test.c
 [v _ISR_timer0 ISR_timer0 `IIH(v  1 e 1 0 ]

@@ -4762,23 +4762,19 @@ void cover_bottle(){
             else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
         }
     }
+    int count = 0;
+    for (int i = 0; i < 3; i++){
+        if (global_buffer.bottles[i].bottle_state == FULL) count++;
+    }
+    pipe_write(&p, count);
     sem_post(&out_sem);
 }
 
 void count_out(){
     sem_wait(&out_sem);
+    unsigned int count;
     while(1){
-        int out_bottles = 0;
-        if(PORTDbits.RD4){
-            out_bottles++;
-            lunos_delayTask(100);
-        }
-        if (out_bottles == 5){
-            PORTBbits.RB1 = 0;
-            lunos_delayTask(10000);
-            PORTBbits.RB1 = 1;
-        }
-         global_buffer.p_state = FREE;
+        pipe_read(&p, &count);
     }
     sem_post(&count_sem);
 }
