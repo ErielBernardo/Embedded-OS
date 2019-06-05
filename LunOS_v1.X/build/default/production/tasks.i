@@ -4661,6 +4661,7 @@ void SRAMInitHeap(void);
 unsigned char* mem;
 
 sem_t teste_1, teste_2, w_pipe, r_pipe;
+sem_t count_sem, fill_sem, check_sem, cover_sem, out_sem;
 pipe_t p;
 t_buffer global_buffer;
 
@@ -4670,8 +4671,13 @@ void user_conf() {
   TRISD = 0b01111110;
   PORTCbits.RC7 = 1;
 
-  sem_init(&teste_1, 1);
-  sem_init(&teste_2, 0);
+
+
+  sem_init(&count_sem, 1);
+  sem_init(&fill_sem, 0);
+  sem_init(&check_sem, 0);
+  sem_init(&cover_sem, 0);
+  sem_init(&out_sem, 0);
   pipe_create(&p, &w_pipe, &r_pipe);
   mem = SRAMalloc(5);
 
@@ -4681,80 +4687,100 @@ void user_conf() {
 
 
 void count_bottles(){
-    while(global_buffer.count < 3){
-        if(!PORTBbits.RB6){
-            lunos_delayTask(500);
-            t_bottle bottle;
-            global_buffer.bottles[global_buffer.count] = bottle;
-            global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
-            global_buffer.count += 1;
+    while(1){
+        sem_wait(&count_sem);
+        while(global_buffer.count < 3){
+            if(!PORTBbits.RB6){
+                lunos_delayTask(500);
+                t_bottle bottle;
+                global_buffer.bottles[global_buffer.count] = bottle;
+                global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
+                global_buffer.count += 1;
+                }
             }
-        }
-    global_buffer.p_state = BUSY_;
+        global_buffer.p_state = BUSY_;
+    }
+    sem_post(&fill_sem);
 }
 
 void fill_bottle(){
-    while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
-        lunos_delayTask(100);
+    while(1){
+        sem_wait(&fill_sem);
+        while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
+            lunos_delayTask(100);
+        }
     }
+    sem_post(&check_sem);
 }
 
 void check_level(){
-    if (!PORTDbits.RD1)
-        global_buffer.bottles[0].bottle_state = EMPTY;
-    else if (PORTDbits.RD1)
-        global_buffer.bottles[0].bottle_state = FULL;
-    else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+    while(1){
+        sem_wait(&check_sem);
+        if (!PORTDbits.RD1)
+            global_buffer.bottles[0].bottle_state = EMPTY;
+        else if (PORTDbits.RD1)
+            global_buffer.bottles[0].bottle_state = FULL;
+        else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
 
-    if (!PORTDbits.RD2)
-        global_buffer.bottles[1].bottle_state = EMPTY;
-    else if (PORTDbits.RD2)
-        global_buffer.bottles[1].bottle_state = FULL;
-    else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+        if (!PORTDbits.RD2)
+            global_buffer.bottles[1].bottle_state = EMPTY;
+        else if (PORTDbits.RD2)
+            global_buffer.bottles[1].bottle_state = FULL;
+        else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
 
-    if (!PORTDbits.RD3)
-        global_buffer.bottles[2].bottle_state = EMPTY;
-    else if (PORTDbits.RD3)
-        global_buffer.bottles[2].bottle_state = FULL;
-    else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+        if (!PORTDbits.RD3)
+            global_buffer.bottles[2].bottle_state = EMPTY;
+        else if (PORTDbits.RD3)
+            global_buffer.bottles[2].bottle_state = FULL;
+        else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+    }
+    sem_post(&cover_sem);
 }
 
 void cover_bottle(){
-    if (PORTCbits.RC3){
-        if(global_buffer.bottles[0].bottle_state == FULL)
-            global_buffer.bottles[0].bottle_state = CLOSED;
-        else if (PORTCbits.RC3)
-            global_buffer.bottles[0].bottle_state = FAIL;
-        else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+    while(1){
+        sem_wait(&cover_sem);
+        if (PORTCbits.RC3){
+            if(global_buffer.bottles[0].bottle_state == FULL)
+                global_buffer.bottles[0].bottle_state = CLOSED;
+            else if (PORTCbits.RC3)
+                global_buffer.bottles[0].bottle_state = FAIL;
+            else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
+        }
+        if (PORTCbits.RC4){
+            if(global_buffer.bottles[1].bottle_state == FULL)
+                global_buffer.bottles[1].bottle_state = CLOSED;
+            else if (PORTCbits.RC4)
+                global_buffer.bottles[1].bottle_state = FAIL;
+            else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
+        }
+        if (PORTCbits.RC5){
+            if(global_buffer.bottles[2].bottle_state == FULL)
+                global_buffer.bottles[2].bottle_state = CLOSED;
+            else if (PORTCbits.RC5)
+                global_buffer.bottles[2].bottle_state = FAIL;
+            else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
+        }
     }
-    if (PORTCbits.RC4){
-        if(global_buffer.bottles[1].bottle_state == FULL)
-            global_buffer.bottles[1].bottle_state = CLOSED;
-        else if (PORTCbits.RC4)
-            global_buffer.bottles[1].bottle_state = FAIL;
-        else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
-    }
-    if (PORTCbits.RC5){
-        if(global_buffer.bottles[2].bottle_state == FULL)
-            global_buffer.bottles[2].bottle_state = CLOSED;
-        else if (PORTCbits.RC5)
-            global_buffer.bottles[2].bottle_state = FAIL;
-        else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
-    }
+    sem_post(&out_sem);
 }
 
 void count_out(){
-    int out_bottles = 0;
-    if(PORTDbits.RD4){
-        out_bottles++;
-        lunos_delayTask(100);
+    sem_wait(&out_sem);
+    while(1){
+        int out_bottles = 0;
+        if(PORTDbits.RD4){
+            out_bottles++;
+            lunos_delayTask(100);
+        }
+        if (out_bottles == 5){
+            PORTBbits.RB1 = 0;
+            lunos_delayTask(10000);
+            PORTBbits.RB1 = 1;
+        }
+         global_buffer.p_state = FREE;
     }
-    if (out_bottles == 5){
-        PORTBbits.RB1 = 0;
-        lunos_delayTask(10000);
-        PORTBbits.RB1 = 1;
-    }
-     global_buffer.p_state = FREE;
+    sem_post(&count_sem);
 }
 
 void task_0() {
