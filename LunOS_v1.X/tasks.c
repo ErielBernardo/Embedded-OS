@@ -21,9 +21,14 @@ t_buffer global_buffer;
 void user_conf() {
   TRISB = 0b00000001;
   TRISC = 0b01111111;
-  TRISD = 0b01111110;
+  TRISD = 0b11110001;
   PORTCbits.RC7 = 1;
   
+  PORTDbits.RD4 = 1;
+  PORTDbits.RD5 = 1;
+  PORTDbits.RD6 = 1;
+  PORTDbits.RD7 = 1;
+  PORTBbits.RB1 = 1;
   //sem_init(&teste_1, 1);
   //sem_init(&teste_2, 0);
   sem_init(&count_sem, 1);
@@ -42,6 +47,7 @@ void user_conf() {
 void count_bottles(){
     while(1){
         sem_wait(&count_sem);
+        PORTDbits.RD4 = 0;
         while(global_buffer.count < MAX_BOTTLES){
             if(!PORTBbits.RB6){
                 lunos_delayTask(500);
@@ -53,21 +59,25 @@ void count_bottles(){
             }
         global_buffer.p_state = BUSY_;
     }
+    PORTDbits.RD4 = 1;
     sem_post(&fill_sem);
 }
 
 void fill_bottle(){
     while(1){
+        PORTDbits.RD5 = 0;
         sem_wait(&fill_sem);
         while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
             lunos_delayTask(100);
         }
     }
+    PORTDbits.RD5 = 1;
     sem_post(&check_sem);
 }
 
 void check_level(){
     while(1){
+        PORTDbits.RD6 = 0;
         sem_wait(&check_sem);
         if (!PORTDbits.RD1)
             global_buffer.bottles[0].bottle_state = EMPTY;
@@ -87,11 +97,13 @@ void check_level(){
             global_buffer.bottles[2].bottle_state = FULL;  
         else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
     }
+    PORTDbits.RD6 = 1;
     sem_post(&cover_sem);
 }
 
 void cover_bottle(){
     while(1){
+        PORTDbits.RD7 = 0;
         sem_wait(&cover_sem);
         if (PORTCbits.RC3){
             if(global_buffer.bottles[0].bottle_state == FULL)
@@ -119,17 +131,21 @@ void cover_bottle(){
     for (int i = 0; i < MAX_BOTTLES; i++){
         if (global_buffer.bottles[i].bottle_state == FULL) count++;
     }
+    PORTDbits.RD7 = 1;
     pipe_write(&p, count);
     sem_post(&out_sem);
 }
 
 void count_out(){
+    
     sem_wait(&out_sem);
     unsigned int count;
     while(1){
+        PORTBbits.RB1 = 0;
         pipe_read(&p, &count);
     }
     sem_post(&count_sem);
+    PORTBbits.RB1 = 1;
 }
 
 void task_0() {
