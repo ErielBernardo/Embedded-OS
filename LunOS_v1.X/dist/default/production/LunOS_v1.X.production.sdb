@@ -21,7 +21,7 @@ FINISHED 3
 WAITING_PIPE 4
 WAITING_SEM 5
 ]
-"32 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/main.c
+"39 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/main.c
 [e E2528 . `uc
 READY 0
 RUNNING 1
@@ -126,21 +126,27 @@ BUSY_ 1
 [v _count_bottles count_bottles `R(v  1 e 1 0 ]
 "49
 [v _fill_bottle fill_bottle `R(v  1 e 1 0 ]
-"103
+"55
+[v _check_level check_level `R(v  1 e 1 0 ]
+"75
+[v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
+"99
+[v _count_out count_out `R(v  1 e 1 0 ]
+"113
 [v _task_0 task_0 `R(v  1 e 1 0 ]
-"112
+"122
 [v _task_1 task_1 `R(v  1 e 1 0 ]
-"121
+"131
 [v _task_2 task_2 `R(v  1 e 1 0 ]
-"129
+"139
 [v _task_bozo task_bozo `R(v  1 e 1 0 ]
-"140
+"150
 [v _task_xuxa task_xuxa `R(v  1 e 1 0 ]
 "14 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/kernel.h
 [v _who who `i  1 e 2 0 ]
 "15
 [v _size size `i  1 e 2 0 ]
-[s S793 . 1 `uc 1 RB0 1 0 :1:0 
+[s S801 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -150,7 +156,7 @@ BUSY_ 1
 `uc 1 RB7 1 0 :1:7 
 ]
 "315 /Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h
-[s S802 . 1 `uc 1 INT0 1 0 :1:0 
+[s S810 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -159,7 +165,7 @@ BUSY_ 1
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S811 . 1 `uc 1 AN12 1 0 :1:0 
+[s S819 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -168,14 +174,14 @@ BUSY_ 1
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S820 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S828 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S822 . 1 `uc 1 . 1 0 :3:0 
+[s S830 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S825 . 1 `S793 1 . 1 0 `S802 1 . 1 0 `S811 1 . 1 0 `S820 1 . 1 0 `S822 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES825  1 e 1 @3969 ]
-[s S709 . 1 `uc 1 RC0 1 0 :1:0 
+[u S833 . 1 `S801 1 . 1 0 `S810 1 . 1 0 `S819 1 . 1 0 `S828 1 . 1 0 `S830 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES833  1 e 1 @3969 ]
+[s S717 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -185,7 +191,7 @@ BUSY_ 1
 `uc 1 RC7 1 0 :1:7 
 ]
 "497
-[s S718 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S726 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 SCK 1 0 :1:3 
@@ -194,7 +200,7 @@ BUSY_ 1
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S727 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S735 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SCL 1 0 :1:3 
@@ -203,16 +209,16 @@ BUSY_ 1
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S736 . 1 `uc 1 T1CKI 1 0 :1:0 
+[s S744 . 1 `uc 1 T1CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 ]
-[s S740 . 1 `uc 1 . 1 0 :1:0 
+[s S748 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[u S744 . 1 `S709 1 . 1 0 `S718 1 . 1 0 `S727 1 . 1 0 `S736 1 . 1 0 `S740 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES744  1 e 1 @3970 ]
+[u S752 . 1 `S717 1 . 1 0 `S726 1 . 1 0 `S735 1 . 1 0 `S744 1 . 1 0 `S748 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES752  1 e 1 @3970 ]
 [s S33 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
@@ -338,6 +344,8 @@ BUSY_ 1
 [v _TOSH TOSH `VEuc  1 e 1 @4094 ]
 "6999
 [v _TOSU TOSU `VEuc  1 e 1 @4095 ]
+"7405
+[v _FREE FREE `VEb  1 e 0 @32052 ]
 "11 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/int0_test.c
 [v _quantum quantum `i  1 e 2 0 ]
 [s S250 data_stack 3 `uc 1 TOSU_reg 1 0 `uc 1 TOSL_reg 1 1 `uc 1 TOSH_reg 1 2 ]
@@ -350,23 +358,23 @@ BUSY_ 1
 [v __uDynamicHeap _uDynamicHeap `[512]uc  1 e 512 0 ]
 "14 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
 [v _mem mem `*.39uc  1 e 2 0 ]
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
 "16
-[v _teste_1 teste_1 `S528  1 e 14 0 ]
-[v _teste_2 teste_2 `S528  1 e 14 0 ]
-[v _w_pipe w_pipe `S528  1 e 14 0 ]
-[v _r_pipe r_pipe `S528  1 e 14 0 ]
+[v _teste_1 teste_1 `S536  1 e 14 0 ]
+[v _teste_2 teste_2 `S536  1 e 14 0 ]
+[v _w_pipe w_pipe `S536  1 e 14 0 ]
+[v _r_pipe r_pipe `S536  1 e 14 0 ]
 "17
-[s S533 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S528 1 w 2 8 `*.39S528 1 r 2 10 ]
-[v _p p `S533  1 e 12 0 ]
-[s S697 . 1 `E2364 1 bottle_state 1 0 ]
+[s S541 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S536 1 w 2 8 `*.39S536 1 r 2 10 ]
+[v _p p `S541  1 e 12 0 ]
+[s S705 . 1 `E2364 1 bottle_state 1 0 ]
 "18
-[s S702 . 6 `i 1 count 2 0 `[3]S697 1 bottles 3 2 `E2370 1 p_state 1 5 ]
-[v _global_buffer global_buffer `S702  1 e 6 0 ]
+[s S710 . 6 `i 1 count 2 0 `[3]S705 1 bottles 3 2 `E2370 1 p_state 1 5 ]
+[v _global_buffer global_buffer `S710  1 e 6 0 ]
 "16 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/main.c
 [v _main main `R(v  1 e 1 0 ]
 {
-"37
+"44
 } 0
 "20 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
 [v _user_conf user_conf `R(v  1 e 1 0 ]
@@ -376,34 +384,34 @@ BUSY_ 1
 "9 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
 [v _pipe_create pipe_create `R(v  1 e 1 0 ]
 {
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[s S533 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S528 1 w 2 8 `*.39S528 1 r 2 10 ]
-[v _p p `*.39S533  1 p 2 -2 ]
-[v _w w `*.39S528  1 p 2 -4 ]
-[v _r r `*.39S528  1 p 2 -6 ]
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[s S541 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S536 1 w 2 8 `*.39S536 1 r 2 10 ]
+[v _p p `*.39S541  1 p 2 -2 ]
+[v _w w `*.39S536  1 p 2 -4 ]
+[v _r r `*.39S536  1 p 2 -6 ]
 "16
 } 0
 "10 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/semaphore.c
 [v _sem_init sem_init `R(v  1 e 1 0 ]
 {
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[v _s s `*.39S528  1 p 2 -2 ]
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[v _s s `*.39S536  1 p 2 -2 ]
 [v _valor valor `i  1 p 2 -4 ]
 "18
 } 0
 "191 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/sralloc.c
 [v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
 {
-[s S971 _BITS 1 `uc 1 count 1 0 :7:0 
+[s S981 _BITS 1 `uc 1 count 1 0 :7:0 
 `uc 1 alloc 1 0 :1:7 
 ]
 "193
-[u S974 _SALLOC 1 `uc 1 byte 1 0 `S971 1 bits 1 0 ]
-[v _pHeap pHeap `*.39S974  1 a 2 0 ]
+[u S984 _SALLOC 1 `uc 1 byte 1 0 `S981 1 bits 1 0 ]
+[v _pHeap pHeap `*.39S984  1 a 2 0 ]
 "194
-[v _temp temp `*.39S974  1 a 2 2 ]
+[v _temp temp `*.39S984  1 a 2 2 ]
 "195
-[v _segHeader segHeader `S974  1 a 1 4 ]
+[v _segHeader segHeader `S984  1 a 1 4 ]
 "196
 [v _segLen segLen `uc  1 a 1 5 ]
 "191
@@ -413,18 +421,18 @@ BUSY_ 1
 "359
 [v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
 {
-[s S971 _BITS 1 `uc 1 count 1 0 :7:0 
+[s S981 _BITS 1 `uc 1 count 1 0 :7:0 
 `uc 1 alloc 1 0 :1:7 
 ]
 "361
-[u S974 _SALLOC 1 `uc 1 byte 1 0 `S971 1 bits 1 0 ]
-[v _pSegB pSegB `*.39S974  1 a 2 0 ]
+[u S984 _SALLOC 1 `uc 1 byte 1 0 `S981 1 bits 1 0 ]
+[v _pSegB pSegB `*.39S984  1 a 2 0 ]
 "362
-[v _uSegB uSegB `S974  1 a 1 2 ]
-[v _uSegA uSegA `S974  1 a 1 3 ]
-[v _uSum uSum `S974  1 a 1 4 ]
+[v _uSegB uSegB `S984  1 a 1 2 ]
+[v _uSegA uSegA `S984  1 a 1 3 ]
+[v _uSum uSum `S984  1 a 1 4 ]
 "359
-[v _pSegA pSegA `*.39S974  1 p 2 -2 ]
+[v _pSegA pSegA `*.39S984  1 p 2 -2 ]
 "403
 } 5
 "49 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/kernel.c
@@ -497,87 +505,104 @@ BUSY_ 1
 {
 "119
 } 0
-"103 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
-[v _task_0 task_0 `R(v  1 e 1 0 ]
+"36 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
+[v _count_bottles count_bottles `R(v  1 e 1 0 ]
 {
-"110
-} 0
-"18 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
-[v _pipe_write pipe_write `R(v  1 e 1 0 ]
-{
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[s S533 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S528 1 w 2 8 `*.39S528 1 r 2 10 ]
-[v _p p `*.39S533  1 p 2 -2 ]
-[v _data data `ui  1 p 2 -4 ]
-"25
-} 0
-"20 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/semaphore.c
-[v _sem_wait sem_wait `R(v  1 e 1 0 ]
-{
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[v _s s `*.39S528  1 p 2 -2 ]
-"30
-} 0
-"32
-[v _sem_post sem_post `R(v  1 e 1 0 ]
-{
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[v _s s `*.39S528  1 p 2 -2 ]
-"41
-} 0
+[s S705 . 1 `E2364 1 bottle_state 1 0 ]
+"40
+[v _bottle bottle `S705  1 a 1 0 ]
+"47
+} 1
 "29 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/kernel.c
 [v _lunos_delayTask lunos_delayTask `R(v  1 e 1 0 ]
 {
 [v _time time `ui  1 p 2 -2 ]
 "36
 } 0
-"112 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
-[v _task_1 task_1 `R(v  1 e 1 0 ]
-{
-"113
-[v _dado dado `ui  1 a 2 0 ]
-"119
-} 2
-"27 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
-[v _pipe_read pipe_read `R(v  1 e 1 0 ]
-{
-[s S528 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
-[s S533 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S528 1 w 2 8 `*.39S528 1 r 2 10 ]
-[v _p p `*.39S533  1 p 2 -2 ]
-[v _data data `*.39ui  1 p 2 -4 ]
-"34
-} 0
-"36 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
-[v _count_bottles count_bottles `R(v  1 e 1 0 ]
-{
-[s S697 . 1 `E2364 1 bottle_state 1 0 ]
-"40
-[v _bottle bottle `S697  1 a 1 0 ]
-"47
-} 1
-"49
+"49 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
 [v _fill_bottle fill_bottle `R(v  1 e 1 0 ]
 {
 "53
 } 0
-"121
+"55
+[v _check_level check_level `R(v  1 e 1 0 ]
+{
+"73
+} 0
+"75
+[v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
+{
+"97
+} 0
+"99
+[v _count_out count_out `R(v  1 e 1 0 ]
+{
+"100
+[v _out_bottles out_bottles `i  1 a 2 0 ]
+"111
+} 2
+"113
+[v _task_0 task_0 `R(v  1 e 1 0 ]
+{
+"120
+} 0
+"18 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
+[v _pipe_write pipe_write `R(v  1 e 1 0 ]
+{
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[s S541 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S536 1 w 2 8 `*.39S536 1 r 2 10 ]
+[v _p p `*.39S541  1 p 2 -2 ]
+[v _data data `ui  1 p 2 -4 ]
+"25
+} 0
+"20 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/semaphore.c
+[v _sem_wait sem_wait `R(v  1 e 1 0 ]
+{
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[v _s s `*.39S536  1 p 2 -2 ]
+"30
+} 0
+"32
+[v _sem_post sem_post `R(v  1 e 1 0 ]
+{
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[v _s s `*.39S536  1 p 2 -2 ]
+"41
+} 0
+"122 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
+[v _task_1 task_1 `R(v  1 e 1 0 ]
+{
+"123
+[v _dado dado `ui  1 a 2 0 ]
+"129
+} 2
+"27 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/pipe.c
+[v _pipe_read pipe_read `R(v  1 e 1 0 ]
+{
+[s S536 semaphore 14 `i 1 contador 2 0 `[4]ui 1 bloqued_Queue 8 2 `ui 1 bloqued_size 2 10 `ui 1 task_to_ready 2 12 ]
+[s S541 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S536 1 w 2 8 `*.39S536 1 r 2 10 ]
+[v _p p `*.39S541  1 p 2 -2 ]
+[v _data data `*.39ui  1 p 2 -4 ]
+"34
+} 0
+"131 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/tasks.c
 [v _task_2 task_2 `R(v  1 e 1 0 ]
 {
-"127
+"137
 } 0
-"129
+"139
 [v _task_bozo task_bozo `R(v  1 e 1 0 ]
-{
-"131
-[v _i i `i  1 a 2 0 ]
-"138
-} 2
-"140
-[v _task_xuxa task_xuxa `R(v  1 e 1 0 ]
 {
 "141
 [v _i i `i  1 a 2 0 ]
-"153
+"148
+} 2
+"150
+[v _task_xuxa task_xuxa `R(v  1 e 1 0 ]
+{
+"151
+[v _i i `i  1 a 2 0 ]
+"163
 } 2
 "56 /Users/gabriel.ghellere/Documents/Embedded-OS/LunOS_v1.X/int0_test.c
 [v _ISR_timer0 ISR_timer0 `IIH(v  1 e 1 0 ]

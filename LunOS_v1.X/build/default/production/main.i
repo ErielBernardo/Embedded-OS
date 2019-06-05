@@ -4620,9 +4620,9 @@ void task_1();
 void task_2();
 void task_bozo();
 void task_xuxa();
+
 void count_bottles();
 void fill_bottle();
-
 void check_level();
 void cover_bottle();
 void count_out();
@@ -4656,7 +4656,7 @@ void SRAMInitHeap(void);
 #pragma config PBADEN = OFF
 #pragma config WDT = OFF
 
-__asm("GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle");
+__asm("GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle, _check_level, _cover_bottle, _count_out");
 
 void main(void) {
 
@@ -4667,9 +4667,16 @@ void main(void) {
   config_timer0();
 
 
-  lunos_createTask(3, &task_0);
-  lunos_createTask(4, &task_1);
-  lunos_createTask(5, &count_bottles);
+
+
+
+
+
+  lunos_createTask(3, &count_bottles);
+  lunos_createTask(4, &fill_bottle);
+  lunos_createTask(5, &check_level);
+  lunos_createTask(6, &cover_bottle);
+  lunos_createTask(7, &count_out);
 
 
 

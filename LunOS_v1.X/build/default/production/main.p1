@@ -16,16 +16,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "64 ./kernel.h
 [; ;./kernel.h: 64: void lunos_createTask(unsigned int prior, void(*f)());
 [v _lunos_createTask `(v ~T0 @X0 0 ef2`ui`*F2585 ]
-"10 ./tasks.h
-[; ;./tasks.h: 10: void task_0();
-[v _task_0 `(v ~T0 @X0 0 e? ]
-"11
-[; ;./tasks.h: 11: void task_1();
-[v _task_1 `(v ~T0 @X0 0 e? ]
-"15
-[; ;./tasks.h: 15: void count_bottles();
+"16 ./tasks.h
+[; ;./tasks.h: 16: void count_bottles();
 [v _count_bottles `(v ~T0 @X0 0 e? ]
-"32 main.c
+"17
+[; ;./tasks.h: 17: void fill_bottle();
+[v _fill_bottle `(v ~T0 @X0 0 e? ]
+"18
+[; ;./tasks.h: 18: void check_level();
+[v _check_level `(v ~T0 @X0 0 e? ]
+"19
+[; ;./tasks.h: 19: void cover_bottle();
+[v _cover_bottle `(v ~T0 @X0 0 e? ]
+"20
+[; ;./tasks.h: 20: void count_out();
+[v _count_out `(v ~T0 @X0 0 e? ]
+"39 main.c
 [c E2528 0 1 2 3 4 5 .. ]
 [n E2528 . READY RUNNING WAITING FINISHED WAITING_PIPE WAITING_SEM  ]
 "72 ./kernel.h
@@ -458,48 +464,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "11 main.c
-[; ;main.c: 11:   lunos_createTask(3, &task_0);
+[; ;main.c: 11: 
 [p x PBADEN = OFF ]
 "12
-[; ;main.c: 12:   lunos_createTask(4, &task_1);
+[; ;main.c: 12: 
 [p x WDT    = OFF ]
 "14
 [; ;main.c: 14: 
-[; <" GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle ;# ">
+[; <" GLOBAL _task_idle, _task_0, _task_1, _task_2, _task_bozo, _task_xuxa, _count_bottles, _fill_bottle, _check_level, _cover_bottle, _count_out ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
 "16
-[; ;main.c: 16: 
+[; ;main.c: 16:   lunos_createTask(3, &count_bottles);
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "18
-[; ;main.c: 18:   dispatcher(READY);
+[; ;main.c: 18:   lunos_createTask(5, &check_level);
 [e ( _lunos_init ..  ]
 "20
-[; ;main.c: 20:   while (1);
+[; ;main.c: 20:   lunos_createTask(7, &count_out);
 [e ( _user_conf ..  ]
 "21
 [; ;main.c: 21: 
 [e ( _config_INT0 ..  ]
 "22
-[; ;main.c: 22:   return;
+[; ;main.c: 22: 
 [e ( _config_timer0 ..  ]
-"25
-[e ( _lunos_createTask (2 , -> -> 3 `i `ui &U _task_0 ]
-"26
-[e ( _lunos_createTask (2 , -> -> 4 `i `ui &U _task_1 ]
-"27
-[e ( _lunos_createTask (2 , -> -> 5 `i `ui &U _count_bottles ]
+"30
+[; ;main.c: 30: }
+[e ( _lunos_createTask (2 , -> -> 3 `i `ui &U _count_bottles ]
+"31
+[e ( _lunos_createTask (2 , -> -> 4 `i `ui &U _fill_bottle ]
 "32
-[e ( _dispatcher (1 . `E2528 0 ]
+[e ( _lunos_createTask (2 , -> -> 5 `i `ui &U _check_level ]
+"33
+[e ( _lunos_createTask (2 , -> -> 6 `i `ui &U _cover_bottle ]
 "34
+[e ( _lunos_createTask (2 , -> -> 7 `i `ui &U _count_out ]
+"39
+[e ( _dispatcher (1 . `E2528 0 ]
+"41
 [e :U 290 ]
 [e :U 289 ]
 [e $U 290  ]
 [e :U 291 ]
-"36
+"43
 [e $UE 288  ]
-"37
+"44
 [e :UE 288 ]
 }

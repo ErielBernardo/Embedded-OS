@@ -121,6 +121,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "669
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 669: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
 [v _PORTDbits `VS23 ~T0 @X0 0 e@3971 ]
+"7405
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f4520.h: 7405: extern volatile __bit FREE __attribute__((address(0x7D34)));
+[v _FREE `Vb ~T0 @X0 0 e@32052 ]
 "21 ./pipe.h
 [; ;./pipe.h: 21: void pipe_write(pipe_t *p, unsigned int data);
 [v _pipe_write `(v ~T0 @X0 0 ef2`*S288`ui ]
@@ -587,8 +590,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tasks.c: 22:   TRISC = 0b01111111;
 [e = _TRISC -> -> 127 `i `uc ]
 "23
-[; ;tasks.c: 23:   TRISD = 0b11111110;
-[e = _TRISD -> -> 254 `i `uc ]
+[; ;tasks.c: 23:   TRISD = 0b01111110;
+[e = _TRISD -> -> 126 `i `uc ]
 "24
 [; ;tasks.c: 24:   PORTCbits.RC7 = 1;
 [e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
@@ -865,202 +868,240 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _count_out ]
 [f ]
+"100
+[; ;tasks.c: 100:     int out_bottles = 0;
+[v _out_bottles `i ~T0 @X0 1 a ]
+[e = _out_bottles -> 0 `i ]
 "101
-[; ;tasks.c: 101: }
+[; ;tasks.c: 101:     if(PORTDbits.RD4){
+[e $ ! != -> . . _PORTDbits 0 4 `i -> 0 `i 329  ]
+{
+"102
+[; ;tasks.c: 102:         out_bottles++;
+[e ++ _out_bottles -> 1 `i ]
+"103
+[; ;tasks.c: 103:         lunos_delayTask(100);
+[e ( _lunos_delayTask (1 -> -> 100 `i `ui ]
+"104
+[; ;tasks.c: 104:     }
+}
+[e :U 329 ]
+"105
+[; ;tasks.c: 105:     if (out_bottles == 5){
+[e $ ! == _out_bottles -> 5 `i 330  ]
+{
+"106
+[; ;tasks.c: 106:         PORTBbits.RB1 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"107
+[; ;tasks.c: 107:         lunos_delayTask(10000);
+[e ( _lunos_delayTask (1 -> -> 10000 `i `ui ]
+"108
+[; ;tasks.c: 108:         PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"109
+[; ;tasks.c: 109:     }
+}
+[e :U 330 ]
+"110
+[; ;tasks.c: 110:      global_buffer.p_state = FREE;
+[e = . _global_buffer 2 -> _FREE `E2370 ]
+"111
+[; ;tasks.c: 111: }
 [e :UE 328 ]
 }
-"103
-[; ;tasks.c: 103: void task_0() {
+"113
+[; ;tasks.c: 113: void task_0() {
 [v _task_0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_0 ]
 [f ]
-"104
-[; ;tasks.c: 104:   while(1){
-[e :U 331 ]
+"114
+[; ;tasks.c: 114:   while(1){
+[e :U 333 ]
 {
-"105
-[; ;tasks.c: 105:     pipe_write(&p, 1);
+"115
+[; ;tasks.c: 115:     pipe_write(&p, 1);
 [e ( _pipe_write (2 , &U _p -> -> 1 `i `ui ]
-"106
-[; ;tasks.c: 106:     PORTBbits.RB3 = ~PORTBbits.RB3;
+"116
+[; ;tasks.c: 116:     PORTBbits.RB3 = ~PORTBbits.RB3;
 [e = . . _PORTBbits 0 3 -> ~ -> . . _PORTBbits 0 3 `i `uc ]
-"107
-[; ;tasks.c: 107:     lunos_delayTask(1000);
+"117
+[; ;tasks.c: 117:     lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"108
-[; ;tasks.c: 108:   }
+"118
+[; ;tasks.c: 118:   }
 }
-[e :U 330 ]
-[e $U 331  ]
 [e :U 332 ]
-"110
-[; ;tasks.c: 110: }
-[e :UE 329 ]
+[e $U 333  ]
+[e :U 334 ]
+"120
+[; ;tasks.c: 120: }
+[e :UE 331 ]
 }
-"112
-[; ;tasks.c: 112: void task_1() {
+"122
+[; ;tasks.c: 122: void task_1() {
 [v _task_1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_1 ]
 [f ]
-"113
-[; ;tasks.c: 113:   unsigned int dado;
+"123
+[; ;tasks.c: 123:   unsigned int dado;
 [v _dado `ui ~T0 @X0 1 a ]
-"114
-[; ;tasks.c: 114:   while(1){
-[e :U 335 ]
+"124
+[; ;tasks.c: 124:   while(1){
+[e :U 337 ]
 {
-"115
-[; ;tasks.c: 115:     pipe_read(&p, &dado);
+"125
+[; ;tasks.c: 125:     pipe_read(&p, &dado);
 [e ( _pipe_read (2 , &U _p &U _dado ]
-"116
-[; ;tasks.c: 116:     PORTBbits.RB4 = ~PORTBbits.RB4;
+"126
+[; ;tasks.c: 126:     PORTBbits.RB4 = ~PORTBbits.RB4;
 [e = . . _PORTBbits 0 4 -> ~ -> . . _PORTBbits 0 4 `i `uc ]
-"117
-[; ;tasks.c: 117:     lunos_delayTask(2000);
+"127
+[; ;tasks.c: 127:     lunos_delayTask(2000);
 [e ( _lunos_delayTask (1 -> -> 2000 `i `ui ]
-"118
-[; ;tasks.c: 118:   }
+"128
+[; ;tasks.c: 128:   }
 }
-[e :U 334 ]
-[e $U 335  ]
 [e :U 336 ]
-"119
-[; ;tasks.c: 119: }
-[e :UE 333 ]
+[e $U 337  ]
+[e :U 338 ]
+"129
+[; ;tasks.c: 129: }
+[e :UE 335 ]
 }
-"121
-[; ;tasks.c: 121: void task_2() {
+"131
+[; ;tasks.c: 131: void task_2() {
 [v _task_2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_2 ]
 [f ]
-"122
-[; ;tasks.c: 122:   while(1){
-[e :U 339 ]
+"132
+[; ;tasks.c: 132:   while(1){
+[e :U 341 ]
 {
-"123
-[; ;tasks.c: 123:     PORTBbits.RB5 = ~PORTBbits.RB5;
+"133
+[; ;tasks.c: 133:     PORTBbits.RB5 = ~PORTBbits.RB5;
 [e = . . _PORTBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-"124
-[; ;tasks.c: 124:     lunos_delayTask(1000);
+"134
+[; ;tasks.c: 134:     lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"125
-[; ;tasks.c: 125:   }
+"135
+[; ;tasks.c: 135:   }
 }
-[e :U 338 ]
-[e $U 339  ]
 [e :U 340 ]
-"127
-[; ;tasks.c: 127: }
-[e :UE 337 ]
+[e $U 341  ]
+[e :U 342 ]
+"137
+[; ;tasks.c: 137: }
+[e :UE 339 ]
 }
-"129
-[; ;tasks.c: 129: void task_bozo() {
+"139
+[; ;tasks.c: 139: void task_bozo() {
 [v _task_bozo `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_bozo ]
 [f ]
-"130
-[; ;tasks.c: 130:   while (1) {
-[e :U 343 ]
-{
-"131
-[; ;tasks.c: 131:     int i;
-[v _i `i ~T0 @X0 1 a ]
-"132
-[; ;tasks.c: 132:     sem_wait(&teste_1);
-[e ( _sem_wait (1 &U _teste_1 ]
-"133
-[; ;tasks.c: 133:     for (i = 0; i < 4; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 345  ]
-[e $U 346  ]
+"140
+[; ;tasks.c: 140:   while (1) {
 [e :U 345 ]
 {
-"134
-[; ;tasks.c: 134:       mem[i] = i+1;
+"141
+[; ;tasks.c: 141:     int i;
+[v _i `i ~T0 @X0 1 a ]
+"142
+[; ;tasks.c: 142:     sem_wait(&teste_1);
+[e ( _sem_wait (1 &U _teste_1 ]
+"143
+[; ;tasks.c: 143:     for (i = 0; i < 4; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 347  ]
+[e $U 348  ]
+[e :U 347 ]
+{
+"144
+[; ;tasks.c: 144:       mem[i] = i+1;
 [e = *U + _mem * -> _i `x -> -> # *U _mem `i `x -> + _i -> 1 `i `uc ]
-"135
-[; ;tasks.c: 135:     }
+"145
+[; ;tasks.c: 145:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 345  ]
-[e :U 346 ]
+[e $ < _i -> 4 `i 347  ]
+[e :U 348 ]
 }
-"136
-[; ;tasks.c: 136:     sem_post(&teste_2);
+"146
+[; ;tasks.c: 146:     sem_post(&teste_2);
 [e ( _sem_post (1 &U _teste_2 ]
-"137
-[; ;tasks.c: 137:   }
+"147
+[; ;tasks.c: 147:   }
 }
-[e :U 342 ]
-[e $U 343  ]
 [e :U 344 ]
-"138
-[; ;tasks.c: 138: }
-[e :UE 341 ]
+[e $U 345  ]
+[e :U 346 ]
+"148
+[; ;tasks.c: 148: }
+[e :UE 343 ]
 }
-"140
-[; ;tasks.c: 140: void task_xuxa() {
+"150
+[; ;tasks.c: 150: void task_xuxa() {
 [v _task_xuxa `(v ~T0 @X0 1 ef ]
 {
 [e :U _task_xuxa ]
 [f ]
-"141
-[; ;tasks.c: 141:   int i;
+"151
+[; ;tasks.c: 151:   int i;
 [v _i `i ~T0 @X0 1 a ]
-"142
-[; ;tasks.c: 142:   while (1) {
-[e :U 350 ]
-{
-"143
-[; ;tasks.c: 143:     sem_wait(&teste_2);
-[e ( _sem_wait (1 &U _teste_2 ]
-"144
-[; ;tasks.c: 144:     for (i = 0; i < 4; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 352  ]
-[e $U 353  ]
+"152
+[; ;tasks.c: 152:   while (1) {
 [e :U 352 ]
 {
-"145
-[; ;tasks.c: 145:       if (mem[i] % 2 == 0)
-[e $ ! == % -> *U + _mem * -> _i `x -> -> # *U _mem `i `x `i -> 2 `i -> 0 `i 355  ]
-"146
-[; ;tasks.c: 146:         PORTBbits.RB3 = ~PORTBbits.RB3;
+"153
+[; ;tasks.c: 153:     sem_wait(&teste_2);
+[e ( _sem_wait (1 &U _teste_2 ]
+"154
+[; ;tasks.c: 154:     for (i = 0; i < 4; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 354  ]
+[e $U 355  ]
+[e :U 354 ]
+{
+"155
+[; ;tasks.c: 155:       if (mem[i] % 2 == 0)
+[e $ ! == % -> *U + _mem * -> _i `x -> -> # *U _mem `i `x `i -> 2 `i -> 0 `i 357  ]
+"156
+[; ;tasks.c: 156:         PORTBbits.RB3 = ~PORTBbits.RB3;
 [e = . . _PORTBbits 0 3 -> ~ -> . . _PORTBbits 0 3 `i `uc ]
-[e $U 356  ]
-"147
-[; ;tasks.c: 147:       else
-[e :U 355 ]
-"148
-[; ;tasks.c: 148:         PORTBbits.RB5 = ~PORTBbits.RB5;
+[e $U 358  ]
+"157
+[; ;tasks.c: 157:       else
+[e :U 357 ]
+"158
+[; ;tasks.c: 158:         PORTBbits.RB5 = ~PORTBbits.RB5;
 [e = . . _PORTBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-[e :U 356 ]
-"149
-[; ;tasks.c: 149:       lunos_delayTask(1000);
+[e :U 358 ]
+"159
+[; ;tasks.c: 159:       lunos_delayTask(1000);
 [e ( _lunos_delayTask (1 -> -> 1000 `i `ui ]
-"150
-[; ;tasks.c: 150:     }
+"160
+[; ;tasks.c: 160:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 352  ]
-[e :U 353 ]
+[e $ < _i -> 4 `i 354  ]
+[e :U 355 ]
 }
-"151
-[; ;tasks.c: 151:     sem_post(&teste_1);
+"161
+[; ;tasks.c: 161:     sem_post(&teste_1);
 [e ( _sem_post (1 &U _teste_1 ]
-"152
-[; ;tasks.c: 152:   }
+"162
+[; ;tasks.c: 162:   }
 }
-[e :U 349 ]
-[e $U 350  ]
 [e :U 351 ]
-"153
-[; ;tasks.c: 153: }
-[e :UE 348 ]
+[e $U 352  ]
+[e :U 353 ]
+"163
+[; ;tasks.c: 163: }
+[e :UE 350 ]
 }

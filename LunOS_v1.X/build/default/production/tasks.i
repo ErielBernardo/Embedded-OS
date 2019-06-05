@@ -4435,9 +4435,9 @@ void task_1();
 void task_2();
 void task_bozo();
 void task_xuxa();
+
 void count_bottles();
 void fill_bottle();
-
 void check_level();
 void cover_bottle();
 void count_out();
@@ -4667,7 +4667,7 @@ t_buffer global_buffer;
 void user_conf() {
   TRISB = 0b00000001;
   TRISC = 0b01111111;
-  TRISD = 0b11111110;
+  TRISD = 0b01111110;
   PORTCbits.RC7 = 1;
 
   sem_init(&teste_1, 1);
@@ -4744,7 +4744,17 @@ void cover_bottle(){
 }
 
 void count_out(){
-
+    int out_bottles = 0;
+    if(PORTDbits.RD4){
+        out_bottles++;
+        lunos_delayTask(100);
+    }
+    if (out_bottles == 5){
+        PORTBbits.RB1 = 0;
+        lunos_delayTask(10000);
+        PORTBbits.RB1 = 1;
+    }
+     global_buffer.p_state = FREE;
 }
 
 void task_0() {
