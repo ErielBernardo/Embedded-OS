@@ -19,27 +19,24 @@ void sem_init(sem_t *s, int valor) {
 
 void sem_wait(sem_t *s) {
   DISABLE_ALL_INTERRUPTS();
-
   s->contador -= 1;
   if (s->contador < 0) {
+    //s->contador = 0;
     s->bloqued_Queue[s->bloqued_size] = ready_queue.task_running;
     s->bloqued_size = (s->bloqued_size + 1) % MAX_TASKS;
     dispatcher(WAITING_SEM);
   }
-
   ENABLE_ALL_INTERRUPTS();
 }
 
 void sem_post(sem_t *s) {
   DISABLE_ALL_INTERRUPTS();
-
   s->contador += 1;
-  if (s->contador <= 0) {
+  if (s->contador < 0) {
     ready_queue.tasks[s->bloqued_Queue[s->task_to_ready]].task_state = READY;
     s->task_to_ready = (s->task_to_ready + 1) % MAX_TASKS;
-    //dispatcher(READY);
+    dispatcher(READY);
   }
-
   ENABLE_ALL_INTERRUPTS();
 }
 

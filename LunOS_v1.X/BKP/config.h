@@ -5,7 +5,7 @@
 #ifndef CONFIG_H
 #define	CONFIG_H
 
-#define MAX_TASKS   5
+#define MAX_TASKS   4
 #define ON          1
 #define OFF         0
 

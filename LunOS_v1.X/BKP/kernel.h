@@ -32,14 +32,13 @@ int size = 0;
         size++;\
         __asm("POP");\
     }\
-    ready_queue.tasks[who].task_stack.stack_level = size;\
+    ready_queue.tasks[who].task_stack.stack_level = size - 1;\
 }\
 
 #define RESTORE_CONTEXT(state) {\
-    STKPTR = 0;\
     who = ready_queue.task_running;\
-    if (ready_queue.tasks[who].task_installed == 0) {\
-        ready_queue.tasks[who].task_installed = 1;\
+    STKPTR = 0;\
+    if (ready_queue.tasks[who].task_stack.stack_level == 0) {\
         __asm("PUSH");\
         TOS = ready_queue.tasks[who].task_f;\
     }\
@@ -48,13 +47,13 @@ int size = 0;
         WREG = ready_queue.tasks[who].W_reg;\
         STATUS = ready_queue.tasks[who].STATUS_reg;\
         BSR = ready_queue.tasks[who].BSR_reg;\
-        size = ready_queue.tasks[who].task_stack.stack_level;\
-        while(size){\
-        __asm("PUSH");\
-        TOSL = ready_queue.tasks[who].task_stack.h_stack[size-1].TOSL_reg;\
-        TOSH = ready_queue.tasks[who].task_stack.h_stack[size-1].TOSH_reg;\
-        TOSU = ready_queue.tasks[who].task_stack.h_stack[size-1].TOSU_reg;\
-        size--;\
+        size = ready_queue.tasks[who].task_stack.stack_level;\ 
+        while(size) {\
+            __asm("PUSH");\
+            TOSL = ready_queue.tasks[who].task_stack.h_stack[size].TOSL_reg;\
+            TOSH = ready_queue.tasks[who].task_stack.h_stack[size].TOSH_reg;\
+            TOSU = ready_queue.tasks[who].task_stack.h_stack[size].TOSU_reg;\
+            size--;\
         }\
     }\
 }\

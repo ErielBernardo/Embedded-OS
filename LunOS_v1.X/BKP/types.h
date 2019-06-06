@@ -8,11 +8,13 @@
 #include "config.h"
 
 #define STACK_SIZE 31
-
+#define MAX_BOTTLES 3
 
 typedef unsigned int tid;
 typedef unsigned char byte;
 typedef enum {READY = 0, RUNNING, WAITING, FINISHED, WAITING_PIPE, WAITING_SEM} t_state;
+typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
+typedef enum {FREE_ = 0, BUSY_} buffer_state;
 
 typedef struct data_stack {
   byte TOSU_reg;
@@ -35,7 +37,6 @@ typedef struct pcb {
   byte BSR_reg;
   t_state task_state;
   t_stack task_stack;
-  int task_installed; 
   void(*task_f)();
   unsigned int task_delay_time;
 } t_pcb;
@@ -46,5 +47,16 @@ typedef struct r_queue {
   int task_running;
 } t_r_queue;
 
+typedef struct {
+    bottle_state bottle_state;
+} t_bottle;
+
+typedef struct {
+    int count;
+    t_bottle bottles[MAX_BOTTLES];
+    buffer_state p_state;
+} t_buffer;
+
 #endif	/* TYPES_H */
+
 

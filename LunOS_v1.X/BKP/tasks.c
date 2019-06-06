@@ -21,7 +21,6 @@ void user_conf() {
   TRISB = 0b00000001;
   TRISC = 0b01111111;
   TRISD = 0b00001110;
-  
   PORTCbits.RC7 = 1;
   
   PORTDbits.RD4 = 1;
@@ -29,12 +28,14 @@ void user_conf() {
   PORTDbits.RD6 = 1;
   PORTDbits.RD7 = 1;
   PORTBbits.RB1 = 1;
+  //sem_init(&teste_1, 1);
+  //sem_init(&teste_2, 0);
   sem_init(&count_sem, 1);
   sem_init(&fill_sem, 0);
   sem_init(&check_sem, 0);
   sem_init(&cover_sem, 0);
   sem_init(&out_sem, 0);
-  //pipe_create(&p, &w_pipe, &r_pipe);
+  pipe_create(&p, &w_pipe, &r_pipe);
   //mem = SRAMalloc(5);
   
   global_buffer.count = 0;
@@ -45,24 +46,30 @@ void count_bottles(){
     while(1){
         sem_wait(&count_sem);
         PORTDbits.RD4 = 0;
-        while(global_buffer.count <= MAX_BOTTLES){
-            while(PORTCbits.RC6);
+        //while(global_buffer.count < MAX_BOTTLES){
+            while(PORTCbits.RC6)
+            {
+                Nop();
+            }
+            //PORTDbits.RD4 = ~PORTDbits.RD4;
+            lunos_delayTask(50);
             t_bottle bottle;
             global_buffer.bottles[global_buffer.count] = bottle;
             global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
-            global_buffer.count += 1;            
-            global_buffer.p_state = BUSY_;
-        }
-        sem_post(&fill_sem);
+            global_buffer.count += 1;
+        //}
+        global_buffer.p_state = BUSY_;
         PORTDbits.RD4 = 1;
+        sem_post(&fill_sem);
     }
 }
+
 void fill_bottle(){
     while(1){
         sem_wait(&fill_sem);
         PORTDbits.RD5 = 0;
         while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
-            Nop();
+            lunos_delayTask(100);
         }
         PORTDbits.RD5 = 1;
         sem_post(&check_sem);
@@ -124,9 +131,9 @@ void cover_bottle(){
         for (int i = 0; i < MAX_BOTTLES; i++){
             if (global_buffer.bottles[i].bottle_state == FULL) count++;
             pipe_write(&p, count);
-            PORTDbits.RD7 = 1;    
+            PORTDbits.RD7 = 1;
+            sem_post(&out_sem);
         }
-        sem_post(&out_sem);
     }
 }
 

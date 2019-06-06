@@ -21,8 +21,6 @@ void lunos_createTask(unsigned int prior, void(*f)()) {
   new_task.task_f = f;
   new_task.task_stack.stack_level = 0;
   new_task.task_delay_time = 0;
-  new_task.task_installed = 0;
-
   // Inserir nova tarefa na fila de aptos
   ready_queue.tasks[ready_queue.tasks_installed] = new_task;
   ready_queue.tasks_installed++;
@@ -106,6 +104,7 @@ void delay_decrement() {
       ready_queue.tasks[i].task_delay_time--;
       if (ready_queue.tasks[i].task_delay_time == 0) {
         ready_queue.tasks[i].task_state = READY;
+       
 #if PRIOR_SCH
         dispatcher(READY);
 #endif
