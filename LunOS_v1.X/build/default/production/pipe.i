@@ -4661,7 +4661,7 @@ void pipe_write(pipe_t *p, unsigned int data) {
 
 }
 
-void pipe_read(pipe_t *p, unsigned int *data) {
+void pipe_read(pipe_t *p, unsigned int * data) {
 
   sem_wait(p->r);
   *data = p->pipe_data[p->index_read];

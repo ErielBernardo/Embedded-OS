@@ -32,6 +32,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2143
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 2143: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"277
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 277:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"287
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 287:     struct {
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 297:     struct {
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
+"307
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 307:     struct {
+[s S15 :1 `uc 1 ]
+[n S15 . FLT0 ]
+"310
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 310:     struct {
+[s S16 :3 `uc 1 :1 `uc 1 ]
+[n S16 . . CCP2_PA2 ]
+"276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 276: typedef union {
+[u S11 `S12 1 `S13 1 `S14 1 `S15 1 `S16 1 ]
+[n S11 . . . . . . ]
+"315
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 315: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS11 ~T0 @X0 0 e@3969 ]
 "456
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 456:     struct {
 [s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -82,45 +109,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "669
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 669: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
 [v _PORTDbits `VS23 ~T0 @X0 0 e@3971 ]
-"277
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 277:     struct {
-[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S12 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"287
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 287:     struct {
-[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S13 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
-"297
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 297:     struct {
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
-"307
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 307:     struct {
-[s S15 :1 `uc 1 ]
-[n S15 . FLT0 ]
-"310
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 310:     struct {
-[s S16 :3 `uc 1 :1 `uc 1 ]
-[n S16 . . CCP2_PA2 ]
-"276
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 276: typedef union {
-[u S11 `S12 1 `S13 1 `S14 1 `S15 1 `S16 1 ]
-[n S11 . . . . . . ]
-"315
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 315: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS11 ~T0 @X0 0 e@3969 ]
 "19 ./semaphore.h
 [; ;./semaphore.h: 19: void sem_init(sem_t *s, int valor);
 [v _sem_init `(v ~T0 @X0 0 ef2`*S287`i ]
-"20
+"20 ./pipe.h
+[; ;./pipe.h: 20: void pipe_create(pipe_t *p, sem_t *w, sem_t *r);
+[v _pipe_create `(v ~T0 @X0 0 ef3`*S288`*S287`*S287 ]
+"20 ./semaphore.h
 [; ;./semaphore.h: 20: void sem_wait(sem_t *s);
 [v _sem_wait `(v ~T0 @X0 0 ef1`*S287 ]
-"21
+"66 ./kernel.h
+[; ;./kernel.h: 66: void lunos_delayTask(unsigned int time);
+[v _lunos_delayTask `(v ~T0 @X0 0 ef1`ui ]
+"21 ./semaphore.h
 [; ;./semaphore.h: 21: void sem_post(sem_t *s);
 [v _sem_post `(v ~T0 @X0 0 ef1`*S287 ]
-"50 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
 "21 ./pipe.h
 [; ;./pipe.h: 21: void pipe_write(pipe_t *p, unsigned int data);
 [v _pipe_write `(v ~T0 @X0 0 ef2`*S288`ui ]
@@ -577,450 +580,449 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _user_conf ]
 [f ]
-"21
-[; ;tasks.c: 21:   TRISB = 0b00000001;
-[e = _TRISB -> -> 1 `i `uc ]
 "22
-[; ;tasks.c: 22:   TRISC = 0b01111111;
-[e = _TRISC -> -> 127 `i `uc ]
+[; ;tasks.c: 22:     TRISB = 0b00000101;
+[e = _TRISB -> -> 5 `i `uc ]
 "23
-[; ;tasks.c: 23:   TRISD = 0b00001110;
+[; ;tasks.c: 23:     TRISC = 0b01111111;
+[e = _TRISC -> -> 127 `i `uc ]
+"24
+[; ;tasks.c: 24:     TRISD = 0b00001110;
 [e = _TRISD -> -> 14 `i `uc ]
-"25
-[; ;tasks.c: 25:   PORTCbits.RC7 = 1;
-[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
-"27
-[; ;tasks.c: 27:   PORTDbits.RD4 = 1;
-[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
-"28
-[; ;tasks.c: 28:   PORTDbits.RD5 = 1;
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
-"29
-[; ;tasks.c: 29:   PORTDbits.RD6 = 1;
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-"30
-[; ;tasks.c: 30:   PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
-"31
-[; ;tasks.c: 31:   PORTBbits.RB1 = 1;
+"26
+[; ;tasks.c: 26:     PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"28
+[; ;tasks.c: 28:     PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"30
+[; ;tasks.c: 30:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"31
+[; ;tasks.c: 31:     PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
 "32
-[; ;tasks.c: 32:   sem_init(&count_sem, 1);
-[e ( _sem_init (2 , &U _count_sem -> 1 `i ]
+[; ;tasks.c: 32:     PORTDbits.RD6 = 1;
+[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
 "33
-[; ;tasks.c: 33:   sem_init(&fill_sem, 0);
-[e ( _sem_init (2 , &U _fill_sem -> 0 `i ]
-"34
-[; ;tasks.c: 34:   sem_init(&check_sem, 0);
-[e ( _sem_init (2 , &U _check_sem -> 0 `i ]
+[; ;tasks.c: 33:     PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 "35
-[; ;tasks.c: 35:   sem_init(&cover_sem, 0);
-[e ( _sem_init (2 , &U _cover_sem -> 0 `i ]
+[; ;tasks.c: 35:     sem_init(&count_sem, 1);
+[e ( _sem_init (2 , &U _count_sem -> 1 `i ]
 "36
-[; ;tasks.c: 36:   sem_init(&out_sem, 0);
+[; ;tasks.c: 36:     sem_init(&fill_sem, 0);
+[e ( _sem_init (2 , &U _fill_sem -> 0 `i ]
+"37
+[; ;tasks.c: 37:     sem_init(&check_sem, 0);
+[e ( _sem_init (2 , &U _check_sem -> 0 `i ]
+"38
+[; ;tasks.c: 38:     sem_init(&cover_sem, 0);
+[e ( _sem_init (2 , &U _cover_sem -> 0 `i ]
+"39
+[; ;tasks.c: 39:     sem_init(&out_sem, 0);
 [e ( _sem_init (2 , &U _out_sem -> 0 `i ]
 "40
-[; ;tasks.c: 40:   global_buffer.count = 0;
+[; ;tasks.c: 40:     pipe_create(&p, &w_pipe, &r_pipe);
+[e ( _pipe_create (3 , , &U _p &U _w_pipe &U _r_pipe ]
+"43
+[; ;tasks.c: 43:     global_buffer.count = 0;
 [e = . _global_buffer 0 -> 0 `i ]
-"41
-[; ;tasks.c: 41:   global_buffer.p_state = FREE_;
+"44
+[; ;tasks.c: 44:     global_buffer.p_state = FREE_;
 [e = . _global_buffer 2 . `E2404 0 ]
-"42
-[; ;tasks.c: 42: }
+"45
+[; ;tasks.c: 45: }
 [e :UE 289 ]
 }
-"44
-[; ;tasks.c: 44: void count_bottles(){
+"47
+[; ;tasks.c: 47: void count_bottles(){
 [v _count_bottles `(v ~T0 @X0 1 ef ]
 {
 [e :U _count_bottles ]
 [f ]
-"45
-[; ;tasks.c: 45:     while(1){
+"48
+[; ;tasks.c: 48:     while(1){
 [e :U 292 ]
 {
-"46
-[; ;tasks.c: 46:         sem_wait(&count_sem);
-[e ( _sem_wait (1 &U _count_sem ]
-"47
-[; ;tasks.c: 47:         PORTDbits.RD4 = 0;
-[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
-"48
-[; ;tasks.c: 48:         while(global_buffer.count <= 3){
-[e $U 294  ]
-[e :U 295 ]
-{
 "49
-[; ;tasks.c: 49:             while(PORTCbits.RC6);
-[e $U 297  ]
-[e :U 298 ]
-[e :U 297 ]
-[e $ != -> . . _PORTCbits 0 6 `i -> 0 `i 298  ]
-[e :U 299 ]
+[; ;tasks.c: 49:         sem_wait(&count_sem);
+[e ( _sem_wait (1 &U _count_sem ]
 "50
-[; ;tasks.c: 50:             t_bottle bottle;
-[v _bottle `S280 ~T0 @X0 1 a ]
+[; ;tasks.c: 50:         PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
 "51
-[; ;tasks.c: 51:             global_buffer.bottles[global_buffer.count] = bottle;
-[e = *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux _bottle ]
+[; ;tasks.c: 51:         if (global_buffer.p_state != BUSY_) {
+[e $ ! != -> . _global_buffer 2 `ui -> . `E2404 1 `ui 294  ]
+{
 "52
-[; ;tasks.c: 52:             global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
-[e = . *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 0 ]
+[; ;tasks.c: 52:             while(global_buffer.count < 3){
+[e $U 295  ]
+[e :U 296 ]
+{
 "53
-[; ;tasks.c: 53:             global_buffer.count += 1;
-[e =+ . _global_buffer 0 -> 1 `i ]
+[; ;tasks.c: 53:                 while(PORTCbits.RC6);
+[e $U 298  ]
+[e :U 299 ]
+[e :U 298 ]
+[e $ != -> . . _PORTCbits 0 6 `i -> 0 `i 299  ]
+[e :U 300 ]
 "54
-[; ;tasks.c: 54:             global_buffer.p_state = BUSY_;
-[e = . _global_buffer 2 . `E2404 1 ]
+[; ;tasks.c: 54:                 PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
 "55
-[; ;tasks.c: 55:         }
+[; ;tasks.c: 55:                 lunos_delayTask(300);
+[e ( _lunos_delayTask (1 -> -> 300 `i `ui ]
+"56
+[; ;tasks.c: 56:                 t_bottle bottle;
+[v _bottle `S280 ~T0 @X0 1 a ]
+"57
+[; ;tasks.c: 57:                 global_buffer.bottles[global_buffer.count] = bottle;
+[e = *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux _bottle ]
+"58
+[; ;tasks.c: 58:                 global_buffer.bottles[global_buffer.count].bottle_state = EMPTY;
+[e = . *U + &U . _global_buffer 1 * -> -> . _global_buffer 0 `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 0 ]
+"59
+[; ;tasks.c: 59:                 global_buffer.count += 1;
+[e =+ . _global_buffer 0 -> 1 `i ]
+"60
+[; ;tasks.c: 60:                 PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"61
+[; ;tasks.c: 61:             }
+}
+[e :U 295 ]
+"52
+[; ;tasks.c: 52:             while(global_buffer.count < 3){
+[e $ < . _global_buffer 0 -> 3 `i 296  ]
+[e :U 297 ]
+"62
+[; ;tasks.c: 62:         }
 }
 [e :U 294 ]
-"48
-[; ;tasks.c: 48:         while(global_buffer.count <= 3){
-[e $ <= . _global_buffer 0 -> 3 `i 295  ]
-[e :U 296 ]
-"56
-[; ;tasks.c: 56:         sem_post(&fill_sem);
+"63
+[; ;tasks.c: 63:         global_buffer.p_state = BUSY_;
+[e = . _global_buffer 2 . `E2404 1 ]
+"64
+[; ;tasks.c: 64:         sem_post(&fill_sem);
 [e ( _sem_post (1 &U _fill_sem ]
-"57
-[; ;tasks.c: 57:         PORTDbits.RD4 = 1;
+"65
+[; ;tasks.c: 65:         PORTDbits.RD4 = 1;
 [e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
-"58
-[; ;tasks.c: 58:     }
+"66
+[; ;tasks.c: 66:     }
 }
 [e :U 291 ]
 [e $U 292  ]
 [e :U 293 ]
-"59
-[; ;tasks.c: 59: }
+"67
+[; ;tasks.c: 67: }
 [e :UE 290 ]
 }
-"60
-[; ;tasks.c: 60: void fill_bottle(){
+"69
+[; ;tasks.c: 69: void fill_bottle(){
 [v _fill_bottle `(v ~T0 @X0 1 ef ]
 {
 [e :U _fill_bottle ]
 [f ]
-"61
-[; ;tasks.c: 61:     while(1){
-[e :U 302 ]
-{
-"62
-[; ;tasks.c: 62:         sem_wait(&fill_sem);
-[e ( _sem_wait (1 &U _fill_sem ]
-"63
-[; ;tasks.c: 63:         PORTDbits.RD5 = 0;
-[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
-"64
-[; ;tasks.c: 64:         while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
-[e $U 304  ]
-[e :U 305 ]
-{
-"65
-[; ;tasks.c: 65:             __nop();
-[e ( ___nop ..  ]
-"66
-[; ;tasks.c: 66:         }
-}
-[e :U 304 ]
-"64
-[; ;tasks.c: 64:         while (!PORTCbits.RC0 && !PORTCbits.RC1 && !PORTCbits.RC2){
-[e $ && && ! != -> . . _PORTCbits 0 0 `i -> 0 `i ! != -> . . _PORTCbits 0 1 `i -> 0 `i ! != -> . . _PORTCbits 0 2 `i -> 0 `i 305  ]
-[e :U 306 ]
-"67
-[; ;tasks.c: 67:         PORTDbits.RD5 = 1;
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
-"68
-[; ;tasks.c: 68:         sem_post(&check_sem);
-[e ( _sem_post (1 &U _check_sem ]
-"69
-[; ;tasks.c: 69:     }
-}
-[e :U 301 ]
-[e $U 302  ]
-[e :U 303 ]
 "70
-[; ;tasks.c: 70: }
-[e :UE 300 ]
-}
+[; ;tasks.c: 70:     while(1){
+[e :U 303 ]
+{
+"71
+[; ;tasks.c: 71:         sem_wait(&fill_sem);
+[e ( _sem_wait (1 &U _fill_sem ]
 "72
-[; ;tasks.c: 72: void check_level(){
+[; ;tasks.c: 72:         PORTDbits.RD5 = 0;
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+"73
+[; ;tasks.c: 73:         PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"74
+[; ;tasks.c: 74:         lunos_delayTask(500);
+[e ( _lunos_delayTask (1 -> -> 500 `i `ui ]
+"75
+[; ;tasks.c: 75:         while (PORTCbits.RC0 && PORTCbits.RC1 && PORTCbits.RC2);
+[e $U 305  ]
+[e :U 306 ]
+[e :U 305 ]
+[e $ && && != -> . . _PORTCbits 0 0 `i -> 0 `i != -> . . _PORTCbits 0 1 `i -> 0 `i != -> . . _PORTCbits 0 2 `i -> 0 `i 306  ]
+[e :U 307 ]
+"76
+[; ;tasks.c: 76:         lunos_delayTask(200);
+[e ( _lunos_delayTask (1 -> -> 200 `i `ui ]
+"77
+[; ;tasks.c: 77:         sem_post(&check_sem);
+[e ( _sem_post (1 &U _check_sem ]
+"78
+[; ;tasks.c: 78:         PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"79
+[; ;tasks.c: 79:         PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+"80
+[; ;tasks.c: 80:     }
+}
+[e :U 302 ]
+[e $U 303  ]
+[e :U 304 ]
+"81
+[; ;tasks.c: 81: }
+[e :UE 301 ]
+}
+"83
+[; ;tasks.c: 83: void check_level(){
 [v _check_level `(v ~T0 @X0 1 ef ]
 {
 [e :U _check_level ]
 [f ]
-"73
-[; ;tasks.c: 73:     while(1){
-[e :U 309 ]
+"84
+[; ;tasks.c: 84:     while(1){
+[e :U 310 ]
 {
-"74
-[; ;tasks.c: 74:         sem_wait(&check_sem);
+"85
+[; ;tasks.c: 85:         sem_wait(&check_sem);
 [e ( _sem_wait (1 &U _check_sem ]
-"75
-[; ;tasks.c: 75:         PORTDbits.RD6 = 0;
+"86
+[; ;tasks.c: 86:         PORTDbits.RD6 = 0;
 [e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
-"76
-[; ;tasks.c: 76:         if (!PORTDbits.RD1)
-[e $ ! ! != -> . . _PORTDbits 0 1 `i -> 0 `i 311  ]
-"77
-[; ;tasks.c: 77:             global_buffer.bottles[0].bottle_state = EMPTY;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 0 ]
+"87
+[; ;tasks.c: 87:         PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"88
+[; ;tasks.c: 88:         lunos_delayTask(500);
+[e ( _lunos_delayTask (1 -> -> 500 `i `ui ]
+"89
+[; ;tasks.c: 89:         PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"90
+[; ;tasks.c: 90:         lunos_delayTask(500);
+[e ( _lunos_delayTask (1 -> -> 500 `i `ui ]
+"91
+[; ;tasks.c: 91:         while (PORTDbits.RD1 && PORTDbits.RD2 && PORTDbits.RD3);
 [e $U 312  ]
-"78
-[; ;tasks.c: 78:         else if (PORTDbits.RD1)
-[e :U 311 ]
-[e $ ! != -> . . _PORTDbits 0 1 `i -> 0 `i 313  ]
-"79
-[; ;tasks.c: 79:             global_buffer.bottles[0].bottle_state = FULL;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 1 ]
-[e $U 314  ]
-"80
-[; ;tasks.c: 80:         else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
 [e :U 313 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 314 ]
 [e :U 312 ]
-"82
-[; ;tasks.c: 82:         if (!PORTDbits.RD2)
-[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 315  ]
-"83
-[; ;tasks.c: 83:             global_buffer.bottles[1].bottle_state = EMPTY;
+[e $ && && != -> . . _PORTDbits 0 1 `i -> 0 `i != -> . . _PORTDbits 0 2 `i -> 0 `i != -> . . _PORTDbits 0 3 `i -> 0 `i 313  ]
+[e :U 314 ]
+"95
+[; ;tasks.c: 95:             global_buffer.bottles[0].bottle_state = FULL;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 1 ]
+"98
+[; ;tasks.c: 98:         if (PORTDbits.RD2)
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 315  ]
+"99
+[; ;tasks.c: 99:             global_buffer.bottles[1].bottle_state = EMPTY;
 [e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 0 ]
 [e $U 316  ]
-"84
-[; ;tasks.c: 84:         else if (PORTDbits.RD2)
+"100
+[; ;tasks.c: 100:         else
 [e :U 315 ]
-[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 317  ]
-"85
-[; ;tasks.c: 85:             global_buffer.bottles[1].bottle_state = FULL;
+"101
+[; ;tasks.c: 101:             global_buffer.bottles[1].bottle_state = FULL;
 [e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 1 ]
-[e $U 318  ]
-"86
-[; ;tasks.c: 86:         else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
-[e :U 317 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 318 ]
 [e :U 316 ]
-"88
-[; ;tasks.c: 88:         if (!PORTDbits.RD3)
-[e $ ! ! != -> . . _PORTDbits 0 3 `i -> 0 `i 319  ]
-"89
-[; ;tasks.c: 89:             global_buffer.bottles[2].bottle_state = EMPTY;
+"104
+[; ;tasks.c: 104:         if (PORTDbits.RD3)
+[e $ ! != -> . . _PORTDbits 0 3 `i -> 0 `i 317  ]
+"105
+[; ;tasks.c: 105:             global_buffer.bottles[2].bottle_state = EMPTY;
 [e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 0 ]
-[e $U 320  ]
-"90
-[; ;tasks.c: 90:         else if (PORTDbits.RD3)
-[e :U 319 ]
-[e $ ! != -> . . _PORTDbits 0 3 `i -> 0 `i 321  ]
-"91
-[; ;tasks.c: 91:             global_buffer.bottles[2].bottle_state = FULL;
+[e $U 318  ]
+"106
+[; ;tasks.c: 106:         else
+[e :U 317 ]
+"107
+[; ;tasks.c: 107:             global_buffer.bottles[2].bottle_state = FULL;
 [e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 1 ]
-[e $U 322  ]
-"92
-[; ;tasks.c: 92:         else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
-[e :U 321 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 322 ]
-[e :U 320 ]
-"93
-[; ;tasks.c: 93:         PORTDbits.RD6 = 1;
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-"94
-[; ;tasks.c: 94:         sem_post(&cover_sem);
+[e :U 318 ]
+"109
+[; ;tasks.c: 109:         lunos_delayTask(200);
+[e ( _lunos_delayTask (1 -> -> 200 `i `ui ]
+"110
+[; ;tasks.c: 110:         sem_post(&cover_sem);
 [e ( _sem_post (1 &U _cover_sem ]
-"95
-[; ;tasks.c: 95:     }
+"111
+[; ;tasks.c: 111:         PORTDbits.RD6 = 1;
+[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
+"112
+[; ;tasks.c: 112:     }
 }
-[e :U 308 ]
-[e $U 309  ]
-[e :U 310 ]
-"96
-[; ;tasks.c: 96: }
-[e :UE 307 ]
+[e :U 309 ]
+[e $U 310  ]
+[e :U 311 ]
+"113
+[; ;tasks.c: 113: }
+[e :UE 308 ]
 }
-"98
-[; ;tasks.c: 98: void cover_bottle(){
+"115
+[; ;tasks.c: 115: void cover_bottle(){
 [v _cover_bottle `(v ~T0 @X0 1 ef ]
 {
 [e :U _cover_bottle ]
 [f ]
-"99
-[; ;tasks.c: 99:     while(1){
-[e :U 325 ]
-{
-"100
-[; ;tasks.c: 100:         sem_wait(&cover_sem);
-[e ( _sem_wait (1 &U _cover_sem ]
-"101
-[; ;tasks.c: 101:         PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
-"102
-[; ;tasks.c: 102:         if (PORTCbits.RC3){
-[e $ ! != -> . . _PORTCbits 0 3 `i -> 0 `i 327  ]
-{
-"103
-[; ;tasks.c: 103:             if(global_buffer.bottles[0].bottle_state == FULL)
-[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2398 1 `ui 328  ]
-"104
-[; ;tasks.c: 104:                 global_buffer.bottles[0].bottle_state = CLOSED;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 2 ]
-[e $U 329  ]
-"105
-[; ;tasks.c: 105:             else if (PORTCbits.RC3)
-[e :U 328 ]
-[e $ ! != -> . . _PORTCbits 0 3 `i -> 0 `i 330  ]
-"106
-[; ;tasks.c: 106:                 global_buffer.bottles[0].bottle_state = FAIL;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 3 ]
-[e $U 331  ]
-"107
-[; ;tasks.c: 107:             else global_buffer.bottles[0].bottle_state = global_buffer.bottles[0].bottle_state;
-[e :U 330 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 331 ]
-[e :U 329 ]
-"108
-[; ;tasks.c: 108:         }
-}
-[e :U 327 ]
-"109
-[; ;tasks.c: 109:         if (PORTCbits.RC4){
-[e $ ! != -> . . _PORTCbits 0 4 `i -> 0 `i 332  ]
-{
-"110
-[; ;tasks.c: 110:             if(global_buffer.bottles[1].bottle_state == FULL)
-[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2398 1 `ui 333  ]
-"111
-[; ;tasks.c: 111:                 global_buffer.bottles[1].bottle_state = CLOSED;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 2 ]
-[e $U 334  ]
-"112
-[; ;tasks.c: 112:             else if (PORTCbits.RC4)
-[e :U 333 ]
-[e $ ! != -> . . _PORTCbits 0 4 `i -> 0 `i 335  ]
-"113
-[; ;tasks.c: 113:                 global_buffer.bottles[1].bottle_state = FAIL;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 3 ]
-[e $U 336  ]
-"114
-[; ;tasks.c: 114:             else global_buffer.bottles[1].bottle_state = global_buffer.bottles[1].bottle_state;
-[e :U 335 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 336 ]
-[e :U 334 ]
-"115
-[; ;tasks.c: 115:         }
-}
-[e :U 332 ]
 "116
-[; ;tasks.c: 116:         if (PORTCbits.RC5){
-[e $ ! != -> . . _PORTCbits 0 5 `i -> 0 `i 337  ]
+[; ;tasks.c: 116:     while(1){
+[e :U 321 ]
 {
 "117
-[; ;tasks.c: 117:             if(global_buffer.bottles[2].bottle_state == FULL)
-[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2398 1 `ui 338  ]
+[; ;tasks.c: 117:         sem_wait(&cover_sem);
+[e ( _sem_wait (1 &U _cover_sem ]
 "118
-[; ;tasks.c: 118:                 global_buffer.bottles[2].bottle_state = CLOSED;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 2 ]
-[e $U 339  ]
+[; ;tasks.c: 118:         PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "119
-[; ;tasks.c: 119:             else if (PORTCbits.RC5)
-[e :U 338 ]
-[e $ ! != -> . . _PORTCbits 0 5 `i -> 0 `i 340  ]
+[; ;tasks.c: 119:         PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
 "120
-[; ;tasks.c: 120:                 global_buffer.bottles[2].bottle_state = FAIL;
-[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 3 ]
-[e $U 341  ]
+[; ;tasks.c: 120:         lunos_delayTask(500);
+[e ( _lunos_delayTask (1 -> -> 500 `i `ui ]
 "121
-[; ;tasks.c: 121:             else global_buffer.bottles[2].bottle_state = global_buffer.bottles[2].bottle_state;
-[e :U 340 ]
-[e = . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . *U + &U . _global_buffer 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 ]
-[e :U 341 ]
-[e :U 339 ]
-"122
-[; ;tasks.c: 122:         }
-}
-[e :U 337 ]
-"123
-[; ;tasks.c: 123:         int count = 0;
-[v _count `i ~T0 @X0 1 a ]
-[e = _count -> 0 `i ]
+[; ;tasks.c: 121:         while (PORTCbits.RC3 && PORTCbits.RC4 && PORTCbits.RC5);
+[e $U 323  ]
+[e :U 324 ]
+[e :U 323 ]
+[e $ && && != -> . . _PORTCbits 0 3 `i -> 0 `i != -> . . _PORTCbits 0 4 `i -> 0 `i != -> . . _PORTCbits 0 5 `i -> 0 `i 324  ]
+[e :U 325 ]
 "124
-[; ;tasks.c: 124:         for (int i = 0; i < 3; i++){
+[; ;tasks.c: 124:                 global_buffer.bottles[0].bottle_state = CLOSED;
+[e = . *U + &U . _global_buffer 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 . `E2398 2 ]
+"143
+[; ;tasks.c: 143:         unsigned int count = 0;
+[v _count `ui ~T0 @X0 1 a ]
+[e = _count -> -> 0 `i `ui ]
+"144
+[; ;tasks.c: 144:         for (int i = 0; i < 3; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 3 `i 342  ]
-[e $U 343  ]
-[e :U 342 ]
+[e $ < _i -> 3 `i 326  ]
+[e $U 327  ]
+[e :U 326 ]
 {
-"125
-[; ;tasks.c: 125:             if (global_buffer.bottles[i].bottle_state == FULL) count++;
-[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> _i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2398 1 `ui 345  ]
-[e ++ _count -> 1 `i ]
-[e :U 345 ]
-"126
-[; ;tasks.c: 126:             pipe_write(&p, count);
-[e ( _pipe_write (2 , &U _p -> _count `ui ]
-"127
-[; ;tasks.c: 127:             PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
-"128
-[; ;tasks.c: 128:         }
+"145
+[; ;tasks.c: 145:             if (global_buffer.bottles[i].bottle_state == FULL) count++;
+[e $ ! == -> . *U + &U . _global_buffer 1 * -> -> _i `ui `ux -> -> # *U &U . _global_buffer 1 `ui `ux 0 `ui -> . `E2398 1 `ui 329  ]
+[e ++ _count -> -> 1 `i `ui ]
+[e :U 329 ]
+"146
+[; ;tasks.c: 146:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 3 `i 342  ]
-[e :U 343 ]
+[e $ < _i -> 3 `i 326  ]
+[e :U 327 ]
 }
-"129
-[; ;tasks.c: 129:         sem_post(&out_sem);
+"148
+[; ;tasks.c: 148:         pipe_write(&p, (unsigned int)count);
+[e ( _pipe_write (2 , &U _p _count ]
+"149
+[; ;tasks.c: 149:         sem_post(&out_sem);
 [e ( _sem_post (1 &U _out_sem ]
-"130
-[; ;tasks.c: 130:     }
+"150
+[; ;tasks.c: 150:         PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"151
+[; ;tasks.c: 151:         PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"152
+[; ;tasks.c: 152:     }
 }
-[e :U 324 ]
-[e $U 325  ]
-[e :U 326 ]
-"131
-[; ;tasks.c: 131: }
-[e :UE 323 ]
+[e :U 320 ]
+[e $U 321  ]
+[e :U 322 ]
+"153
+[; ;tasks.c: 153: }
+[e :UE 319 ]
 }
-"133
-[; ;tasks.c: 133: void count_out(){
+"155
+[; ;tasks.c: 155: void count_out(){
 [v _count_out `(v ~T0 @X0 1 ef ]
 {
 [e :U _count_out ]
 [f ]
-"134
-[; ;tasks.c: 134:     while(1){
-[e :U 348 ]
+"156
+[; ;tasks.c: 156:     while(1){
+[e :U 332 ]
 {
-"135
-[; ;tasks.c: 135:         byte pip;
-[v _pip `uc ~T0 @X0 1 a ]
-"136
-[; ;tasks.c: 136:         sem_wait(&out_sem);
+"157
+[; ;tasks.c: 157:         unsigned int n;
+[v _n `ui ~T0 @X0 1 a ]
+"158
+[; ;tasks.c: 158:         unsigned int count = 0;
+[v _count `ui ~T0 @X0 1 a ]
+[e = _count -> -> 0 `i `ui ]
+"159
+[; ;tasks.c: 159:         sem_wait(&out_sem);
 [e ( _sem_wait (1 &U _out_sem ]
-"137
-[; ;tasks.c: 137:         PORTBbits.RB1 = 0;
+"160
+[; ;tasks.c: 160:         PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"138
-[; ;tasks.c: 138:         pipe_read(&p, &pip);
-[e ( _pipe_read (2 , &U _p -> &U _pip `*ui ]
-"139
-[; ;tasks.c: 139:         sem_post(&count_sem);
-[e ( _sem_post (1 &U _count_sem ]
-"140
-[; ;tasks.c: 140:         PORTBbits.RB1 = 1;
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"141
-[; ;tasks.c: 141:     }
+"161
+[; ;tasks.c: 161:         PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"162
+[; ;tasks.c: 162:         pipe_read(&p, &n);
+[e ( _pipe_read (2 , &U _p &U _n ]
+"163
+[; ;tasks.c: 163:         while (count < n){
+[e $U 334  ]
+[e :U 335 ]
+{
+"164
+[; ;tasks.c: 164:             while(PORTBbits.RB2);
+[e $U 337  ]
+[e :U 338 ]
+[e :U 337 ]
+[e $ != -> . . _PORTBbits 0 2 `i -> 0 `i 338  ]
+[e :U 339 ]
+"165
+[; ;tasks.c: 165:             lunos_delayTask(200);
+[e ( _lunos_delayTask (1 -> -> 200 `i `ui ]
+"166
+[; ;tasks.c: 166:             count++;
+[e ++ _count -> -> 1 `i `ui ]
+"167
+[; ;tasks.c: 167:         }
 }
-[e :U 347 ]
-[e $U 348  ]
-[e :U 349 ]
-"142
-[; ;tasks.c: 142: }
-[e :UE 346 ]
+[e :U 334 ]
+"163
+[; ;tasks.c: 163:         while (count < n){
+[e $ < _count _n 335  ]
+[e :U 336 ]
+"168
+[; ;tasks.c: 168:         PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"169
+[; ;tasks.c: 169:         lunos_delayTask(200);
+[e ( _lunos_delayTask (1 -> -> 200 `i `ui ]
+"170
+[; ;tasks.c: 170:         PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"171
+[; ;tasks.c: 171:         PORTBbits.RB1 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"172
+[; ;tasks.c: 172:         lunos_delayTask(200);
+[e ( _lunos_delayTask (1 -> -> 200 `i `ui ]
+"174
+[; ;tasks.c: 174:         sem_post(&count_sem);
+[e ( _sem_post (1 &U _count_sem ]
+"175
+[; ;tasks.c: 175:         global_buffer.p_state = FREE_;
+[e = . _global_buffer 2 . `E2404 0 ]
+"176
+[; ;tasks.c: 176:         global_buffer.count = 0;
+[e = . _global_buffer 0 -> 0 `i ]
+"177
+[; ;tasks.c: 177:         PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"178
+[; ;tasks.c: 178:     }
+}
+[e :U 331 ]
+[e $U 332  ]
+[e :U 333 ]
+"179
+[; ;tasks.c: 179: }
+[e :UE 330 ]
 }

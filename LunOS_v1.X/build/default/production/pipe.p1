@@ -498,7 +498,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 288 ]
 }
 "27
-[; ;pipe.c: 27: void pipe_read(pipe_t *p, unsigned int *data) {
+[; ;pipe.c: 27: void pipe_read(pipe_t *p, unsigned int * data) {
 [v _pipe_read `(v ~T0 @X0 1 ef2`*S6`*ui ]
 {
 [e :U _pipe_read ]
