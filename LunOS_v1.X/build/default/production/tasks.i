@@ -4432,6 +4432,7 @@ void cover_bottle();
 void count_out();
 
 
+
 typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
 typedef enum {FREE_ = 0, BUSY_} buffer_state;
 
@@ -4625,7 +4626,7 @@ int sem_get_value(sem_t s);
 extern t_r_queue ready_queue;
 int who = 0;
 int size = 0;
-# 65 "./kernel.h"
+# 66 "./kernel.h"
 void lunos_createTask(unsigned int prior, void(*f)());
 void lunos_delayTask(unsigned int time);
 void lunos_exit();
@@ -4664,6 +4665,8 @@ void SRAMInitHeap(void);
 
 
 
+unsigned int data_PIPE;
+
 unsigned char* mem;
 
 sem_t count_sem, fill_sem, check_sem, cover_sem, out_sem, w_pipe, r_pipe;
@@ -4696,7 +4699,7 @@ void user_conf() {
     global_buffer.count = 0;
     global_buffer.p_state = FREE_;
 }
-
+# 61 "tasks.c"
 void count_bottles(){
     while(1){
         sem_wait(&count_sem);
@@ -4724,11 +4727,12 @@ void fill_bottle(){
         sem_wait(&fill_sem);
         PORTDbits.RD5 = 0;
         PORTCbits.RC7 = 0;
+        lunos_delayTask(300);
+        PORTCbits.RC7 = 1;
         lunos_delayTask(500);
         while (PORTCbits.RC0 && PORTCbits.RC1 && PORTCbits.RC2);
         lunos_delayTask(200);
         sem_post(&check_sem);
-        PORTCbits.RC7 = 1;
         PORTDbits.RD5 = 1;
     }
 }
@@ -4742,24 +4746,8 @@ void check_level(){
         PORTCbits.RC7 = 1;
         lunos_delayTask(500);
         while (PORTDbits.RD1 && PORTDbits.RD2 && PORTDbits.RD3);
-
-
-
-            global_buffer.bottles[0].bottle_state = FULL;
-
-
-        if (PORTDbits.RD2)
-            global_buffer.bottles[1].bottle_state = EMPTY;
-        else
-            global_buffer.bottles[1].bottle_state = FULL;
-
-
-        if (PORTDbits.RD3)
-            global_buffer.bottles[2].bottle_state = EMPTY;
-        else
-            global_buffer.bottles[2].bottle_state = FULL;
-
         lunos_delayTask(200);
+# 124 "tasks.c"
         sem_post(&cover_sem);
         PORTDbits.RD6 = 1;
     }
@@ -4772,16 +4760,13 @@ void cover_bottle(){
         PORTCbits.RC7 = 0;
         lunos_delayTask(500);
         while (PORTCbits.RC3 && PORTCbits.RC4 && PORTCbits.RC5);
+        lunos_delayTask(200);
 
 
                 global_buffer.bottles[0].bottle_state = CLOSED;
-# 143 "tasks.c"
-        unsigned int count = 0;
-        for (int i = 0; i < 3; i++){
-            if (global_buffer.bottles[i].bottle_state == FULL) count++;
-        }
-
-        pipe_write(&p, (unsigned int)count);
+# 159 "tasks.c"
+        unsigned int count = 3;
+        pipe_write(&p, count);
         sem_post(&out_sem);
         PORTCbits.RC7 = 1;
         PORTDbits.RD7 = 1;
@@ -4790,13 +4775,14 @@ void cover_bottle(){
 
 void count_out(){
     while(1){
-        unsigned int n;
+        unsigned int data;
         unsigned int count = 0;
         sem_wait(&out_sem);
         PORTBbits.RB1 = 0;
         PORTCbits.RC7 = 0;
-        pipe_read(&p, &n);
-        while (count < n){
+        pipe_read(&p, &data);
+        data_PIPE = data;
+        while (count < data){
             while(PORTBbits.RB2);
             lunos_delayTask(200);
             count++;

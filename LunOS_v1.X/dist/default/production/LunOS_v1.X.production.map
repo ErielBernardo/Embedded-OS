@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\LunOS_v1.X.production.sym \
   --cmf=dist/default/production\LunOS_v1.X.production.cmf -z -Q18F4520 \
-  -oC:\Users\Eriel\AppData\Local\Temp\s2g0.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Eriel\AppData\Local\Temp\s8r4.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LunOS_v1.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0558h-05FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Eriel\AppData\Local\Temp\s2g0.o \
+  C:\Users\Eriel\AppData\Local\Temp\s8r4.o \
   dist/default/production\LunOS_v1.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Eriel\AppData\Local\Temp\s2g0.o
+C:\Users\Eriel\AppData\Local\Temp\s8r4.o
                 stack                               558      558       A8      558       2
                 init                                  C        C        8        4       0
                 reset_vec                             0        0        4        0       0
@@ -44,40 +44,40 @@ C:\Users\Eriel\AppData\Local\Temp\s2g0.o
 dist/default/production\LunOS_v1.X.production.o
                 intcode                               8        8        4        4       0
                 temp                                 47       47       20        1       1
-                text26                             1484     1484       96        4       0
+                text26                             13A6     13A6       96        4       0
                 text25                              996      996      110        4       0
                 intcode_body                         14       14      4C8        4       0
                 text23                              DCA      DCA      108        4       0
-                text22                             1260     1260       C8        4       0
+                text22                             1182     1182       C8        4       0
                 text21                              CC0      CC0      10A        4       0
-                text20                             10B4     10B4       DE        4       0
-                text19                             171E     171E       6C        4       0
-                text18                             1826     1826       44        4       0
-                text17                             178A     178A       52        4       0
+                text20                             1640     1640       5C        4       0
+                text19                             173E     173E       50        4       0
+                text18                             16EE     16EE       50        4       0
+                text17                             169C     169C       52        4       0
                 text16                              ED2      ED2      102        4       0
                 text15                              FD4      FD4       E0        4       0
-                text14                             15AA     15AA       86        4       0
-                text13                             18C4     18C4        4        4       0
-                text12                             18AE     18AE       10        4       0
-                text11                             189C     189C       12        4       0
-                text10                             1328     1328       BC        4       0
-                text9                              151A     151A       90        4       0
-                text8                              18BE     18BE        6        4       0
+                text14                             14CC     14CC       86        4       0
+                text13                             1832     1832        4        4       0
+                text12                             181C     181C       10        4       0
+                text11                             180A     180A       12        4       0
+                text10                             124A     124A       BC        4       0
+                text9                              143C     143C       90        4       0
+                text8                              182C     182C        6        4       0
                 text7                               4DC      4DC      4BA        4       0
-                text6                              1192     1192       CE        4       0
+                text6                              10B4     10B4       CE        4       0
                 text5                               BB4      BB4      10C        4       0
-                text4                              186A     186A       32        4       0
-                text3                              16AE     16AE       70        4       0
+                text4                              17D8     17D8       32        4       0
+                text3                              15D0     15D0       70        4       0
                 text2                               AA6      AA6      10E        4       0
-                text1                              13E4     13E4       A0        4       0
-                text0                              1630     1630       7E        4       0
+                text1                              1306     1306       A0        4       0
+                text0                              1552     1552       7E        4       0
                 cstackCOMRAM                         67       67        E        1       1
                 bssBIGRAM                            C0       C0      498       C0       1
                 bssBANK0                             80       80       40       80       1
                 dataCOMRAM                           75       75        2        1       1
                 bssCOMRAM                             1        1       46        1       1
-                cinit                              17DC     17DC       4A        4       0
-                idataCOMRAM                        18C8     18C8        2        4       0
+                cinit                              178E     178E       4A        4       0
+                idataCOMRAM                        1836     1836        2        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -87,35 +87,35 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        4         0
                 init                                  C        C        8         0
                 reset_vec                             0        0        4         0
-                text26                             1484     1484       96         0
+                text26                             13A6     13A6       96         0
                 text25                              996      996      110         0
                 intcode_body                         14       14      4C8         0
                 text23                              DCA      DCA      108         0
-                text22                             1260     1260       C8         0
+                text22                             1182     1182       C8         0
                 text21                              CC0      CC0      10A         0
-                text20                             10B4     10B4       DE         0
-                text19                             171E     171E       6C         0
-                text18                             1826     1826       44         0
-                text17                             178A     178A       52         0
+                text20                             1640     1640       5C         0
+                text19                             173E     173E       50         0
+                text18                             16EE     16EE       50         0
+                text17                             169C     169C       52         0
                 text16                              ED2      ED2      102         0
                 text15                              FD4      FD4       E0         0
-                text14                             15AA     15AA       86         0
-                text13                             18C4     18C4        4         0
-                text12                             18AE     18AE       10         0
-                text11                             189C     189C       12         0
-                text10                             1328     1328       BC         0
-                text9                              151A     151A       90         0
-                text8                              18BE     18BE        6         0
+                text14                             14CC     14CC       86         0
+                text13                             1832     1832        4         0
+                text12                             181C     181C       10         0
+                text11                             180A     180A       12         0
+                text10                             124A     124A       BC         0
+                text9                              143C     143C       90         0
+                text8                              182C     182C        6         0
                 text7                               4DC      4DC      4BA         0
-                text6                              1192     1192       CE         0
+                text6                              10B4     10B4       CE         0
                 text5                               BB4      BB4      10C         0
-                text4                              186A     186A       32         0
-                text3                              16AE     16AE       70         0
+                text4                              17D8     17D8       32         0
+                text3                              15D0     15D0       70         0
                 text2                               AA6      AA6      10E         0
-                text1                              13E4     13E4       A0         0
-                text0                              1630     1630       7E         0
-                cinit                              17DC     17DC       4A         0
-                idataCOMRAM                        18C8     18C8        2         0
+                text1                              1306     1306       A0         0
+                text0                              1552     1552       7E         0
+                cinit                              178E     178E       4A         0
+                idataCOMRAM                        1836     1836        2         0
 
         CLASS   CONST          
 
@@ -167,7 +167,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  000076  000077         1       1  COMRAM  
-                intcode                        000008  0018C2  0018CA         4       0  CODE    
+                intcode                        000008  001830  001838         4       0  CODE    
                 bssBANK0                       000080  000040  0000C0        80       1  BANK0   
                 bssBIGRAM                      0000C0  000498  000558        C0       1  BIGRAM  
                 stack                          000558  0000A8  000600       558       2  STACK   
@@ -182,15 +182,15 @@ UNUSED ADDRESS RANGES
         BIGRAM           000077-00007F                9
                          000558-0005FF               A8
         CODE             000004-000007                4
-                         0018CA-007FFF             6736
+                         001838-007FFF             67C8
         COMRAM           000077-00007F                9
         CONST            000004-000007                4
-                         0018CA-007FFF             6736
+                         001838-007FFF             67C8
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      0018CA-007FFF             6736
+        MEDIUMCONST      001838-007FFF             67C8
         RAM              000558-0005FF               A8
         SFR              000F80-000FFF               80
-        SMALLCONST       0018CA-007FFF              100
+        SMALLCONST       001838-007FFF              100
 
                                   Symbol Table
 
@@ -201,7 +201,7 @@ _ISR_timer0                intcode      000008
 _PORTBbits                 (abs)        000F81
 _PORTCbits                 (abs)        000F82
 _PORTDbits                 (abs)        000F83
-_SRAMInitHeap              text6        001192
+_SRAMInitHeap              text6        0010B4
 _STATUS                    (abs)        000FD8
 _STKPTR                    (abs)        000FFC
 _T0CONbits                 (abs)        000FD5
@@ -398,79 +398,79 @@ __S1                       (abs)        000558
 __S2                       (abs)        000600
 ___inthi_sp                stack        000590
 ___intlo_sp                stack        0005C8
-___lwmod                   text10       001328
+___lwmod                   text10       00124A
 ___param_bank              (abs)        000000
 ___rparam_used             (abs)        000001
 ___sp                      stack        000558
-___wmul                    text26       001484
+___wmul                    text26       0013A6
 __accesstop                (abs)        000080
 __activetblptr             (abs)        000000
 __end_of_ISR_timer0        intcode_body 0004DC
-__end_of_SRAMInitHeap      text6        001260
-__end_of___lwmod           text10       0013E4
-__end_of___wmul            text26       00151A
-__end_of__initialization   cinit        001820
-__end_of_check_level       text19       00178A
-__end_of_config_INT0       text12       0018BE
-__end_of_config_timer0     text11       0018AE
-__end_of_count_bottles     text14       001630
-__end_of_count_out         text22       001328
-__end_of_cover_bottle      text20       001192
+__end_of_SRAMInitHeap      text6        001182
+__end_of___lwmod           text10       001306
+__end_of___wmul            text26       00143C
+__end_of__initialization   cinit        0017D2
+__end_of_check_level       text19       00178E
+__end_of_config_INT0       text12       00182C
+__end_of_config_timer0     text11       00181C
+__end_of_count_bottles     text14       001552
+__end_of_count_out         text22       00124A
+__end_of_cover_bottle      text20       00169C
 __end_of_delay_decrement   text25       000AA6
 __end_of_dispatcher        text7        000996
-__end_of_fill_bottle       text18       00186A
+__end_of_fill_bottle       text18       00173E
 __end_of_lunos_createTask  text5        000CC0
-__end_of_lunos_delayTask   text17       0017DC
-__end_of_lunos_init        text4        00189C
-__end_of_main              text0        0016AE
+__end_of_lunos_delayTask   text17       0016EE
+__end_of_lunos_init        text4        00180A
+__end_of_main              text0        0015D0
 __end_of_pipe_create       text2        000BB4
 __end_of_pipe_read         text23       000ED2
 __end_of_pipe_write        text21       000DCA
-__end_of_round_robin       text9        0015AA
-__end_of_scheduler         text8        0018C4
-__end_of_sem_init          text3        00171E
+__end_of_round_robin       text9        0014CC
+__end_of_scheduler         text8        001832
+__end_of_sem_init          text3        001640
 __end_of_sem_post          text16       000FD4
 __end_of_sem_wait          text15       0010B4
-__end_of_task_idle         text13       0018C8
-__end_of_user_conf         text1        001484
-__initialization           cinit        0017DC
+__end_of_task_idle         text13       001836
+__end_of_user_conf         text1        0013A6
+__initialization           cinit        00178E
 __mediumconst              mediumconst  000000
 __pbssBANK0                bssBANK0     000080
 __pbssBIGRAM               bssBIGRAM    0000C0
 __pbssCOMRAM               bssCOMRAM    000001
-__pcinit                   cinit        0017DC
+__pcinit                   cinit        00178E
 __pcstackCOMRAM            cstackCOMRAM 000067
 __pdataCOMRAM              dataCOMRAM   000075
-__pidataCOMRAM             idataCOMRAM  0018C8
+__pidataCOMRAM             idataCOMRAM  001836
 __pintcode                 intcode      000008
 __pintcode_body            intcode_body 000014
-__ptext0                   text0        001630
-__ptext1                   text1        0013E4
-__ptext10                  text10       001328
-__ptext11                  text11       00189C
-__ptext12                  text12       0018AE
-__ptext13                  text13       0018C4
-__ptext14                  text14       0015AA
+__ptext0                   text0        001552
+__ptext1                   text1        001306
+__ptext10                  text10       00124A
+__ptext11                  text11       00180A
+__ptext12                  text12       00181C
+__ptext13                  text13       001832
+__ptext14                  text14       0014CC
 __ptext15                  text15       000FD4
 __ptext16                  text16       000ED2
-__ptext17                  text17       00178A
-__ptext18                  text18       001826
-__ptext19                  text19       00171E
+__ptext17                  text17       00169C
+__ptext18                  text18       0016EE
+__ptext19                  text19       00173E
 __ptext2                   text2        000AA6
-__ptext20                  text20       0010B4
+__ptext20                  text20       001640
 __ptext21                  text21       000CC0
-__ptext22                  text22       001260
+__ptext22                  text22       001182
 __ptext23                  text23       000DCA
 __ptext25                  text25       000996
-__ptext26                  text26       001484
+__ptext26                  text26       0013A6
 __ptext27                  text27       000000
-__ptext3                   text3        0016AE
-__ptext4                   text4        00186A
+__ptext3                   text3        0015D0
+__ptext4                   text4        0017D8
 __ptext5                   text5        000BB4
-__ptext6                   text6        001192
+__ptext6                   text6        0010B4
 __ptext7                   text7        0004DC
-__ptext8                   text8        0018BE
-__ptext9                   text9        00151A
+__ptext8                   text8        00182C
+__ptext9                   text9        00143C
 __ramtop                   ramtop       000600
 __size_of_ISR_timer0       (abs)        000000
 __size_of_SRAMInitHeap     (abs)        000000
@@ -501,24 +501,24 @@ __size_of_task_idle        (abs)        000000
 __size_of_user_conf        (abs)        000000
 __smallconst               smallconst   000000
 __uDynamicHeap             bssBIGRAM    000358
-_check_level               text19       00171E
+_check_level               text19       00173E
 _check_sem                 bssCOMRAM    00000B
-_config_INT0               text12       0018AE
-_config_timer0             text11       00189C
-_count_bottles             text14       0015AA
-_count_out                 text22       001260
+_config_INT0               text12       00181C
+_config_timer0             text11       00180A
+_count_bottles             text14       0014CC
+_count_out                 text22       001182
 _count_sem                 bssCOMRAM    00002B
-_cover_bottle              text20       0010B4
+_cover_bottle              text20       001640
 _cover_sem                 bssBANK0     0000B0
 _delay_decrement           text25       000996
 _dispatcher                text7        0004DC
-_fill_bottle               text18       001826
+_fill_bottle               text18       0016EE
 _fill_sem                  bssCOMRAM    00001B
 _global_buffer             bssCOMRAM    000001
 _lunos_createTask          text5        000BB4
-_lunos_delayTask           text17       00178A
-_lunos_init                text4        00186A
-_main                      text0        001630
+_lunos_delayTask           text17       00169C
+_lunos_init                text4        0017D8
+_main                      text0        001552
 _out_sem                   bssBANK0     0000A0
 _p                         bssCOMRAM    00003B
 _pipe_create               text2        000AA6
@@ -527,18 +527,18 @@ _pipe_write                text21       000CC0
 _quantum                   dataCOMRAM   000075
 _r_pipe                    bssBANK0     000080
 _ready_queue               bssBIGRAM    0000C0
-_round_robin               text9        00151A
-_scheduler                 text8        0018BE
-_sem_init                  text3        0016AE
+_round_robin               text9        00143C
+_scheduler                 text8        00182C
+_sem_init                  text3        0015D0
 _sem_post                  text16       000ED2
 _sem_wait                  text15       000FD4
 _size                      bssCOMRAM    000007
-_task_idle                 text13       0018C4
-_user_conf                 text1        0013E4
+_task_idle                 text13       001832
+_user_conf                 text1        001306
 _w_pipe                    bssBANK0     000090
 _who                       bssCOMRAM    000009
 btemp                      temp         000047
-end_of_initialization      cinit        001820
+end_of_initialization      cinit        0017D2
 int_func                   intcode_body 000014
 intlevel0                  text         000000
 intlevel1                  text         000000
@@ -554,7 +554,7 @@ ltemp2                     temp         00004F
 stackhi                    (abs)        0005FF
 stacklo                    (abs)        000558
 start                      init         00000C
-start_initialization       cinit        0017DC
+start_initialization       cinit        00178E
 ttemp0                     temp         000047
 ttemp1                     temp         00004A
 ttemp2                     temp         00004D
@@ -609,7 +609,7 @@ Total ram usage:        0 bytes
 
  *************** function _user_conf *****************
  Defined at:
-		line 20 in file "tasks.c"
+		line 22 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1022,7 +1022,7 @@ Total ram usage:        0 bytes
 
  *************** function _count_bottles *****************
  Defined at:
-		line 47 in file "tasks.c"
+		line 61 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1165,7 +1165,7 @@ Total ram usage:        0 bytes
 
  *************** function _fill_bottle *****************
  Defined at:
-		line 69 in file "tasks.c"
+		line 83 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1197,7 +1197,7 @@ Total ram usage:        0 bytes
 
  *************** function _check_level *****************
  Defined at:
-		line 83 in file "tasks.c"
+		line 98 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1229,12 +1229,11 @@ Total ram usage:        0 bytes
 
  *************** function _cover_bottle *****************
  Defined at:
-		line 115 in file "tasks.c"
+		line 129 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2  [STACK] int 
-  count           2  [STACK] unsigned int 
+  count           2    0        unsigned int 
  Return value:  Size  Location     Type
                   1  [STACK] void 
  Registers used:
@@ -1296,11 +1295,11 @@ Total ram usage:        0 bytes
 
  *************** function _count_out *****************
  Defined at:
-		line 155 in file "tasks.c"
+		line 167 in file "tasks.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  n               2  [STACK] unsigned int 
+  data            2  [STACK] unsigned int 
   count           2  [STACK] unsigned int 
  Return value:  Size  Location     Type
                   1  [STACK] void 
@@ -1335,7 +1334,7 @@ Total ram usage:        0 bytes
   p               2  [STACK] PTR struct pipe
 		 -> p(12), 
   data            2  [STACK] PTR unsigned int 
-		 -> n(2), 
+		 -> data(2), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -1459,57 +1458,57 @@ MODULE INFORMATION
 Module		Function		Class		Link	Load	Size
 semaphore.c
 		_sem_wait      		CODE           	0FD4	0000	225
-		_sem_init      		CODE           	16AE	0000	113
+		_sem_init      		CODE           	15D0	0000	113
 		_sem_post      		CODE           	0ED2	0000	259
 
 semaphore.c estimated size: 597
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
-		___lwmod       		CODE           	1328	0000	189
+		___lwmod       		CODE           	124A	0000	189
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c estimated size: 189
 
 sralloc.c
-		_SRAMInitHeap  		CODE           	1192	0000	207
+		_SRAMInitHeap  		CODE           	10B4	0000	207
 
 sralloc.c estimated size: 207
 
 int0_test.c
 		_ISR_timer0    		CODE           	0008	0000	1229
-		_config_INT0   		CODE           	18AE	0000	17
-		_config_timer0 		CODE           	189C	0000	19
+		_config_INT0   		CODE           	181C	0000	17
+		_config_timer0 		CODE           	180A	0000	19
 
 int0_test.c estimated size: 1265
 
 tasks.c
-		_count_out     		CODE           	1260	0000	201
-		_cover_bottle  		CODE           	10B4	0000	223
-		_count_bottles 		CODE           	15AA	0000	135
-		_check_level   		CODE           	171E	0000	109
-		_user_conf     		CODE           	13E4	0000	161
-		_fill_bottle   		CODE           	1826	0000	69
+		_count_out     		CODE           	1182	0000	201
+		_cover_bottle  		CODE           	1640	0000	93
+		_count_bottles 		CODE           	14CC	0000	135
+		_check_level   		CODE           	173E	0000	81
+		_user_conf     		CODE           	1306	0000	161
+		_fill_bottle   		CODE           	16EE	0000	81
 
-tasks.c estimated size: 898
+tasks.c estimated size: 752
 
 kernel.c
 		_delay_decrement		CODE           	0996	0000	273
-		_scheduler     		CODE           	18BE	0000	7
-		_round_robin   		CODE           	151A	0000	145
+		_scheduler     		CODE           	182C	0000	7
+		_round_robin   		CODE           	143C	0000	145
 		_dispatcher    		CODE           	04DC	0000	1211
 		_lunos_createTask		CODE           	0BB4	0000	269
-		_lunos_init    		CODE           	186A	0000	51
-		_task_idle     		CODE           	18C4	0000	5
-		_lunos_delayTask		CODE           	178A	0000	83
+		_lunos_init    		CODE           	17D8	0000	51
+		_task_idle     		CODE           	1832	0000	5
+		_lunos_delayTask		CODE           	169C	0000	83
 
 kernel.c estimated size: 2044
 
 shared
-		__initialization		CODE           	17DC	0000	69
+		__initialization		CODE           	178E	0000	69
 
 shared estimated size: 69
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
-		___wmul        		CODE           	1484	0000	151
+		___wmul        		CODE           	13A6	0000	151
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c estimated size: 151
 
@@ -1521,7 +1520,7 @@ pipe.c
 pipe.c estimated size: 803
 
 main.c
-		_main          		CODE           	1630	0000	127
+		_main          		CODE           	1552	0000	127
 
 main.c estimated size: 127
 

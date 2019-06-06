@@ -17,6 +17,7 @@ int size = 0;
 #define ENABLE_ALL_INTERRUPTS() INTCONbits.GIE = 1
 #define DISABLE_ALL_INTERRUPTS() INTCONbits.GIE = 0
 
+// ALTERADA *********** RESTORE_CONTEXT *********************************************************************
 // Rotinas para tratamento de contexto
 #define SAVE_CONTEXT(state) {\
     who = ready_queue.task_running;\

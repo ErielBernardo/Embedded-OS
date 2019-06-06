@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"71 ./kernel.h
-[; ;./kernel.h: 71: void lunos_init();
+"72 ./kernel.h
+[; ;./kernel.h: 72: void lunos_init();
 [v _lunos_init `(v ~T0 @X0 0 e? ]
 "10 ./tasks.h
 [; ;./tasks.h: 10: void user_conf();
@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./int0_test.h: 11: void config_timer0();
 [v _config_timer0 `(v ~T0 @X0 0 e? ]
 [v F2568 `(v ~T0 @X0 0 t? ]
-"65 ./kernel.h
-[; ;./kernel.h: 65: void lunos_createTask(unsigned int prior, void(*f)());
+"66 ./kernel.h
+[; ;./kernel.h: 66: void lunos_createTask(unsigned int prior, void(*f)());
 [v _lunos_createTask `(v ~T0 @X0 0 ef2`ui`*F2568 ]
 "12 ./tasks.h
 [; ;./tasks.h: 12: void count_bottles();
@@ -34,8 +34,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 main.c
 [c E2528 0 1 2 3 4 5 .. ]
 [n E2528 . READY RUNNING WAITING FINISHED WAITING_PIPE WAITING_SEM  ]
-"73 ./kernel.h
-[; ;./kernel.h: 73: void dispatcher(t_state state);
+"74 ./kernel.h
+[; ;./kernel.h: 74: void dispatcher(t_state state);
 [v _dispatcher `(v ~T0 @X0 0 ef1`E2528 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");

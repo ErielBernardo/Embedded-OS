@@ -4580,7 +4580,7 @@ typedef struct r_queue {
 extern t_r_queue ready_queue;
 int who = 0;
 int size = 0;
-# 65 "./kernel.h"
+# 66 "./kernel.h"
 void lunos_createTask(unsigned int prior, void(*f)());
 void lunos_delayTask(unsigned int time);
 void lunos_exit();
@@ -4605,6 +4605,7 @@ void fill_bottle();
 void check_level();
 void cover_bottle();
 void count_out();
+
 
 
 typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;

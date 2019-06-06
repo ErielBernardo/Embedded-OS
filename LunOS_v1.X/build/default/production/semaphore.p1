@@ -46,8 +46,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 semaphore.c
 [; ;semaphore.c: 8: extern t_r_queue ready_queue;
 [v _ready_queue `S4 ~T0 @X0 0 e ]
-"73 ./kernel.h
-[; ;./kernel.h: 73: void dispatcher(t_state state);
+"74 ./kernel.h
+[; ;./kernel.h: 74: void dispatcher(t_state state);
 [v _dispatcher `(v ~T0 @X0 0 ef1`E4 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");

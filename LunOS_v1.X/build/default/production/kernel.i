@@ -4588,7 +4588,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 extern t_r_queue ready_queue;
 int who = 0;
 int size = 0;
-# 65 "./kernel.h"
+# 66 "./kernel.h"
 void lunos_createTask(unsigned int prior, void(*f)());
 void lunos_delayTask(unsigned int time);
 void lunos_exit();

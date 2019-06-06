@@ -95,8 +95,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "669
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 669: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
 [v _PORTDbits `VS23 ~T0 @X0 0 e@3971 ]
-"76 ./kernel.h
-[; ;./kernel.h: 76: void delay_decrement();
+"77 ./kernel.h
+[; ;./kernel.h: 77: void delay_decrement();
 [v _delay_decrement `(v ~T0 @X0 0 e? ]
 "68 int0_test.c
 [; ;int0_test.c: 68:       { who = ready_queue.task_running; ready_queue.tasks[who].task_state = READY; ready_queue.tasks[who].W_reg = WREG; ready_queue.tasks[who].STATUS_reg = STATUS; ready_queue.tasks[who].BSR_reg = BSR; size = 0; while (STKPTR) { ready_queue.tasks[who].task_stack.h_stack[size].TOSU_reg = TOSU; ready_queue.tasks[who].task_stack.h_stack[size].TOSH_reg = TOSH; ready_queue.tasks[who].task_stack.h_stack[size].TOSL_reg = TOSL; size++; __asm("POP"); } ready_queue.tasks[who].task_stack.stack_level = size;};
@@ -143,8 +143,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6904
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 6904: extern volatile unsigned char STKPTR __attribute__((address(0xFFC)));
 [v _STKPTR `Vuc ~T0 @X0 0 e@4092 ]
-"74 ./kernel.h
-[; ;./kernel.h: 74: unsigned int round_robin();
+"75 ./kernel.h
+[; ;./kernel.h: 75: unsigned int round_robin();
 [v _round_robin `(ui ~T0 @X0 0 e? ]
 "6977 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 6977: extern volatile __uint24 TOS __attribute__((address(0xFFD)));

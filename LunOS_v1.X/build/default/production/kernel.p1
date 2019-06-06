@@ -41,20 +41,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS278 ~T0 @X0 0 e@4082 ]
-"73 ./kernel.h
-[; ;./kernel.h: 73: void dispatcher(t_state state);
+"74 ./kernel.h
+[; ;./kernel.h: 74: void dispatcher(t_state state);
 [v _dispatcher `(v ~T0 @X0 0 ef1`E4 ]
-"71
-[; ;./kernel.h: 71: void lunos_init();
+"72
+[; ;./kernel.h: 72: void lunos_init();
 [v _lunos_init `(v ~T0 @X0 0 e? ]
 "3 ./sralloc.h
 [; ;./sralloc.h: 3: void SRAMInitHeap(void);
 [v _SRAMInitHeap `(v ~T0 @X0 0 ef ]
-"77 ./kernel.h
-[; ;./kernel.h: 77: void task_idle();
+"78 ./kernel.h
+[; ;./kernel.h: 78: void task_idle();
 [v _task_idle `(v ~T0 @X0 0 e? ]
-"74
-[; ;./kernel.h: 74: unsigned int round_robin();
+"75
+[; ;./kernel.h: 75: unsigned int round_robin();
 [v _round_robin `(ui ~T0 @X0 0 e? ]
 "6462 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4520.h: 6462: extern volatile unsigned char WREG __attribute__((address(0xFE8)));

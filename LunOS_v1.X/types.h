@@ -35,7 +35,7 @@ typedef struct pcb {
   byte BSR_reg;
   t_state task_state;
   t_stack task_stack;
-  int task_installed; 
+  int task_installed; // adicionada **********************************
   void(*task_f)();
   unsigned int task_delay_time;
 } t_pcb;

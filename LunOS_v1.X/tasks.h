@@ -14,6 +14,7 @@ void fill_bottle();
 void check_level();
 void cover_bottle();
 void count_out();
+
 #endif	/* TASKS_H */
 
 typedef enum {EMPTY = 0, FULL, CLOSED, FAIL} bottle_state;
