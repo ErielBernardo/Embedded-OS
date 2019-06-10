@@ -11,8 +11,9 @@
 #include "sralloc.h"
 #include "types.h"
 
-unsigned int data_PIPE;
-
+unsigned int count;
+tid Data_PIPE;
+int numero;
 unsigned char* mem;
 
 sem_t count_sem, fill_sem, check_sem, cover_sem, out_sem, w_pipe, r_pipe;
@@ -33,7 +34,10 @@ void user_conf() {
     PORTDbits.RD5 = 1;
     PORTDbits.RD6 = 1;
     PORTDbits.RD7 = 1;
-
+    
+    sem_init(&w_pipe, 1);
+    sem_init(&r_pipe, 0);
+    
     sem_init(&count_sem, 1);
     sem_init(&fill_sem, 0);
     sem_init(&check_sem, 0);
@@ -106,20 +110,24 @@ void check_level(){
         while (PORTDbits.RD1 && PORTDbits.RD2 && PORTDbits.RD3);
         lunos_delayTask(200);   // Tratamento do botoa
         
-//        if (PORTDbits.RD1)
-//            global_buffer.bottles[0].bottle_state = EMPTY;
-//        else
-//            global_buffer.bottles[0].bottle_state = FULL;
-//
-//        if (PORTDbits.RD2)
-//            global_buffer.bottles[1].bottle_state = EMPTY;
-//        else
-//            global_buffer.bottles[1].bottle_state = FULL;
-//
-//        if (PORTDbits.RD3)
-//            global_buffer.bottles[2].bottle_state = EMPTY;
-//        else
-//            global_buffer.bottles[2].bottle_state = FULL;
+        if (LATDbits.LATD1)
+            global_buffer.bottles[0].bottle_state = EMPTY;
+        else
+            global_buffer.bottles[0].bottle_state = FULL;
+
+        if (PORTDbits.RD2)
+            global_buffer.bottles[1].bottle_state = EMPTY;
+        else
+            global_buffer.bottles[1].bottle_state = FULL;
+
+        if (PORTDbits.RD3)
+            global_buffer.bottles[2].bottle_state = EMPTY;
+        else
+            global_buffer.bottles[2].bottle_state = FULL;
+        
+        global_buffer.bottles[0].bottle_state = FULL;
+        global_buffer.bottles[1].bottle_state = FULL;
+        global_buffer.bottles[2].bottle_state = FULL;
         
         sem_post(&cover_sem);   // Libera semaforo da proxima tarefa
         PORTDbits.RD6 = 1;  // indica q a tarefa deixou de executar
@@ -134,29 +142,39 @@ void cover_bottle(){
         lunos_delayTask(500);
         while (PORTCbits.RC3 && PORTCbits.RC4 && PORTCbits.RC5); // trata botao
         lunos_delayTask(200); // por 500 ms
-//        if (PORTCbits.RC3){
-//            if(global_buffer.bottles[0].bottle_state == FULL)
-                global_buffer.bottles[0].bottle_state = CLOSED;
-//            else if (PORTCbits.RC3)
-//                global_buffer.bottles[0].bottle_state = FAIL;
-//        }  
-//        if (PORTCbits.RC4){
-//            if(global_buffer.bottles[1].bottle_state == FULL)
-//                global_buffer.bottles[1].bottle_state = CLOSED;
-//            else if (PORTCbits.RC4)
-//                global_buffer.bottles[1].bottle_state = FAIL;
-//        }
-//        if (PORTCbits.RC5){
-//            if(global_buffer.bottles[2].bottle_state == FULL)
-//                global_buffer.bottles[2].bottle_state = CLOSED;
-//            else if (PORTCbits.RC5)
-//                global_buffer.bottles[2].bottle_state = FAIL;
-//        }
-//        unsigned int count = 0;
-//        for (int i = 0; i < MAX_BOTTLES; i++){
-//            if (global_buffer.bottles[i].bottle_state == CLOSED) count++;
-//        }
-        unsigned int count = 3; // MUDAR ISSO, SÓ SERVE PARA TESTE DO PIPE PARA count_out !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    if (PORTCbits.RC3){
+//        lunos_delayTask(10);
+        if(global_buffer.bottles[0].bottle_state == FULL)
+            global_buffer.bottles[0].bottle_state = CLOSED;
+        else if (PORTCbits.RC3)
+            global_buffer.bottles[0].bottle_state = FAIL;
+//    }  
+//    if (PORTCbits.RC4){
+//        lunos_delayTask(10);
+        if(global_buffer.bottles[1].bottle_state == FULL)
+            global_buffer.bottles[1].bottle_state = CLOSED;
+        else if (PORTCbits.RC4)
+            global_buffer.bottles[1].bottle_state = FAIL;
+//    }
+//    if (PORTCbits.RC5){
+//        lunos_delayTask(10);
+        if(global_buffer.bottles[2].bottle_state == FULL)
+            global_buffer.bottles[2].bottle_state = CLOSED;
+        else if (PORTCbits.RC5)
+            global_buffer.bottles[2].bottle_state = FAIL;
+//    }
+        
+        count = 0;
+        numero = 0;
+        for (int i = 0; i < MAX_BOTTLES; i++){
+            if (global_buffer.bottles[i].bottle_state == CLOSED){
+                count++;
+            }
+            numero = count;
+        }
+        Data_PIPE = count;
+        
+//        count = 3; // MUDAR ISSO, SÓ SERVE PARA TESTE DO PIPE PARA count_out !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         pipe_write(&p, count);
         sem_post(&out_sem);
         PORTCbits.RC7 = 1;
@@ -167,16 +185,16 @@ void cover_bottle(){
 void count_out(){
     while(1){
         unsigned int data;
-        unsigned int count = 0;
+        unsigned int n = 0;
         sem_wait(&out_sem);    // espera liberar semafaro dessa tarefa
         PORTBbits.RB1 = 0;  // indica q a tarefa esta executando
         PORTCbits.RC7 = 0;  // liga esteira
         pipe_read(&p, &data);   // le o pipe
-        data_PIPE = data;
-        while (count < data){
-            while(PORTBbits.RB2);
-            lunos_delayTask(200);
-            count++;
+        Data_PIPE = data;    // atribui a variavel global o pipe recebido
+        while (n < data){   // conta a saida do numero de garrafas cheias e fechadas
+            while(PORTBbits.RB2);   // entrada do sonsor de garrafa
+            lunos_delayTask(200);   // trata botao do sensor
+            n++;
         }
         PORTBbits.RB1 = 1; // pisca led da tarefa
         lunos_delayTask(200); // pisca led da tarefa

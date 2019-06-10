@@ -39,7 +39,7 @@ FINISHED 3
 WAITING_PIPE 4
 WAITING_SEM 5
 ]
-"20 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"21 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [e E2398 . `uc
 EMPTY 0
 FULL 1
@@ -118,17 +118,17 @@ BUSY_ 1
 [v _SRAMInitHeap SRAMInitHeap `R(v  1 e 1 0 ]
 "359
 [v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
-"22 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"23 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [v _user_conf user_conf `R(v  1 e 1 0 ]
-"61
+"65
 [v _count_bottles count_bottles `R(v  1 e 1 0 ]
-"83
+"87
 [v _fill_bottle fill_bottle `R(v  1 e 1 0 ]
-"98
+"102
 [v _check_level check_level `R(v  1 e 1 0 ]
-"129
+"137
 [v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
-"167
+"185
 [v _count_out count_out `R(v  1 e 1 0 ]
 "14 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X/kernel.h
 [v _who who `i  1 e 2 0 ]
@@ -236,6 +236,27 @@ BUSY_ 1
 ]
 [u S207 . 1 `S33 1 . 1 0 `S190 1 . 1 0 `S199 1 . 1 0 `S204 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES207  1 e 1 @3971 ]
+[s S907 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"1340
+[s S916 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S925 . 1 `S907 1 . 1 0 `S916 1 . 1 0 ]
+[v _LATDbits LATDbits `VES925  1 e 1 @3980 ]
 "1699
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "1921
@@ -342,8 +363,10 @@ BUSY_ 1
 [v _ready_queue ready_queue `S270  1 e 664 0 ]
 "144 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\sralloc.c
 [v __uDynamicHeap _uDynamicHeap `[512]uc  1 e 512 0 ]
+"14 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+[v _count count `ui  1 e 2 0 ]
 [s S540 semaphore 16 `i 1 contador 2 0 `[5]ui 1 bloqued_Queue 10 2 `ui 1 bloqued_size 2 12 `ui 1 task_to_ready 2 14 ]
-"18 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"19
 [v _count_sem count_sem `S540  1 e 16 0 ]
 [v _fill_sem fill_sem `S540  1 e 16 0 ]
 [v _check_sem check_sem `S540  1 e 16 0 ]
@@ -351,11 +374,11 @@ BUSY_ 1
 [v _out_sem out_sem `S540  1 e 16 0 ]
 [v _w_pipe w_pipe `S540  1 e 16 0 ]
 [v _r_pipe r_pipe `S540  1 e 16 0 ]
-"19
+"20
 [s S545 pipe 12 `[2]ui 1 pipe_data 4 0 `ui 1 index_write 2 4 `ui 1 index_read 2 6 `*.39S540 1 w 2 8 `*.39S540 1 r 2 10 ]
 [v _p p `S545  1 e 12 0 ]
 [s S710 . 1 `E2398 1 bottle_state 1 0 ]
-"20
+"21
 [s S715 . 6 `i 1 count 2 0 `[3]S710 1 bottles 3 2 `E2404 1 p_state 1 5 ]
 [v _global_buffer global_buffer `S715  1 e 6 0 ]
 "16 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\main.c
@@ -363,10 +386,10 @@ BUSY_ 1
 {
 "37
 } 0
-"22 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"23 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [v _user_conf user_conf `R(v  1 e 1 0 ]
 {
-"47
+"51
 } 0
 "9 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\pipe.c
 [v _pipe_create pipe_create `R(v  1 e 1 0 ]
@@ -456,13 +479,13 @@ BUSY_ 1
 {
 "120
 } 0
-"61 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"65 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [v _count_bottles count_bottles `R(v  1 e 1 0 ]
 {
 [s S710 . 1 `E2398 1 bottle_state 1 0 ]
-"70
+"74
 [v _bottle bottle `S710  1 a 1 0 ]
-"81
+"85
 } 1
 "20 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\semaphore.c
 [v _sem_wait sem_wait `R(v  1 e 1 0 ]
@@ -484,21 +507,23 @@ BUSY_ 1
 [v _time time `ui  1 p 2 -2 ]
 "38
 } 0
-"83 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"87 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [v _fill_bottle fill_bottle `R(v  1 e 1 0 ]
 {
-"96
+"100
 } 0
-"98
+"102
 [v _check_level check_level `R(v  1 e 1 0 ]
 {
-"127
+"135
 } 0
-"129
+"137
 [v _cover_bottle cover_bottle `R(v  1 e 1 0 ]
 {
-"165
-} 0
+"169
+[v _i i `i  1 a 2 0 ]
+"183
+} 2
 "18 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\pipe.c
 [v _pipe_write pipe_write `R(v  1 e 1 0 ]
 {
@@ -508,14 +533,14 @@ BUSY_ 1
 [v _data data `ui  1 p 2 -4 ]
 "25
 } 0
-"167 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
+"185 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\tasks.c
 [v _count_out count_out `R(v  1 e 1 0 ]
 {
-"169
+"187
 [v _data data `ui  1 a 2 0 ]
-"170
-[v _count count `ui  1 a 2 2 ]
-"192
+"188
+[v _n n `ui  1 a 2 2 ]
+"210
 } 4
 "27 C:\Users\Eriel\OneDrive\Documentos\SO Embarcados\Embedded-OS\Embedded-OS\LunOS_v1.X\pipe.c
 [v _pipe_read pipe_read `R(v  1 e 1 0 ]
